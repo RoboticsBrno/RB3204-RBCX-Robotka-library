@@ -1,0 +1,43 @@
+{
+  "name": "RB3204-RBCX-Robotka-library",
+  "keywords": "ESP32, RBCX, RB3204, Robotarna, RobotikaBrno, RoboticsBrno, Robotka",
+  "description": "A library to simplify programming of the Robotka robot.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoboticsBrno/RB3204-RBCX-Robotka-library.git"
+  },
+  "authors": [
+    {
+      "name": "Vojtěch Boček",
+      "email": "vbocek@gmail.com",
+      "url": "http://www.robotikabrno.cz",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "version": "0.0.1",
+  "frameworks": ["arduino"],
+  "platforms": "espressif32",
+  "dependencies": [
+    {
+      "name": "RB3204-RBCX-library",
+      "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v0.0.1.zip"
+    },
+    {
+      "name": "RB3201-RBProtocol",
+      "version": "https://github.com/RoboticsBrno/RB3201-RBProtocol-library/archive/v10.3.0.zip"
+    },
+    {
+      "name": "Esp32-Mcp3008-LineSensor",
+      "version": "https://github.com/RoboticsBrno/Esp32-Mcp3008-LineSensor/archive/v2.0.2.zip"
+    },
+    {
+      "name": "Esp32-RBGridUI",
+      "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.1.0.zip"
+    }
+  ],
+  "build": {
+    "flags": "-std=c++14",
+    "unflags": "-std=gnu++11"
+  }
+}
