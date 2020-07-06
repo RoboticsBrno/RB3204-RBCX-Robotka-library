@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robotka: Sledování čáry</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robotka
+   </div>
+   <div id="projectbrief">Knihovna pro obsluhu Robotky.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hledat');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkce</a>  </div>
+  <div class="headertitle">
+<div class="title">Sledování čáry</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funkce pro komunikaci se senzory na čáru.  
+<a href="#details">...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkce</h2></td></tr>
+<tr class="memitem:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a> (float motor_time_coef=1.0)</td></tr>
+<tr class="memdesc:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kalibrovat senzory na čáru.  <a href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">...</a><br /></td></tr>
+<tr class="separator:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga431763d1456764ea6789809a6819be03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a> ()</td></tr>
+<tr class="memdesc:ga431763d1456764ea6789809a6819be03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vymazat kalibraci.  <a href="group__line.html#ga431763d1456764ea6789809a6819be03">...</a><br /></td></tr>
+<tr class="separator:ga431763d1456764ea6789809a6819be03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">rkLineGetSensor</a> (uint8_t sensorId)</td></tr>
+<tr class="memdesc:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hodnota z jednoho senzoru na čáru.  <a href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">...</a><br /></td></tr>
+<tr class="separator:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">rkLineGetPosition</a> (bool white_line=false, uint8_t line_threshold_pct=25)</td></tr>
+<tr class="memdesc:gabce0ea4f636979db89c6138d8ae4fff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozice čáry pod senzory.  <a href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">...</a><br /></td></tr>
+<tr class="separator:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
+<p>Funkce pro komunikaci se senzory na čáru. </p>
+<h2 class="groupheader">Dokumentace funkcí</h2>
+<a id="ga72f95ff9d7ca5b75f1c3560c3c303790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72f95ff9d7ca5b75f1c3560c3c303790">&#9670;&nbsp;</a></span>rkLineCalibrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rkLineCalibrate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>motor_time_coef</em> = <code>1.0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kalibrovat senzory na čáru. </p>
+<p>Otočí robota doprava a pak doleva a zase zpět tak, aby lišta se senzory prošla celá nad čárou i nad okolím. Trvá to 2.2s, funkce po celou dobu kalibrace čeká a vrátí se až po dokončení.</p>
+<p>Předpokládá se, že před zavoláním této metody roboto stojí tak, že prostřední senzory jsou nad čárou.</p>
+<p>Kalibrační hodnoty se ukládají do paměti, kalibraci je třeba dělat pouze když je ruka přesunuta na jiný podklad.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motor_time_coef</td><td>tento koeficient změní jak dlouho se roboto otáčí, změňte pokud se vaše ruka neotočí tak, že senzory projedou všechny nad čárou. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga431763d1456764ea6789809a6819be03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga431763d1456764ea6789809a6819be03">&#9670;&nbsp;</a></span>rkLineClearCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rkLineClearCalibration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vymazat kalibraci. </p>
+<p>Vymazat nastavenou kalibraci a dále používat nezkalibrované hodnoty. </p>
+
+</div>
+</div>
+<a id="gabce0ea4f636979db89c6138d8ae4fff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabce0ea4f636979db89c6138d8ae4fff2">&#9670;&nbsp;</a></span>rkLineGetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float rkLineGetPosition </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>white_line</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>line_threshold_pct</em> = <code>25</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pozice čáry pod senzory. </p>
+<p>Tato funkce se pokouší najít černou čáru pod senzory.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">white_line</td><td>nastavte na true, pokud sledujete bílou čáru na černém podkladu. Výchozí: false </td></tr>
+    <tr><td class="paramname">line_threshold_pct</td><td>Jak velký rozdíl v procentech musí mezi hodnotami být, aby byla čára považována za nalezenou. Výchozí: 25% </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Desetinná hodnota od -1 do +1. -1 znamená, že čára je úplně vlevo, 0 že je uprostřed a 1 že je úplně vpravo. Vrátí NaN, pokud nenalezne čáru - výsledek otestujte funkcí isnan() - <code>isnan(line_position)</code> </dd></dl>
+
+</div>
+</div>
+<a id="ga213a4dc0b560ed9c9e8331c6b7726bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga213a4dc0b560ed9c9e8331c6b7726bc0">&#9670;&nbsp;</a></span>rkLineGetSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t rkLineGetSensor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sensorId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hodnota z jednoho senzoru na čáru. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorId</td><td>číslo senzoru od 0 do 7 včetně </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>naměřená hodnota od 0 do 1023 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generováno po 6. čec 2020 12.55:21 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

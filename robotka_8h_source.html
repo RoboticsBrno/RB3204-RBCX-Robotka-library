@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robotka: Zdrojový soubor robotka.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robotka
+   </div>
+   <div id="projectbrief">Knihovna pro obsluhu Robotky.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hledat');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">robotka.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="robotka_8h.html">Zobrazit dokumentaci tohoto souboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _LIBRB_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define _LIBRB_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;fmt/core.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;fmt/printf.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;RBCX.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;gridui.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;rbprotocol.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>gridui;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structrkPinsConfig.html">   37</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structrkPinsConfig.html">rkPinsConfig</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="structrkPinsConfig.html">rkPinsConfig</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : line_cs(4)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        , line_mosi(14)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        , line_miso(27)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        , line_sck(26) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint8_t line_cs;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint8_t line_mosi;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint8_t line_miso;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t line_sck;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define RK_DEFAULT_WIFI_AP_PASSWORD &quot;flusflus&quot; </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">   52</a></span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structrkConfig.html">   60</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structrkConfig.html">rkConfig</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="structrkConfig.html">rkConfig</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        : rbcontroller_app_enable(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        , owner(<span class="stringliteral">&quot;Nenastaven&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        , name(<span class="stringliteral">&quot;Nenastaveno&quot;</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        , wifi_name(<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        , wifi_password(<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        , wifi_default_ap(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        , wifi_ap_password(<a class="code" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">RK_DEFAULT_WIFI_AP_PASSWORD</a>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        , wifi_ap_channel(1)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        , motor_id_left(4)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        , motor_id_right(1)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        , motor_max_power_pct(60)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        , motor_polarity_switch_left(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        , motor_polarity_switch_right(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        , motor_enable_failsafe(<span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structrkConfig.html#a18347342033debb9e6b6a0d2323ed96a">   78</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structrkConfig.html#a18347342033debb9e6b6a0d2323ed96a">rbcontroller_app_enable</a>; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structrkConfig.html#af5cd8612bda3218aca9bb0fc5ca38d92">   80</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structrkConfig.html#af5cd8612bda3218aca9bb0fc5ca38d92">owner</a>; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structrkConfig.html#a7798e9ff2af8a9f2f8baad2ad90aca4b">   81</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structrkConfig.html#a7798e9ff2af8a9f2f8baad2ad90aca4b">name</a>; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structrkConfig.html#ad7900c8fefe8c3f39a9589ddccbeb552">   83</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structrkConfig.html#ad7900c8fefe8c3f39a9589ddccbeb552">wifi_name</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structrkConfig.html#a02585855d3927918b1eba5bbd0c4df26">   84</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structrkConfig.html#a02585855d3927918b1eba5bbd0c4df26">wifi_password</a>; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structrkConfig.html#aaaef1435e9656b0392c377a39117c338">   86</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structrkConfig.html#aaaef1435e9656b0392c377a39117c338">wifi_default_ap</a>; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structrkConfig.html#a804d01d181bf1079e32a9a8a2f313647">   87</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structrkConfig.html#a804d01d181bf1079e32a9a8a2f313647">wifi_ap_password</a>; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structrkConfig.html#a94ef5a5a4cf9841100123e58f22f2e08">   88</a></span>&#160;    uint8_t <a class="code" href="structrkConfig.html#a94ef5a5a4cf9841100123e58f22f2e08">wifi_ap_channel</a>; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structrkConfig.html#a0f6cf95aa260a18e9eb3a2239eec3841">   90</a></span>&#160;    uint8_t <a class="code" href="structrkConfig.html#a0f6cf95aa260a18e9eb3a2239eec3841">motor_id_left</a>; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structrkConfig.html#ac7c0397b741aa8bd9ab5db6fddfb424d">   91</a></span>&#160;    uint8_t <a class="code" href="structrkConfig.html#ac7c0397b741aa8bd9ab5db6fddfb424d">motor_id_right</a>; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structrkConfig.html#a217f36a4ec2030e2614c3bf2e9c6db0b">   92</a></span>&#160;    uint8_t <a class="code" href="structrkConfig.html#a217f36a4ec2030e2614c3bf2e9c6db0b">motor_max_power_pct</a>; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="structrkConfig.html#a98b16d3afdb82c807c2095ac507c9dab">   93</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structrkConfig.html#a98b16d3afdb82c807c2095ac507c9dab">motor_polarity_switch_left</a>; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structrkConfig.html#af3ca80ca3a44209dc3a6a70acc5e7efe">   94</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structrkConfig.html#af3ca80ca3a44209dc3a6a70acc5e7efe">motor_polarity_switch_right</a>; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structrkConfig.html#ad99c9e33ca54ac2af4746a4f094c9ae5">   95</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structrkConfig.html#ad99c9e33ca54ac2af4746a4f094c9ae5">motor_enable_failsafe</a>; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structrkConfig.html#a9aa5f8cefd3ac6e9b5bf77c240eaa48f">   97</a></span>&#160;    <a class="code" href="structrkPinsConfig.html">rkPinsConfig</a> <a class="code" href="structrkConfig.html#a9aa5f8cefd3ac6e9b5bf77c240eaa48f">pins</a>; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    BTN_DOWN = rb::ButtonId::Down,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    BTN_UP = rb::ButtonId::Up,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    BTN_LEFT = rb::ButtonId::Left,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    BTN_RIGHT = rb::ButtonId::Right,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    BTN_ON = rb::ButtonId::On,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    BTN_OFF = rb::ButtonId::Off,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} rkButtonId;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__general.html#ga8ec76111b1acaa90d2a1a3b0947ccb67">rkSetup</a>(<span class="keyword">const</span> <a class="code" href="structrkConfig.html">rkConfig</a>&amp; cfg = <a class="code" href="structrkConfig.html">rkConfig</a>());</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga72c459570948677f062017ddd6ec4e1f">rkMotorsSetPower</a>(int8_t left, int8_t right);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga25ce4bec1148bd48ee8f9493a0161097">rkMotorsSetPowerLeft</a>(int8_t power);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga2ab76ce8144d24d80af28deed2352cac">rkMotorsSetPowerRight</a>(int8_t power);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga53feafb0b16e552d38d820aab8242d9c">rkMotorsSetPowerById</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, int8_t power);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga80623fb1f7e036a62118385e68350989">rkMotorsSetSpeed</a>(int8_t left, int8_t right);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#gaebe7c19a71ebb245e6f515c02ab92f31">rkMotorsSetSpeedLeft</a>(int8_t speed);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga3afdb597abf80f84aeb44fce8c964d6a">rkMotorsSetSpeedRight</a>(int8_t speed);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga11b72894b5c7bff56829eae6f73492b2">rkMotorsSetSpeedById</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, int8_t speed);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__motors.html#ga082613a9a80b31f339a7d94b5459ae55">rkMotorsJoystick</a>(int32_t x, int32_t y);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;uint32_t <a class="code" href="group__battery.html#ga8f7f74b5d0e0482a17b7833357c90ba6">rkBatteryPercent</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;uint32_t <a class="code" href="group__battery.html#gac7f084d93d06d292682ffaa31f339929">rkBatteryVoltageMv</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rbcontroller.html#ga4e0ed17d397b7233d37152e92e8b4904">rkControllerSendLog</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* format, ...);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rbcontroller.html#ga4e0ed17d397b7233d37152e92e8b4904">rkControllerSendLog</a>(<span class="keyword">const</span> std::string&amp; text);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keywordtype">void</span> rkControllerSend(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd, rbjson::Object* data = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keywordtype">void</span> rkControllerSendMustArrive(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd, rbjson::Object* data = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#ga25805989f781fc23bb81376d917b75c6">rkLedRed</a>(<span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#gaaf9ab17fde6f743586635569c4e40d3b">rkLedYellow</a>(<span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#ga65cb68130c10d30f2ac3f0c6d58aedba">rkLedGreen</a>(<span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a>(<span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#ga20b4e3d298cf55329ab0dfa564e61fee">rkLedAll</a>(<span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">rkLedById</a>(uint8_t <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> on = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(rkButtonId <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">  308</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_DOWN, waitForRelease);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9">  318</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9">rkButtonUp</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_UP, waitForRelease);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd">  328</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd">rkButtonLeft</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_LEFT, waitForRelease);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">  338</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">rkButtonRight</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_RIGHT, waitForRelease);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno"><a class="line" href="group__buttons.html#ga4eab004dff50030755ab45bd92983e44">  348</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#ga4eab004dff50030755ab45bd92983e44">rkButtonOn</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_ON, waitForRelease);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">  358</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a>(<span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(BTN_OFF, waitForRelease);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a>(rkButtonId <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a>(<span class="keywordtype">float</span> motor_time_coef = 1.0);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a>();</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;uint16_t <a class="code" href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">rkLineGetSensor</a>(uint8_t sensorId);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keywordtype">float</span> <a class="code" href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">rkLineGetPosition</a>(<span class="keywordtype">bool</span> white_line = <span class="keyword">false</span>, uint8_t line_threshold_pct = 25);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="preprocessor">#endif // LIBRB_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__buttons_html_gadffbeede1bad4d606b6ba779c0269393"><div class="ttname"><a href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a></div><div class="ttdeci">bool rkButtonOff(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;OFF&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:358</div></div>
+<div class="ttc" id="agroup__buttons_html_gaefcbc39c395320a29e2898557e4dda5f"><div class="ttname"><a href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">rkButtonRight</a></div><div class="ttdeci">bool rkButtonRight(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;doprava&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:338</div></div>
+<div class="ttc" id="astructrkPinsConfig_html"><div class="ttname"><a href="structrkPinsConfig.html">rkPinsConfig</a></div><div class="ttdoc">Nastavení čísel pinů různých periferií.</div><div class="ttdef"><b>Definition:</b> robotka.h:37</div></div>
+<div class="ttc" id="agroup__rbcontroller_html_ga4e0ed17d397b7233d37152e92e8b4904"><div class="ttname"><a href="group__rbcontroller.html#ga4e0ed17d397b7233d37152e92e8b4904">rkControllerSendLog</a></div><div class="ttdeci">void rkControllerSendLog(const char *format,...)</div><div class="ttdoc">Odeslat text do aplikace.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:23</div></div>
+<div class="ttc" id="agroup__battery_html_gac7f084d93d06d292682ffaa31f339929"><div class="ttname"><a href="group__battery.html#gac7f084d93d06d292682ffaa31f339929">rkBatteryVoltageMv</a></div><div class="ttdeci">uint32_t rkBatteryVoltageMv()</div><div class="ttdoc">Úroveň baterie v mV.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:63</div></div>
+<div class="ttc" id="agroup__motors_html_ga25ce4bec1148bd48ee8f9493a0161097"><div class="ttname"><a href="group__motors.html#ga25ce4bec1148bd48ee8f9493a0161097">rkMotorsSetPowerLeft</a></div><div class="ttdeci">void rkMotorsSetPowerLeft(int8_t power)</div><div class="ttdoc">Nastavení výkonu levého motoru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:71</div></div>
+<div class="ttc" id="agroup__buttons_html_ga87d3afcba3fc74d28e731b840adc1ee9"><div class="ttname"><a href="group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9">rkButtonUp</a></div><div class="ttdeci">bool rkButtonUp(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;nahoru&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:318</div></div>
+<div class="ttc" id="agroup__buttons_html_ga4eab004dff50030755ab45bd92983e44"><div class="ttname"><a href="group__buttons.html#ga4eab004dff50030755ab45bd92983e44">rkButtonOn</a></div><div class="ttdeci">bool rkButtonOn(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;ON&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:348</div></div>
+<div class="ttc" id="astructrkConfig_html_ad7900c8fefe8c3f39a9589ddccbeb552"><div class="ttname"><a href="structrkConfig.html#ad7900c8fefe8c3f39a9589ddccbeb552">rkConfig::wifi_name</a></div><div class="ttdeci">const char * wifi_name</div><div class="ttdoc">Jméno WiFi sítě, na kterou se připojovat. Výchozí: &quot;&quot;</div><div class="ttdef"><b>Definition:</b> robotka.h:83</div></div>
+<div class="ttc" id="astructrkConfig_html_af3ca80ca3a44209dc3a6a70acc5e7efe"><div class="ttname"><a href="structrkConfig.html#af3ca80ca3a44209dc3a6a70acc5e7efe">rkConfig::motor_polarity_switch_right</a></div><div class="ttdeci">bool motor_polarity_switch_right</div><div class="ttdoc">Prohození polarity pravého motoru. Výchozí: true</div><div class="ttdef"><b>Definition:</b> robotka.h:94</div></div>
+<div class="ttc" id="agroup__buttons_html_ga13a44b9bf33dc9d2fe450c0f6f6fc181"><div class="ttname"><a href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a></div><div class="ttdeci">bool rkButtonIsPressed(rkButtonId id, bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto tlačítko?</div><div class="ttdef"><b>Definition:</b> robotka.cpp:150</div></div>
+<div class="ttc" id="agroup__leds_html_gaaf9ab17fde6f743586635569c4e40d3b"><div class="ttname"><a href="group__leds.html#gaaf9ab17fde6f743586635569c4e40d3b">rkLedYellow</a></div><div class="ttdeci">void rkLedYellow(bool on=true)</div><div class="ttdoc">Zapnout/vypnout žlutou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:117</div></div>
+<div class="ttc" id="agroup__buttons_html_gab55cc8b2aa05d4f938c6807ce739eebd"><div class="ttname"><a href="group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd">rkButtonLeft</a></div><div class="ttdeci">bool rkButtonLeft(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;doleva&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:328</div></div>
+<div class="ttc" id="agroup__leds_html_ga20b4e3d298cf55329ab0dfa564e61fee"><div class="ttname"><a href="group__leds.html#ga20b4e3d298cf55329ab0dfa564e61fee">rkLedAll</a></div><div class="ttdeci">void rkLedAll(bool on=true)</div><div class="ttdoc">Zapnout/vypnout všechny LED zaráz.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:129</div></div>
+<div class="ttc" id="astructrkConfig_html_a217f36a4ec2030e2614c3bf2e9c6db0b"><div class="ttname"><a href="structrkConfig.html#a217f36a4ec2030e2614c3bf2e9c6db0b">rkConfig::motor_max_power_pct</a></div><div class="ttdeci">uint8_t motor_max_power_pct</div><div class="ttdoc">Limit výkonu motoru v procentech od 0 do 100. Výchozí: 60</div><div class="ttdef"><b>Definition:</b> robotka.h:92</div></div>
+<div class="ttc" id="astructrkConfig_html_a804d01d181bf1079e32a9a8a2f313647"><div class="ttname"><a href="structrkConfig.html#a804d01d181bf1079e32a9a8a2f313647">rkConfig::wifi_ap_password</a></div><div class="ttdeci">const char * wifi_ap_password</div><div class="ttdoc">Heslo k vytvořené síti. Výchozí: &quot;flusflus&quot;</div><div class="ttdef"><b>Definition:</b> robotka.h:87</div></div>
+<div class="ttc" id="agroup__leds_html_ga65cb68130c10d30f2ac3f0c6d58aedba"><div class="ttname"><a href="group__leds.html#ga65cb68130c10d30f2ac3f0c6d58aedba">rkLedGreen</a></div><div class="ttdeci">void rkLedGreen(bool on=true)</div><div class="ttdoc">Zapnout/vypnout zelenou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:121</div></div>
+<div class="ttc" id="astructrkConfig_html_a18347342033debb9e6b6a0d2323ed96a"><div class="ttname"><a href="structrkConfig.html#a18347342033debb9e6b6a0d2323ed96a">rkConfig::rbcontroller_app_enable</a></div><div class="ttdeci">bool rbcontroller_app_enable</div><div class="ttdoc">povolit komunikaci s aplikací RBController. Výchozí: false</div><div class="ttdef"><b>Definition:</b> robotka.h:78</div></div>
+<div class="ttc" id="agroup__general_html_ga774729cebfd08838fd6f5bec88b15b11"><div class="ttname"><a href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">RK_DEFAULT_WIFI_AP_PASSWORD</a></div><div class="ttdeci">#define RK_DEFAULT_WIFI_AP_PASSWORD</div><div class="ttdoc">Výchozí heslo pro WiFi AP.</div><div class="ttdef"><b>Definition:</b> robotka.h:51</div></div>
+<div class="ttc" id="astructrkConfig_html_af5cd8612bda3218aca9bb0fc5ca38d92"><div class="ttname"><a href="structrkConfig.html#af5cd8612bda3218aca9bb0fc5ca38d92">rkConfig::owner</a></div><div class="ttdeci">const char * owner</div><div class="ttdoc">Jméno vlastníka robota. Podle tohoto jména filtruje RBController roboty. Výchozí: &quot;&quot;</div><div class="ttdef"><b>Definition:</b> robotka.h:80</div></div>
+<div class="ttc" id="astructrkConfig_html"><div class="ttname"><a href="structrkConfig.html">rkConfig</a></div><div class="ttdoc">Nastavení SW pro Robotky.</div><div class="ttdef"><b>Definition:</b> robotka.h:60</div></div>
+<div class="ttc" id="astructrkConfig_html_ac7c0397b741aa8bd9ab5db6fddfb424d"><div class="ttname"><a href="structrkConfig.html#ac7c0397b741aa8bd9ab5db6fddfb424d">rkConfig::motor_id_right</a></div><div class="ttdeci">uint8_t motor_id_right</div><div class="ttdoc">Které M číslo motoru patří pravému, podle čísla na desce. Výchozí: 1</div><div class="ttdef"><b>Definition:</b> robotka.h:91</div></div>
+<div class="ttc" id="agroup__leds_html_gaeb3b7b86b57f86df7d325ad02bb67d5c"><div class="ttname"><a href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">rkLedById</a></div><div class="ttdeci">void rkLedById(uint8_t id, bool on=true)</div><div class="ttdoc">Zapnout/vypnout LED podle jejich čísla na desce, od 1 do 4 včetně.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:137</div></div>
+<div class="ttc" id="astructrkConfig_html_ad99c9e33ca54ac2af4746a4f094c9ae5"><div class="ttname"><a href="structrkConfig.html#ad99c9e33ca54ac2af4746a4f094c9ae5">rkConfig::motor_enable_failsafe</a></div><div class="ttdeci">bool motor_enable_failsafe</div><div class="ttdoc">Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed....</div><div class="ttdef"><b>Definition:</b> robotka.h:95</div></div>
+<div class="ttc" id="agroup__motors_html_ga53feafb0b16e552d38d820aab8242d9c"><div class="ttname"><a href="group__motors.html#ga53feafb0b16e552d38d820aab8242d9c">rkMotorsSetPowerById</a></div><div class="ttdeci">void rkMotorsSetPowerById(int id, int8_t power)</div><div class="ttdoc">Nastavení výkonu motoru podle jeho čísla (M1...M4) na desce.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:79</div></div>
+<div class="ttc" id="astructrkConfig_html_a94ef5a5a4cf9841100123e58f22f2e08"><div class="ttname"><a href="structrkConfig.html#a94ef5a5a4cf9841100123e58f22f2e08">rkConfig::wifi_ap_channel</a></div><div class="ttdeci">uint8_t wifi_ap_channel</div><div class="ttdoc">Kanál WiFi vytvořené sítě. Výchozí: 1</div><div class="ttdef"><b>Definition:</b> robotka.h:88</div></div>
+<div class="ttc" id="agroup__motors_html_ga3afdb597abf80f84aeb44fce8c964d6a"><div class="ttname"><a href="group__motors.html#ga3afdb597abf80f84aeb44fce8c964d6a">rkMotorsSetSpeedRight</a></div><div class="ttdeci">void rkMotorsSetSpeedRight(int8_t speed)</div><div class="ttdoc">Nastavení rychlosti pravého motoru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:96</div></div>
+<div class="ttc" id="agroup__general_html_ga8ec76111b1acaa90d2a1a3b0947ccb67"><div class="ttname"><a href="group__general.html#ga8ec76111b1acaa90d2a1a3b0947ccb67">rkSetup</a></div><div class="ttdeci">void rkSetup(const rkConfig &amp;cfg=rkConfig())</div><div class="ttdoc">Inicializační funkce Robotky.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:19</div></div>
+<div class="ttc" id="astructrkConfig_html_aaaef1435e9656b0392c377a39117c338"><div class="ttname"><a href="structrkConfig.html#aaaef1435e9656b0392c377a39117c338">rkConfig::wifi_default_ap</a></div><div class="ttdeci">bool wifi_default_ap</div><div class="ttdoc">Vytvářet WiFi síť místo toho, aby se připojovalo k wifi_name. Výchozí: false</div><div class="ttdef"><b>Definition:</b> robotka.h:86</div></div>
+<div class="ttc" id="agroup__motors_html_ga11b72894b5c7bff56829eae6f73492b2"><div class="ttname"><a href="group__motors.html#ga11b72894b5c7bff56829eae6f73492b2">rkMotorsSetSpeedById</a></div><div class="ttdeci">void rkMotorsSetSpeedById(int id, int8_t speed)</div><div class="ttdoc">Nastavení rychlosti motoru podle jeho čísla (M1...M4) na desce.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:100</div></div>
+<div class="ttc" id="agroup__leds_html_ga25805989f781fc23bb81376d917b75c6"><div class="ttname"><a href="group__leds.html#ga25805989f781fc23bb81376d917b75c6">rkLedRed</a></div><div class="ttdeci">void rkLedRed(bool on=true)</div><div class="ttdoc">Zapnout/vypnout červenou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:113</div></div>
+<div class="ttc" id="astructrkConfig_html_a9aa5f8cefd3ac6e9b5bf77c240eaa48f"><div class="ttname"><a href="structrkConfig.html#a9aa5f8cefd3ac6e9b5bf77c240eaa48f">rkConfig::pins</a></div><div class="ttdeci">rkPinsConfig pins</div><div class="ttdoc">Konfigurace pinů pro periferie, viz rkPinsConfig.</div><div class="ttdef"><b>Definition:</b> robotka.h:97</div></div>
+<div class="ttc" id="agroup__motors_html_ga2ab76ce8144d24d80af28deed2352cac"><div class="ttname"><a href="group__motors.html#ga2ab76ce8144d24d80af28deed2352cac">rkMotorsSetPowerRight</a></div><div class="ttdeci">void rkMotorsSetPowerRight(int8_t power)</div><div class="ttdoc">Nastavení výkonu pravého motoru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:75</div></div>
+<div class="ttc" id="agroup__line_html_ga431763d1456764ea6789809a6819be03"><div class="ttname"><a href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a></div><div class="ttdeci">void rkLineClearCalibration()</div><div class="ttdoc">Vymazat kalibraci.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:218</div></div>
+<div class="ttc" id="agroup__motors_html_ga72c459570948677f062017ddd6ec4e1f"><div class="ttname"><a href="group__motors.html#ga72c459570948677f062017ddd6ec4e1f">rkMotorsSetPower</a></div><div class="ttdeci">void rkMotorsSetPower(int8_t left, int8_t right)</div><div class="ttdoc">Nastavení výkonu motorů.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:67</div></div>
+<div class="ttc" id="agroup__line_html_ga72f95ff9d7ca5b75f1c3560c3c303790"><div class="ttname"><a href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a></div><div class="ttdeci">void rkLineCalibrate(float motor_time_coef=1.0)</div><div class="ttdoc">Kalibrovat senzory na čáru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:180</div></div>
+<div class="ttc" id="agroup__battery_html_ga8f7f74b5d0e0482a17b7833357c90ba6"><div class="ttname"><a href="group__battery.html#ga8f7f74b5d0e0482a17b7833357c90ba6">rkBatteryPercent</a></div><div class="ttdeci">uint32_t rkBatteryPercent()</div><div class="ttdoc">Úroveň baterie v procentech.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:59</div></div>
+<div class="ttc" id="astructrkConfig_html_a98b16d3afdb82c807c2095ac507c9dab"><div class="ttname"><a href="structrkConfig.html#a98b16d3afdb82c807c2095ac507c9dab">rkConfig::motor_polarity_switch_left</a></div><div class="ttdeci">bool motor_polarity_switch_left</div><div class="ttdoc">Prohození polarity levého motoru. Výchozí: false</div><div class="ttdef"><b>Definition:</b> robotka.h:93</div></div>
+<div class="ttc" id="agroup__motors_html_ga80623fb1f7e036a62118385e68350989"><div class="ttname"><a href="group__motors.html#ga80623fb1f7e036a62118385e68350989">rkMotorsSetSpeed</a></div><div class="ttdeci">void rkMotorsSetSpeed(int8_t left, int8_t right)</div><div class="ttdoc">Nastavení rychlosti motorů.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:88</div></div>
+<div class="ttc" id="agroup__motors_html_gaebe7c19a71ebb245e6f515c02ab92f31"><div class="ttname"><a href="group__motors.html#gaebe7c19a71ebb245e6f515c02ab92f31">rkMotorsSetSpeedLeft</a></div><div class="ttdeci">void rkMotorsSetSpeedLeft(int8_t speed)</div><div class="ttdoc">Nastavení rychlosti levého motoru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:92</div></div>
+<div class="ttc" id="agroup__buttons_html_ga3bc0ef766782822a9399654f97fa224c"><div class="ttname"><a href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a></div><div class="ttdeci">bool rkButtonDown(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;dolů&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:308</div></div>
+<div class="ttc" id="astructrkConfig_html_a7798e9ff2af8a9f2f8baad2ad90aca4b"><div class="ttname"><a href="structrkConfig.html#a7798e9ff2af8a9f2f8baad2ad90aca4b">rkConfig::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Jméno robota. Výchozí: &quot;&quot;.</div><div class="ttdef"><b>Definition:</b> robotka.h:81</div></div>
+<div class="ttc" id="agroup__line_html_ga213a4dc0b560ed9c9e8331c6b7726bc0"><div class="ttname"><a href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">rkLineGetSensor</a></div><div class="ttdeci">uint16_t rkLineGetSensor(uint8_t sensorId)</div><div class="ttdoc">Hodnota z jednoho senzoru na čáru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:228</div></div>
+<div class="ttc" id="agroup__leds_html_ga5a69bab56ea3d255d42e06fdb1169513"><div class="ttname"><a href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a></div><div class="ttdeci">void rkLedBlue(bool on=true)</div><div class="ttdoc">Zapnout/vypnout modrou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:125</div></div>
+<div class="ttc" id="agroup__buttons_html_ga32d6fb26301458fe507c9e28e632ac3a"><div class="ttname"><a href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a></div><div class="ttdeci">void rkButtonWaitForRelease(rkButtonId id)</div><div class="ttdoc">Počkat, dokud není tlačítko uvolněno.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:165</div></div>
+<div class="ttc" id="astructrkConfig_html_a02585855d3927918b1eba5bbd0c4df26"><div class="ttname"><a href="structrkConfig.html#a02585855d3927918b1eba5bbd0c4df26">rkConfig::wifi_password</a></div><div class="ttdeci">const char * wifi_password</div><div class="ttdoc">Heslo k WiFi, na kterou se připojit. Výchozí: &quot;&quot;</div><div class="ttdef"><b>Definition:</b> robotka.h:84</div></div>
+<div class="ttc" id="agroup__motors_html_ga082613a9a80b31f339a7d94b5459ae55"><div class="ttname"><a href="group__motors.html#ga082613a9a80b31f339a7d94b5459ae55">rkMotorsJoystick</a></div><div class="ttdeci">void rkMotorsJoystick(int32_t x, int32_t y)</div><div class="ttdoc">Nastavení rychlosti motorů podle joysticku.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:109</div></div>
+<div class="ttc" id="agroup__line_html_gabce0ea4f636979db89c6138d8ae4fff2"><div class="ttname"><a href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">rkLineGetPosition</a></div><div class="ttdeci">float rkLineGetPosition(bool white_line=false, uint8_t line_threshold_pct=25)</div><div class="ttdoc">Pozice čáry pod senzory.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:232</div></div>
+<div class="ttc" id="astructrkConfig_html_a0f6cf95aa260a18e9eb3a2239eec3841"><div class="ttname"><a href="structrkConfig.html#a0f6cf95aa260a18e9eb3a2239eec3841">rkConfig::motor_id_left</a></div><div class="ttdeci">uint8_t motor_id_left</div><div class="ttdoc">Které M číslo motoru patří levému, podle čísla na desce. Výchozí: 2</div><div class="ttdef"><b>Definition:</b> robotka.h:90</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generováno po 6. čec 2020 12.55:21 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

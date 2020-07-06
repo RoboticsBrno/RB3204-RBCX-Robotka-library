@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robotka: Dokumentace souboru robotka.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robotka
+   </div>
+   <div id="projectbrief">Knihovna pro obsluhu Robotky.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hledat');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Třídy</a> &#124;
+<a href="#define-members">Definice maker</a> &#124;
+<a href="#func-members">Funkce</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentace souboru robotka.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;fmt/core.h&gt;</code><br />
+<code>#include &lt;fmt/printf.h&gt;</code><br />
+<code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &quot;RBCX.h&quot;</code><br />
+<code>#include &quot;gridui.h&quot;</code><br />
+<code>#include &quot;rbprotocol.h&quot;</code><br />
+</div>
+<p><a href="robotka_8h_source.html">Zobrazit zdrojový text tohoto souboru.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Třídy</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkPinsConfig.html">rkPinsConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení čísel pinů různých periferií.  <a href="structrkPinsConfig.html#details">...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html">rkConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení SW pro Robotky.  <a href="structrkConfig.html#details">...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definice maker</h2></td></tr>
+<tr class="memitem:ga774729cebfd08838fd6f5bec88b15b11"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">RK_DEFAULT_WIFI_AP_PASSWORD</a>&#160;&#160;&#160;&quot;flusflus&quot;</td></tr>
+<tr class="memdesc:ga774729cebfd08838fd6f5bec88b15b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Výchozí heslo pro WiFi AP. <br /></td></tr>
+<tr class="separator:ga774729cebfd08838fd6f5bec88b15b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkce</h2></td></tr>
+<tr class="memitem:ga8ec76111b1acaa90d2a1a3b0947ccb67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__general.html#ga8ec76111b1acaa90d2a1a3b0947ccb67">rkSetup</a> (const <a class="el" href="structrkConfig.html">rkConfig</a> &amp;cfg=<a class="el" href="structrkConfig.html">rkConfig</a>())</td></tr>
+<tr class="memdesc:ga8ec76111b1acaa90d2a1a3b0947ccb67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializační funkce Robotky.  <a href="group__general.html#ga8ec76111b1acaa90d2a1a3b0947ccb67">...</a><br /></td></tr>
+<tr class="separator:ga8ec76111b1acaa90d2a1a3b0947ccb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72c459570948677f062017ddd6ec4e1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga72c459570948677f062017ddd6ec4e1f">rkMotorsSetPower</a> (int8_t left, int8_t right)</td></tr>
+<tr class="memdesc:ga72c459570948677f062017ddd6ec4e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení výkonu motorů.  <a href="group__motors.html#ga72c459570948677f062017ddd6ec4e1f">...</a><br /></td></tr>
+<tr class="separator:ga72c459570948677f062017ddd6ec4e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25ce4bec1148bd48ee8f9493a0161097"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga25ce4bec1148bd48ee8f9493a0161097">rkMotorsSetPowerLeft</a> (int8_t power)</td></tr>
+<tr class="memdesc:ga25ce4bec1148bd48ee8f9493a0161097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení výkonu levého motoru.  <a href="group__motors.html#ga25ce4bec1148bd48ee8f9493a0161097">...</a><br /></td></tr>
+<tr class="separator:ga25ce4bec1148bd48ee8f9493a0161097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ab76ce8144d24d80af28deed2352cac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga2ab76ce8144d24d80af28deed2352cac">rkMotorsSetPowerRight</a> (int8_t power)</td></tr>
+<tr class="memdesc:ga2ab76ce8144d24d80af28deed2352cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení výkonu pravého motoru.  <a href="group__motors.html#ga2ab76ce8144d24d80af28deed2352cac">...</a><br /></td></tr>
+<tr class="separator:ga2ab76ce8144d24d80af28deed2352cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53feafb0b16e552d38d820aab8242d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga53feafb0b16e552d38d820aab8242d9c">rkMotorsSetPowerById</a> (int id, int8_t power)</td></tr>
+<tr class="memdesc:ga53feafb0b16e552d38d820aab8242d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení výkonu motoru podle jeho čísla (M1...M4) na desce.  <a href="group__motors.html#ga53feafb0b16e552d38d820aab8242d9c">...</a><br /></td></tr>
+<tr class="separator:ga53feafb0b16e552d38d820aab8242d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80623fb1f7e036a62118385e68350989"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga80623fb1f7e036a62118385e68350989">rkMotorsSetSpeed</a> (int8_t left, int8_t right)</td></tr>
+<tr class="memdesc:ga80623fb1f7e036a62118385e68350989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení rychlosti motorů.  <a href="group__motors.html#ga80623fb1f7e036a62118385e68350989">...</a><br /></td></tr>
+<tr class="separator:ga80623fb1f7e036a62118385e68350989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebe7c19a71ebb245e6f515c02ab92f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#gaebe7c19a71ebb245e6f515c02ab92f31">rkMotorsSetSpeedLeft</a> (int8_t speed)</td></tr>
+<tr class="memdesc:gaebe7c19a71ebb245e6f515c02ab92f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení rychlosti levého motoru.  <a href="group__motors.html#gaebe7c19a71ebb245e6f515c02ab92f31">...</a><br /></td></tr>
+<tr class="separator:gaebe7c19a71ebb245e6f515c02ab92f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3afdb597abf80f84aeb44fce8c964d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga3afdb597abf80f84aeb44fce8c964d6a">rkMotorsSetSpeedRight</a> (int8_t speed)</td></tr>
+<tr class="memdesc:ga3afdb597abf80f84aeb44fce8c964d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení rychlosti pravého motoru.  <a href="group__motors.html#ga3afdb597abf80f84aeb44fce8c964d6a">...</a><br /></td></tr>
+<tr class="separator:ga3afdb597abf80f84aeb44fce8c964d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11b72894b5c7bff56829eae6f73492b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga11b72894b5c7bff56829eae6f73492b2">rkMotorsSetSpeedById</a> (int id, int8_t speed)</td></tr>
+<tr class="memdesc:ga11b72894b5c7bff56829eae6f73492b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení rychlosti motoru podle jeho čísla (M1...M4) na desce.  <a href="group__motors.html#ga11b72894b5c7bff56829eae6f73492b2">...</a><br /></td></tr>
+<tr class="separator:ga11b72894b5c7bff56829eae6f73492b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga082613a9a80b31f339a7d94b5459ae55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga082613a9a80b31f339a7d94b5459ae55">rkMotorsJoystick</a> (int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:ga082613a9a80b31f339a7d94b5459ae55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení rychlosti motorů podle joysticku.  <a href="group__motors.html#ga082613a9a80b31f339a7d94b5459ae55">...</a><br /></td></tr>
+<tr class="separator:ga082613a9a80b31f339a7d94b5459ae55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f7f74b5d0e0482a17b7833357c90ba6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__battery.html#ga8f7f74b5d0e0482a17b7833357c90ba6">rkBatteryPercent</a> ()</td></tr>
+<tr class="memdesc:ga8f7f74b5d0e0482a17b7833357c90ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Úroveň baterie v procentech.  <a href="group__battery.html#ga8f7f74b5d0e0482a17b7833357c90ba6">...</a><br /></td></tr>
+<tr class="separator:ga8f7f74b5d0e0482a17b7833357c90ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7f084d93d06d292682ffaa31f339929"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__battery.html#gac7f084d93d06d292682ffaa31f339929">rkBatteryVoltageMv</a> ()</td></tr>
+<tr class="memdesc:gac7f084d93d06d292682ffaa31f339929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Úroveň baterie v mV.  <a href="group__battery.html#gac7f084d93d06d292682ffaa31f339929">...</a><br /></td></tr>
+<tr class="separator:gac7f084d93d06d292682ffaa31f339929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e0ed17d397b7233d37152e92e8b4904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rbcontroller.html#ga4e0ed17d397b7233d37152e92e8b4904">rkControllerSendLog</a> (const char *format,...)</td></tr>
+<tr class="memdesc:ga4e0ed17d397b7233d37152e92e8b4904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odeslat text do aplikace.  <a href="group__rbcontroller.html#ga4e0ed17d397b7233d37152e92e8b4904">...</a><br /></td></tr>
+<tr class="separator:ga4e0ed17d397b7233d37152e92e8b4904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25805989f781fc23bb81376d917b75c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#ga25805989f781fc23bb81376d917b75c6">rkLedRed</a> (bool on=true)</td></tr>
+<tr class="memdesc:ga25805989f781fc23bb81376d917b75c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout červenou LED.  <a href="group__leds.html#ga25805989f781fc23bb81376d917b75c6">...</a><br /></td></tr>
+<tr class="separator:ga25805989f781fc23bb81376d917b75c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf9ab17fde6f743586635569c4e40d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#gaaf9ab17fde6f743586635569c4e40d3b">rkLedYellow</a> (bool on=true)</td></tr>
+<tr class="memdesc:gaaf9ab17fde6f743586635569c4e40d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout žlutou LED.  <a href="group__leds.html#gaaf9ab17fde6f743586635569c4e40d3b">...</a><br /></td></tr>
+<tr class="separator:gaaf9ab17fde6f743586635569c4e40d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65cb68130c10d30f2ac3f0c6d58aedba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#ga65cb68130c10d30f2ac3f0c6d58aedba">rkLedGreen</a> (bool on=true)</td></tr>
+<tr class="memdesc:ga65cb68130c10d30f2ac3f0c6d58aedba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout zelenou LED.  <a href="group__leds.html#ga65cb68130c10d30f2ac3f0c6d58aedba">...</a><br /></td></tr>
+<tr class="separator:ga65cb68130c10d30f2ac3f0c6d58aedba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a69bab56ea3d255d42e06fdb1169513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a> (bool on=true)</td></tr>
+<tr class="memdesc:ga5a69bab56ea3d255d42e06fdb1169513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout modrou LED.  <a href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">...</a><br /></td></tr>
+<tr class="separator:ga5a69bab56ea3d255d42e06fdb1169513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20b4e3d298cf55329ab0dfa564e61fee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#ga20b4e3d298cf55329ab0dfa564e61fee">rkLedAll</a> (bool on=true)</td></tr>
+<tr class="memdesc:ga20b4e3d298cf55329ab0dfa564e61fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout všechny LED zaráz.  <a href="group__leds.html#ga20b4e3d298cf55329ab0dfa564e61fee">...</a><br /></td></tr>
+<tr class="separator:ga20b4e3d298cf55329ab0dfa564e61fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">rkLedById</a> (uint8_t id, bool on=true)</td></tr>
+<tr class="memdesc:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout LED podle jejich čísla na desce, od 1 do 4 včetně.  <a href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">...</a><br /></td></tr>
+<tr class="separator:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (rkButtonId id, bool waitForRelease=false)</td></tr>
+<tr class="memdesc:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto tlačítko?  <a href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">...</a><br /></td></tr>
+<tr class="separator:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bc0ef766782822a9399654f97fa224c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:ga3bc0ef766782822a9399654f97fa224c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "dolů"?  <a href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">...</a><br /></td></tr>
+<tr class="separator:ga3bc0ef766782822a9399654f97fa224c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87d3afcba3fc74d28e731b840adc1ee9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9">rkButtonUp</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:ga87d3afcba3fc74d28e731b840adc1ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "nahoru"?  <a href="group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9">...</a><br /></td></tr>
+<tr class="separator:ga87d3afcba3fc74d28e731b840adc1ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab55cc8b2aa05d4f938c6807ce739eebd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd">rkButtonLeft</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:gab55cc8b2aa05d4f938c6807ce739eebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "doleva"?  <a href="group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd">...</a><br /></td></tr>
+<tr class="separator:gab55cc8b2aa05d4f938c6807ce739eebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefcbc39c395320a29e2898557e4dda5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">rkButtonRight</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:gaefcbc39c395320a29e2898557e4dda5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "doprava"?  <a href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">...</a><br /></td></tr>
+<tr class="separator:gaefcbc39c395320a29e2898557e4dda5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4eab004dff50030755ab45bd92983e44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga4eab004dff50030755ab45bd92983e44">rkButtonOn</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:ga4eab004dff50030755ab45bd92983e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "ON"?  <a href="group__buttons.html#ga4eab004dff50030755ab45bd92983e44">...</a><br /></td></tr>
+<tr class="separator:ga4eab004dff50030755ab45bd92983e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadffbeede1bad4d606b6ba779c0269393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a> (bool waitForRelease=false)</td></tr>
+<tr class="memdesc:gadffbeede1bad4d606b6ba779c0269393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "OFF"?  <a href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">...</a><br /></td></tr>
+<tr class="separator:gadffbeede1bad4d606b6ba779c0269393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a> (rkButtonId id)</td></tr>
+<tr class="memdesc:ga32d6fb26301458fe507c9e28e632ac3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Počkat, dokud není tlačítko uvolněno.  <a href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">...</a><br /></td></tr>
+<tr class="separator:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a> (float motor_time_coef=1.0)</td></tr>
+<tr class="memdesc:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kalibrovat senzory na čáru.  <a href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">...</a><br /></td></tr>
+<tr class="separator:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga431763d1456764ea6789809a6819be03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a> ()</td></tr>
+<tr class="memdesc:ga431763d1456764ea6789809a6819be03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vymazat kalibraci.  <a href="group__line.html#ga431763d1456764ea6789809a6819be03">...</a><br /></td></tr>
+<tr class="separator:ga431763d1456764ea6789809a6819be03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">rkLineGetSensor</a> (uint8_t sensorId)</td></tr>
+<tr class="memdesc:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hodnota z jednoho senzoru na čáru.  <a href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">...</a><br /></td></tr>
+<tr class="separator:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">rkLineGetPosition</a> (bool white_line=false, uint8_t line_threshold_pct=25)</td></tr>
+<tr class="memdesc:gabce0ea4f636979db89c6138d8ae4fff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozice čáry pod senzory.  <a href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">...</a><br /></td></tr>
+<tr class="separator:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
+<div class="textblock"><p>Metody v tomto souboru vám dovolují jednoduše obsluhovat Robotku. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generováno po 6. čec 2020 12.55:21 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
