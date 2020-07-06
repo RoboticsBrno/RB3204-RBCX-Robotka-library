@@ -17,6 +17,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install platformio
       - name: Build examples
-        run: platformio ci --lib="." --project-conf="./platformio.ini" partitions.csv
-        env:
-          PLATFORMIO_CI_SRC: ${{ matrix.example }}
+        run: platformio ci --lib="." --project-conf="./platformio.ini" ${{ matrix.example }} partitions.csv
