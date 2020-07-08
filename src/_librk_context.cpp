@@ -46,13 +46,13 @@ void Context::setup(const rkConfig& cfg) {
 
     man.install(man_flags);
 
-    m_motors.setup(cfg);
-
     m_line_cfg.pin_cs = (gpio_num_t)cfg.pins.line_cs;
     m_line_cfg.pin_mosi = (gpio_num_t)cfg.pins.line_mosi;
     m_line_cfg.pin_miso = (gpio_num_t)cfg.pins.line_miso;
     m_line_cfg.pin_sck = (gpio_num_t)cfg.pins.line_sck;
 
+    m_motors.init(cfg);
+    m_smartLeds.init(cfg);
     m_wifi.init(cfg);
 
     if (cfg.rbcontroller_app_enable) {

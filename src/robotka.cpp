@@ -268,3 +268,25 @@ void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
 void rkBuzzerSet(bool on) {
     Manager::get().piezo().setState(on);
 }
+
+void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
+    auto& l = gCtx.smartLed();
+    if (idx >= l.count()) {
+        ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
+        return;
+    }
+    l.setRGB(idx, r, g, b);
+}
+
+void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
+    auto& l = gCtx.smartLed();
+    if (idx >= l.count()) {
+        ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
+        return;
+    }
+    l.setHSV(idx, h, s, v);
+}
+
+SmartLed& rkSmartLedsGetController() {
+    return gCtx.smartLed().controller();
+}

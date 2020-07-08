@@ -15,6 +15,8 @@
 
 #include <Arduino.h>
 
+#include "SmartLeds.h"
+
 #include "RBCX.h"
 #include "gridui.h"
 #include "rbprotocol.h"
@@ -39,13 +41,16 @@ struct rkPinsConfig {
         : line_cs(5)
         , line_mosi(23)
         , line_miso(19)
-        , line_sck(18) {
+        , line_sck(18)
+        , smartled_sig(12) {
     }
 
     uint8_t line_cs;
     uint8_t line_mosi;
     uint8_t line_miso;
     uint8_t line_sck;
+
+    uint8_t smartled_sig;
 };
 
 #define RK_DEFAULT_WIFI_AP_PASSWORD "flusflus" //!< Výchozí heslo pro WiFi AP
@@ -72,7 +77,8 @@ struct rkConfig {
         , motor_max_power_pct(60)
         , motor_polarity_switch_left(false)
         , motor_polarity_switch_right(true)
-        , motor_enable_failsafe(false) {
+        , motor_enable_failsafe(false)
+        , smart_leds_count(8) {
     }
 
     bool rbcontroller_app_enable; //!< povolit komunikaci s aplikací RBController. Výchozí: `false`
@@ -93,6 +99,8 @@ struct rkConfig {
     bool motor_polarity_switch_left; //!< Prohození polarity levého motoru. Výchozí: `false`
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
+
+    uint8_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
 
     rkPinsConfig pins; //!< Konfigurace pinů pro periferie, viz rkPinsConfig
 };
@@ -507,6 +515,41 @@ void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback);
  * \param on Zapnout(true) nebo vypnout(false)
  */
 void rkBuzzerSet(bool on);
+
+/**@}*/
+/**
+ * \defgroup smartleds Chytré LED
+ *
+ * Ovládání pásku chytrých LED.
+ *
+ * @{
+ */
+
+/**
+ * \brief Nastavit barvu chytré led ve formátu RGB (Red, Green, Blue).
+ *
+ * Hodnoty barev můžete najít pomocí stránky https://htmlcolorcodes.com/
+ *
+ * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
+ * \param r hodnota červeného kanálu od 0 do 255
+ * \param g hodnota zeleného kanálu od 0 do 255
+ * \param b hodnota modrého kanálu od 0 do 255
+ */
+void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
+
+/**
+ * \brief Nastavit barvu chytré led ve formátu HSV (Hue, Saturation, Value).
+ *
+ * Hodnoty barev můžete najít pomocí stránky https://alloyui.com/examples/color-picker/hsv.html
+ *
+ * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
+ * \param r hodnota odstínu od 0 do 255
+ * \param g hodnota sytosti barvy od 0 do 255
+ * \param b hodnota jasu od 0 do 255
+ */
+void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);
+
+SmartLed& rkSmartLedsGetController();
 
 /**@}*/
 

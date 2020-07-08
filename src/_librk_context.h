@@ -5,6 +5,7 @@
 #include "mcp3008_linesensor.h"
 
 #include "_librk_motors.h"
+#include "_librk_smartleds.h"
 #include "_librk_wifi.h"
 
 namespace rk {
@@ -19,6 +20,7 @@ public:
     rb::Protocol* prot() const { return m_prot; }
     Motors& motors() { return m_motors; }
     mcp3008::LineSensor& line();
+    rk::SmartLeds& smartLed() { return m_smartLeds; }
 
     void saveLineCalibration();
 
@@ -35,6 +37,7 @@ private:
     std::atomic<bool> m_line_installed;
     mcp3008::Driver::Config m_line_cfg;
     mcp3008::LineSensor m_line;
+    SmartLeds m_smartLeds;
 };
 
 extern Context gCtx;
