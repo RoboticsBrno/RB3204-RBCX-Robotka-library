@@ -97,14 +97,14 @@ struct rkConfig {
     rkPinsConfig pins; //!< Konfigurace pinů pro periferie, viz rkPinsConfig
 };
 
-typedef enum {
+enum rkButtonId {
     BTN_DOWN = rb::ButtonId::Down,
     BTN_UP = rb::ButtonId::Up,
     BTN_LEFT = rb::ButtonId::Left,
     BTN_RIGHT = rb::ButtonId::Right,
     BTN_ON = rb::ButtonId::On,
     BTN_OFF = rb::ButtonId::Off,
-} rkButtonId;
+};
 
 /**
  * \brief Inicializační funkce Robotky
@@ -298,6 +298,33 @@ void rkLedById(uint8_t id, bool on = true);
  * \return Vrátí `true` pokud je tlačítko stisknuto.
  */
 bool rkButtonIsPressed(rkButtonId id, bool waitForRelease = false);
+
+/**
+ * \brief Asynchroní zpracování události o stisku tlačítka.
+ *
+ * Ukázka použití:
+ *
+ * \code{cpp}
+ * rkButtonOnChange([](rkButtonId id, bool pressed) -> bool {
+ *     if (id == BTN_DOWN) {
+ *         printf("Dolů: %d\n", pressed);
+ *     } else if (id == BTN_UP) {
+ *         printf("Nahoru: %d\n", pressed);
+ *     } else if (id == BTN_LEFT) {
+ *         printf("Doleva: %d\n", pressed);
+ *     } else if (id == BTN_RIGHT) {
+ *         printf("Doprava: %d\n", pressed);
+ *     }
+ *     return true;
+ * });
+ * \endcode
+ *
+ * \param callback funkce, která je zavolána pokud se stav kteréhokoliv tlačítka změní.
+ *    parametry jsou ID tlačítka z rkButtonId a bool isPressed. Funkce musí vrátit
+ *    true nebo false, podle toho, jestli má čekat na další události (true) nebo
+ *    se má odstranit a další události už nepřijmat (false).
+ */
+void rkButtonOnChange(std::function<bool(rkButtonId, bool)> callback);
 
 /**
  * \brief Je teď stisknuto "dolů"?

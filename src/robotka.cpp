@@ -162,6 +162,12 @@ bool rkButtonIsPressed(rkButtonId id, bool waitForRelease) {
     return true;
 }
 
+void rkButtonOnChange(std::function<bool(rkButtonId, bool)> callback) {
+    Manager::get().buttons().onChange([callback](rb::ButtonId id, bool pressed) -> bool {
+        return callback(rkButtonId(id), pressed);
+    });
+}
+
 void rkButtonWaitForRelease(rkButtonId id) {
     int counter = 0;
     auto& b = Manager::get().buttons();
