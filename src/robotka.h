@@ -361,7 +361,7 @@ inline bool rkButtonOff(bool waitForRelease = false) {
 
 /**
  * \brief Počkat, dokud není tlačítko uvolněno.
- * 
+ *
  * Pokud tlačítko není stisknuté, počká pouze několik desítek ms, tedy nečeká na stisknutí.
  *
  * \param id ID tlačítka z enumu rkButtonId
@@ -372,14 +372,16 @@ void rkButtonWaitForRelease(rkButtonId id);
 
 /**@}*/
 /**
- * \defgroup line Sledování čáry
+ * \defgroup line Sledování čáry pomocí senzorické lišty.
  *
- * Funkce pro komunikaci se senzory na čáru.
+ * Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou
+ * pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem!
+ *
  * @{
  */
 
 /**
- * \brief Kalibrovat senzory na čáru.
+ * \brief Kalibrovat senzorickou lištu.
  *
  * Otočí robota doprava a pak doleva a zase zpět tak, aby lišta se senzory
  * prošla celá nad čárou i nad okolím. Trvá to 2.2s, funkce po celou dobu
@@ -412,9 +414,9 @@ void rkLineClearCalibration();
 uint16_t rkLineGetSensor(uint8_t sensorId);
 
 /**
- * \brief Pozice čáry pod senzory
+ * \brief Pozice čáry pod senzorickou lištou
  *
- * Tato funkce se pokouší najít černou čáru pod senzory.
+ * Tato funkce se pokouší najít černou čáru pod senzorickou lištou.
  *
  * \param white_line nastavte na true, pokud sledujete bílou čáru na černém podkladu. Výchozí: false
  * \param line_threshold_pct Jak velký rozdíl v procentech musí mezi hodnotami být, aby byla čára považována za nalezenou. Výchozí: 25%
