@@ -264,3 +264,7 @@ void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
 
     return Manager::get().ultrasound(id - 1).measureAsync(callback);
 }
+
+void rkBuzzerSet(bool on) {
+    Manager::get().piezo().setState(on);
+}

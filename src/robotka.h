@@ -494,4 +494,20 @@ void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback);
 
 /**@}*/
 
+/**@}*/
+/**
+ * \defgroup buzzer Bzučák
+ *
+ * Ovládání bzučáku na desce.
+ * @{
+ */
+
+/**
+ * \brief Zapnout/vypnout bzučák
+ * \param on Zapnout(true) nebo vypnout(false)
+ */
+void rkBuzzerSet(bool on);
+
+/**@}*/
+
 #endif // LIBRB_H
