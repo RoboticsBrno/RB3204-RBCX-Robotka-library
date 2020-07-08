@@ -53,6 +53,8 @@ void Context::setup(const rkConfig& cfg) {
 
     m_motors.init(cfg);
     m_smartLeds.init(cfg);
+    initIrSensors(cfg);
+
     m_wifi.init(cfg);
 
     if (cfg.rbcontroller_app_enable) {
@@ -149,6 +151,23 @@ void Context::saveLineCalibration() {
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "failed to nvs_set_blob: %d", ret);
     }
+}
+
+void Context::initIrSensors(const rkConfig& cfg) {
+    adc1_config_width(ADC_WIDTH_12Bit);
+    adc1_config_channel_atten(cfg.pins.ir_adc_chan_left, ADC_ATTEN_DB_11);
+    adc1_config_channel_atten(cfg.pins.ir_adc_chan_right, ADC_ATTEN_DB_11);
+
+    m_ir_left = cfg.pins.ir_adc_chan_left;
+    m_ir_right = cfg.pins.ir_adc_chan_right;
+}
+
+uint16_t Context::readAdc1(adc1_channel_t chan, uint16_t samples) {
+    uint32_t reading = 0;
+    for (uint16_t i = 0; i < samples; ++i) {
+        reading += adc1_get_raw(chan);
+    }
+    return reading / samples;
 }
 
 }; // namespace rk

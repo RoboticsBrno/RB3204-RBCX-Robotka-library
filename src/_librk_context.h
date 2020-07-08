@@ -24,9 +24,16 @@ public:
 
     void saveLineCalibration();
 
+    adc1_channel_t irChanLeft() const { return m_ir_left; }
+    adc1_channel_t irChanRight() const { return m_ir_right; }
+
+    uint16_t readAdc1(adc1_channel_t chan, uint16_t samples = 32);
+
 private:
     void handleRbcontrollerMessage(const std::string& cmd, rbjson::Object* pkt);
     bool loadLineCalibration(mcp3008::LineSensor::CalibrationData& data);
+
+    void initIrSensors(const rkConfig& cfg);
 
     Motors m_motors;
     WiFi m_wifi;
@@ -38,6 +45,9 @@ private:
     mcp3008::Driver::Config m_line_cfg;
     mcp3008::LineSensor m_line;
     SmartLeds m_smartLeds;
+
+    adc1_channel_t m_ir_left;
+    adc1_channel_t m_ir_right;
 };
 
 extern Context gCtx;

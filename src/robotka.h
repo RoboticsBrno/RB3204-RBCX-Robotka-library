@@ -42,7 +42,9 @@ struct rkPinsConfig {
         , line_mosi(23)
         , line_miso(19)
         , line_sck(18)
-        , smartled_sig(12) {
+        , smartled_sig(12)
+        , ir_adc_chan_left(ADC1_CHANNEL_0)
+        , ir_adc_chan_right(ADC1_CHANNEL_3) {
     }
 
     uint8_t line_cs;
@@ -51,6 +53,9 @@ struct rkPinsConfig {
     uint8_t line_sck;
 
     uint8_t smartled_sig;
+
+    adc1_channel_t ir_adc_chan_left;
+    adc1_channel_t ir_adc_chan_right;
 };
 
 #define RK_DEFAULT_WIFI_AP_PASSWORD "flusflus" //!< Výchozí heslo pro WiFi AP
@@ -405,7 +410,7 @@ void rkButtonWaitForRelease(rkButtonId id);
 
 /**@}*/
 /**
- * \defgroup line Sledování čáry pomocí senzorické lišty.
+ * \defgroup line Sledování čáry ( !!senzorická lišta !!)
  *
  * Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou
  * pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem!
@@ -457,6 +462,27 @@ uint16_t rkLineGetSensor(uint8_t sensorId);
  *         Vrátí NaN, pokud nenalezne čáru - výsledek otestujte funkcí isnan() - `isnan(line_position)`
  */
 float rkLineGetPosition(bool white_line = false, uint8_t line_threshold_pct = 25);
+
+/**@}*/
+/**
+ * \defgroup line Sledování čáry (!! IR moduly !!)
+ *
+ * Funkce pro čtení hodnot z obdélíkových IR modulů, které mají každý jeden senzor.
+ *
+ * @{
+ */
+
+/**
+ * \brief Hodnota z levého IR senzoru
+ * \return naměřená hodnota od 0(nejvíce bílá) do 4095(nejvíce černá)
+ */
+uint16_t rkIrLeft();
+
+/**
+ * \brief Hodnota z pravého IR senzoru
+ * \return naměřená hodnota od 0(nejvíce bílá) do 4095(nejvíce černá)
+ */
+uint16_t rkIrRight();
 
 /**@}*/
 /**

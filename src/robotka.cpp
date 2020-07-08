@@ -239,6 +239,14 @@ float rkLineGetPosition(bool white_line, uint8_t line_threshold_pct) {
     return gCtx.line().readLine(white_line, float(line_threshold_pct) / 100.f);
 }
 
+uint16_t rkIrLeft() {
+    return gCtx.readAdc1(gCtx.irChanLeft());
+}
+
+uint16_t rkIrRight() {
+    return gCtx.readAdc1(gCtx.irChanRight());
+}
+
 uint32_t rkUltraMeasure(uint8_t id) {
     if (id == 0) {
         ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
