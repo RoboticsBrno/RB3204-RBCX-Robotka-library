@@ -369,8 +369,6 @@ inline bool rkButtonOff(bool waitForRelease = false) {
 void rkButtonWaitForRelease(rkButtonId id);
 
 /**@}*/
-
-/**@}*/
 /**
  * \defgroup line Sledování čáry pomocí senzorické lišty.
  *
@@ -424,6 +422,48 @@ uint16_t rkLineGetSensor(uint8_t sensorId);
  *         Vrátí NaN, pokud nenalezne čáru - výsledek otestujte funkcí isnan() - `isnan(line_position)`
  */
 float rkLineGetPosition(bool white_line = false, uint8_t line_threshold_pct = 25);
+
+/**@}*/
+/**
+ * \defgroup ultrasound Ultrazvuky
+ *
+ * Funkce pro meření vzálenosti pomocí ultrazvuků.
+ * @{
+ */
+
+/**
+ * \brief Změřit vzálenost (blokující)
+ *
+ * Změří vzálenost ultrazvukem a vrátí výsledek v milimetrech.
+ * Může blokovat program až 30ms, podle toho, co ultrazvuk naměří.
+ *
+ * \param id Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce.
+ * \return Naměřená vzdálenost v mm, 0 pokud se měření nepodaří.
+ */
+uint32_t rkUltraMeasure(uint8_t id);
+
+/**
+ * \brief Změřit vzálenost (asynchroní)
+ *
+ * Přidá požadavek na měření vzdálenosti do fronty a okamžitě vrátí.
+ * Jakmile je změřeno, je zavolána funkce předaná jako callback,
+ * jako parametr bude mít naměřenou vzálenost v mm.
+ *
+ * Příklad použití:
+ *
+ * \code{.cpp}
+ * rkUltraMeasureAsync(1, [](uint32_t distance_mm) {
+ *    printf("Namereno: %u mm\n", distance_mm);
+ * });
+ *
+ * rkLedBlue(true); // provede se ještě před tím, než se stihne změřit vzdálenost.
+ * \endcode
+ *
+ * \param id Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce.
+ * \param callback funkce, která bude zavolána po naměření. Do jejího parametru
+ *     bude předána naměřená vzdálenost v mm. 0 znamená chybu v měření.
+ */
+void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback);
 
 /**@}*/
 

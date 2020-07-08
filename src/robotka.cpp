@@ -232,3 +232,29 @@ uint16_t rkLineGetSensor(uint8_t sensorId) {
 float rkLineGetPosition(bool white_line, uint8_t line_threshold_pct) {
     return gCtx.line().readLine(white_line, float(line_threshold_pct) / 100.f);
 }
+
+uint32_t rkUltraMeasure(uint8_t id) {
+    if (id == 0) {
+        ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
+        return 0;
+    } else if (id > 4) {
+        ESP_LOGE(TAG, "%s: maximum Ultrasound id is 4, you are using %d!", __func__, id);
+        return 0;
+    }
+
+    return Manager::get().ultrasound(id - 1).measure();
+}
+
+void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
+    if (id == 0) {
+        ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
+        callback(0);
+        return;
+    } else if (id > 4) {
+        ESP_LOGE(TAG, "%s: maximum Ultrasound id is 4, you are using %d!", __func__, id);
+        callback(0);
+        return;
+    }
+
+    return Manager::get().ultrasound(id - 1).measureAsync(callback);
+}
