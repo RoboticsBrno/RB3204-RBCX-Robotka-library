@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Robotka: Sledování čáry</title>
+<title>Robotka: Sledování čáry pomocí senzorické lišty.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,17 +65,17 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Funkce</a>  </div>
   <div class="headertitle">
-<div class="title">Sledování čáry</div>  </div>
+<div class="title">Sledování čáry pomocí senzorické lišty.</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Funkce pro komunikaci se senzory na čáru.  
+<p>Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem!  
 <a href="#details">...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkce</h2></td></tr>
 <tr class="memitem:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a> (float motor_time_coef=1.0)</td></tr>
-<tr class="memdesc:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kalibrovat senzory na čáru.  <a href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">...</a><br /></td></tr>
+<tr class="memdesc:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kalibrovat senzorickou lištu.  <a href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">...</a><br /></td></tr>
 <tr class="separator:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga431763d1456764ea6789809a6819be03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a> ()</td></tr>
 <tr class="memdesc:ga431763d1456764ea6789809a6819be03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vymazat kalibraci.  <a href="group__line.html#ga431763d1456764ea6789809a6819be03">...</a><br /></td></tr>
@@ -84,11 +84,11 @@ Funkce</h2></td></tr>
 <tr class="memdesc:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hodnota z jednoho senzoru na čáru.  <a href="group__line.html#ga213a4dc0b560ed9c9e8331c6b7726bc0">...</a><br /></td></tr>
 <tr class="separator:ga213a4dc0b560ed9c9e8331c6b7726bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">rkLineGetPosition</a> (bool white_line=false, uint8_t line_threshold_pct=25)</td></tr>
-<tr class="memdesc:gabce0ea4f636979db89c6138d8ae4fff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozice čáry pod senzory.  <a href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">...</a><br /></td></tr>
+<tr class="memdesc:gabce0ea4f636979db89c6138d8ae4fff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozice čáry pod senzorickou lištou.  <a href="group__line.html#gabce0ea4f636979db89c6138d8ae4fff2">...</a><br /></td></tr>
 <tr class="separator:gabce0ea4f636979db89c6138d8ae4fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
-<p>Funkce pro komunikaci se senzory na čáru. </p>
+<p>Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem! </p>
 <h2 class="groupheader">Dokumentace funkcí</h2>
 <a id="ga72f95ff9d7ca5b75f1c3560c3c303790"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga72f95ff9d7ca5b75f1c3560c3c303790">&#9670;&nbsp;</a></span>rkLineCalibrate()</h2>
@@ -106,7 +106,7 @@ Funkce</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Kalibrovat senzory na čáru. </p>
+<p>Kalibrovat senzorickou lištu. </p>
 <p>Otočí robota doprava a pak doleva a zase zpět tak, aby lišta se senzory prošla celá nad čárou i nad okolím. Trvá to 2.2s, funkce po celou dobu kalibrace čeká a vrátí se až po dokončení.</p>
 <p>Předpokládá se, že před zavoláním této metody roboto stojí tak, že prostřední senzory jsou nad čárou.</p>
 <p>Kalibrační hodnoty se ukládají do paměti, kalibraci je třeba dělat pouze když je ruka přesunuta na jiný podklad.</p>
@@ -165,8 +165,8 @@ Funkce</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pozice čáry pod senzory. </p>
-<p>Tato funkce se pokouší najít černou čáru pod senzory.</p>
+<p>Pozice čáry pod senzorickou lištou. </p>
+<p>Tato funkce se pokouší najít černou čáru pod senzorickou lištou.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">white_line</td><td>nastavte na true, pokud sledujete bílou čáru na černém podkladu. Výchozí: false </td></tr>
@@ -208,7 +208,7 @@ Funkce</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno út 7. čec 2020 17.07:39 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno st 8. čec 2020 13.48:03 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
