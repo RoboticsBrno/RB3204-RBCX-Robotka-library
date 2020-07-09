@@ -36,10 +36,10 @@ using namespace gridui;
  */
 struct rkPinsConfig {
     rkPinsConfig()
-        : line_cs(4)
-        , line_mosi(14)
-        , line_miso(27)
-        , line_sck(26) {
+        : line_cs(5)
+        , line_mosi(23)
+        , line_miso(19)
+        , line_sck(18) {
     }
 
     uint8_t line_cs;
