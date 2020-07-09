@@ -162,6 +162,12 @@ bool rkButtonIsPressed(rkButtonId id, bool waitForRelease) {
     return true;
 }
 
+void rkButtonOnChange(std::function<bool(rkButtonId, bool)> callback) {
+    Manager::get().buttons().onChange([callback](rb::ButtonId id, bool pressed) -> bool {
+        return callback(rkButtonId(id), pressed);
+    });
+}
+
 void rkButtonWaitForRelease(rkButtonId id) {
     int counter = 0;
     auto& b = Manager::get().buttons();
@@ -231,4 +237,64 @@ uint16_t rkLineGetSensor(uint8_t sensorId) {
 
 float rkLineGetPosition(bool white_line, uint8_t line_threshold_pct) {
     return gCtx.line().readLine(white_line, float(line_threshold_pct) / 100.f);
+}
+
+uint16_t rkIrLeft() {
+    return gCtx.irRead(gCtx.irChanLeft());
+}
+
+uint16_t rkIrRight() {
+    return gCtx.irRead(gCtx.irChanRight());
+}
+
+uint32_t rkUltraMeasure(uint8_t id) {
+    if (id == 0) {
+        ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
+        return 0;
+    } else if (id > 4) {
+        ESP_LOGE(TAG, "%s: maximum Ultrasound id is 4, you are using %d!", __func__, id);
+        return 0;
+    }
+
+    return Manager::get().ultrasound(id - 1).measure();
+}
+
+void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
+    if (id == 0) {
+        ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
+        callback(0);
+        return;
+    } else if (id > 4) {
+        ESP_LOGE(TAG, "%s: maximum Ultrasound id is 4, you are using %d!", __func__, id);
+        callback(0);
+        return;
+    }
+
+    return Manager::get().ultrasound(id - 1).measureAsync(callback);
+}
+
+void rkBuzzerSet(bool on) {
+    Manager::get().piezo().setState(on);
+}
+
+void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
+    auto& l = gCtx.smartLed();
+    if (idx >= l.count()) {
+        ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
+        return;
+    }
+    l.setRGB(idx, r, g, b);
+}
+
+void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
+    auto& l = gCtx.smartLed();
+    if (idx >= l.count()) {
+        ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
+        return;
+    }
+    l.setHSV(idx, h, s, v);
+}
+
+SmartLed& rkSmartLedsGetController() {
+    return gCtx.smartLed().controller();
 }

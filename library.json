@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "name": "RB3204-RBCX-library",
-            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v0.0.1.zip"
+            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v0.0.2.zip"
         },
         {
             "name": "RB3201-RBProtocol",
@@ -36,6 +36,10 @@
         {
             "name": "Esp32-RBGridUI",
             "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.1.1.zip"
+        },
+        {
+            "name": "SmartLeds",
+            "version": "https://github.com/RoboticsBrno/SmartLeds/archive/c203c6b9f714a7d66a2f048a2280b3fceb91b846.zip"
         }
     ],
     "build": {

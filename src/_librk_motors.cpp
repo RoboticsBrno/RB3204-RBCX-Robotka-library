@@ -13,7 +13,7 @@ Motors::Motors()
 Motors::~Motors() {
 }
 
-void Motors::setup(const rkConfig& cfg) {
+void Motors::init(const rkConfig& cfg) {
     m_id_left = (rb::MotorId)(cfg.motor_id_left - 1);
     m_id_right = (rb::MotorId)(cfg.motor_id_right - 1);
     m_polarity_switch_left = cfg.motor_polarity_switch_left;

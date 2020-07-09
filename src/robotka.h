@@ -15,6 +15,8 @@
 
 #include <Arduino.h>
 
+#include "SmartLeds.h"
+
 #include "RBCX.h"
 #include "gridui.h"
 #include "rbprotocol.h"
@@ -22,9 +24,9 @@
 using namespace gridui;
 
 /**
- * \defgroup general Inicializace
+ * \defgroup general .INICIALIZACE ROBOTA
  *
- * Tato sekce je určená k počátečnímu nastavení knihovny Robotka.
+ * Tato sekce je určená k počátečnímu nastavení knihovny pro Robotku.
  *
  * @{
  */
@@ -39,13 +41,21 @@ struct rkPinsConfig {
         : line_cs(5)
         , line_mosi(23)
         , line_miso(19)
-        , line_sck(18) {
+        , line_sck(18)
+        , smartled_sig(12)
+        , ir_adc_chan_left(ADC1_CHANNEL_0)
+        , ir_adc_chan_right(ADC1_CHANNEL_3) {
     }
 
     uint8_t line_cs;
     uint8_t line_mosi;
     uint8_t line_miso;
     uint8_t line_sck;
+
+    uint8_t smartled_sig;
+
+    adc1_channel_t ir_adc_chan_left;
+    adc1_channel_t ir_adc_chan_right;
 };
 
 #define RK_DEFAULT_WIFI_AP_PASSWORD "flusflus" //!< Výchozí heslo pro WiFi AP
@@ -72,7 +82,8 @@ struct rkConfig {
         , motor_max_power_pct(60)
         , motor_polarity_switch_left(false)
         , motor_polarity_switch_right(true)
-        , motor_enable_failsafe(false) {
+        , motor_enable_failsafe(false)
+        , smart_leds_count(8) {
     }
 
     bool rbcontroller_app_enable; //!< povolit komunikaci s aplikací RBController. Výchozí: `false`
@@ -94,17 +105,19 @@ struct rkConfig {
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
 
+    uint8_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
+
     rkPinsConfig pins; //!< Konfigurace pinů pro periferie, viz rkPinsConfig
 };
 
-typedef enum {
+enum rkButtonId {
     BTN_DOWN = rb::ButtonId::Down,
     BTN_UP = rb::ButtonId::Up,
     BTN_LEFT = rb::ButtonId::Left,
     BTN_RIGHT = rb::ButtonId::Right,
     BTN_ON = rb::ButtonId::On,
     BTN_OFF = rb::ButtonId::Off,
-} rkButtonId;
+};
 
 /**
  * \brief Inicializační funkce Robotky
@@ -300,6 +313,33 @@ void rkLedById(uint8_t id, bool on = true);
 bool rkButtonIsPressed(rkButtonId id, bool waitForRelease = false);
 
 /**
+ * \brief Asynchroní zpracování události o stisku tlačítka.
+ *
+ * Ukázka použití:
+ *
+ * \code{cpp}
+ * rkButtonOnChange([](rkButtonId id, bool pressed) -> bool {
+ *     if (id == BTN_DOWN) {
+ *         printf("Dolů: %d\n", pressed);
+ *     } else if (id == BTN_UP) {
+ *         printf("Nahoru: %d\n", pressed);
+ *     } else if (id == BTN_LEFT) {
+ *         printf("Doleva: %d\n", pressed);
+ *     } else if (id == BTN_RIGHT) {
+ *         printf("Doprava: %d\n", pressed);
+ *     }
+ *     return true;
+ * });
+ * \endcode
+ *
+ * \param callback funkce, která je zavolána pokud se stav kteréhokoliv tlačítka změní.
+ *    parametry jsou ID tlačítka z rkButtonId a bool isPressed. Funkce musí vrátit
+ *    true nebo false, podle toho, jestli má čekat na další události (true) nebo
+ *    se má odstranit a další události už nepřijmat (false).
+ */
+void rkButtonOnChange(std::function<bool(rkButtonId, bool)> callback);
+
+/**
  * \brief Je teď stisknuto "dolů"?
  *
  * \param waitForRelease pokud je stisknuto, počká před vrácením výsledku na jeho uvolnění (default: false)
@@ -369,10 +409,8 @@ inline bool rkButtonOff(bool waitForRelease = false) {
 void rkButtonWaitForRelease(rkButtonId id);
 
 /**@}*/
-
-/**@}*/
 /**
- * \defgroup line Sledování čáry pomocí senzorické lišty.
+ * \defgroup line Sledování čáry (!! senzorická lišta !!)
  *
  * Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou
  * pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem!
@@ -424,6 +462,120 @@ uint16_t rkLineGetSensor(uint8_t sensorId);
  *         Vrátí NaN, pokud nenalezne čáru - výsledek otestujte funkcí isnan() - `isnan(line_position)`
  */
 float rkLineGetPosition(bool white_line = false, uint8_t line_threshold_pct = 25);
+
+/**@}*/
+/**
+ * \defgroup irmodules Sledování čáry (!! IR moduly !!)
+ *
+ * Funkce pro čtení hodnot z obdélníkových IR modulů, které mají každý jeden senzor.
+ *
+ * @{
+ */
+
+/**
+ * \brief Hodnota z levého IR senzoru
+ * \return naměřená hodnota od 0(nejvíce bílá) do 4095(nejvíce černá)
+ */
+uint16_t rkIrLeft();
+
+/**
+ * \brief Hodnota z pravého IR senzoru
+ * \return naměřená hodnota od 0(nejvíce bílá) do 4095(nejvíce černá)
+ */
+uint16_t rkIrRight();
+
+/**@}*/
+/**
+ * \defgroup ultrasound Ultrazvuky
+ *
+ * Funkce pro meření vzálenosti pomocí ultrazvuků.
+ * @{
+ */
+
+/**
+ * \brief Změřit vzálenost (blokující)
+ *
+ * Změří vzálenost ultrazvukem a vrátí výsledek v milimetrech.
+ * Může blokovat program až 30ms, podle toho, co ultrazvuk naměří.
+ *
+ * \param id Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce.
+ * \return Naměřená vzdálenost v mm, 0 pokud se měření nepodaří.
+ */
+uint32_t rkUltraMeasure(uint8_t id);
+
+/**
+ * \brief Změřit vzálenost (asynchroní)
+ *
+ * Přidá požadavek na měření vzdálenosti do fronty a okamžitě vrátí.
+ * Jakmile je změřeno, je zavolána funkce předaná jako callback,
+ * jako parametr bude mít naměřenou vzálenost v mm.
+ *
+ * Příklad použití:
+ *
+ * \code{.cpp}
+ * rkUltraMeasureAsync(1, [](uint32_t distance_mm) {
+ *    printf("Namereno: %u mm\n", distance_mm);
+ * });
+ *
+ * rkLedBlue(true); // provede se ještě před tím, než se stihne změřit vzdálenost.
+ * \endcode
+ *
+ * \param id Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce.
+ * \param callback funkce, která bude zavolána po naměření. Do jejího parametru
+ *     bude předána naměřená vzdálenost v mm. 0 znamená chybu v měření.
+ */
+void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback);
+
+/**@}*/
+
+/**@}*/
+/**
+ * \defgroup buzzer Bzučák
+ *
+ * Ovládání bzučáku na desce.
+ * @{
+ */
+
+/**
+ * \brief Zapnout/vypnout bzučák
+ * \param on Zapnout(true) nebo vypnout(false)
+ */
+void rkBuzzerSet(bool on);
+
+/**@}*/
+/**
+ * \defgroup smartleds Chytré LED
+ *
+ * Ovládání pásku chytrých LED.
+ *
+ * @{
+ */
+
+/**
+ * \brief Nastavit barvu chytré led ve formátu RGB (Red, Green, Blue).
+ *
+ * Hodnoty barev můžete najít pomocí stránky https://htmlcolorcodes.com/
+ *
+ * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
+ * \param r hodnota červeného kanálu od 0 do 255
+ * \param g hodnota zeleného kanálu od 0 do 255
+ * \param b hodnota modrého kanálu od 0 do 255
+ */
+void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
+
+/**
+ * \brief Nastavit barvu chytré led ve formátu HSV (Hue, Saturation, Value).
+ *
+ * Hodnoty barev můžete najít pomocí stránky https://alloyui.com/examples/color-picker/hsv.html
+ *
+ * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
+ * \param h hodnota odstínu od 0 do 255
+ * \param s hodnota sytosti barvy od 0 do 255
+ * \param v hodnota jasu od 0 do 255
+ */
+void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);
+
+SmartLed& rkSmartLedsGetController();
 
 /**@}*/
 

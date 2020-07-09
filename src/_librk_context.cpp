@@ -46,12 +46,16 @@ void Context::setup(const rkConfig& cfg) {
 
     man.install(man_flags);
 
-    m_motors.setup(cfg);
-
     m_line_cfg.pin_cs = (gpio_num_t)cfg.pins.line_cs;
     m_line_cfg.pin_mosi = (gpio_num_t)cfg.pins.line_mosi;
     m_line_cfg.pin_miso = (gpio_num_t)cfg.pins.line_miso;
     m_line_cfg.pin_sck = (gpio_num_t)cfg.pins.line_sck;
+
+    m_ir_left = cfg.pins.ir_adc_chan_left;
+    m_ir_right = cfg.pins.ir_adc_chan_right;
+
+    m_motors.init(cfg);
+    m_smartLeds.init(cfg);
 
     m_wifi.init(cfg);
 
@@ -149,6 +153,25 @@ void Context::saveLineCalibration() {
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "failed to nvs_set_blob: %d", ret);
     }
+}
+
+void Context::initIrSensors() {
+    adc1_config_width(ADC_WIDTH_12Bit);
+    adc1_config_channel_atten(m_ir_left, ADC_ATTEN_DB_11);
+    adc1_config_channel_atten(m_ir_right, ADC_ATTEN_DB_11);
+}
+
+uint16_t Context::irRead(adc1_channel_t chan, uint16_t samples) {
+    bool ex = false;
+    if (m_ir_installed.compare_exchange_strong(ex, true)) {
+        initIrSensors();
+    }
+
+    uint32_t reading = 0;
+    for (uint16_t i = 0; i < samples; ++i) {
+        reading += adc1_get_raw(chan);
+    }
+    return reading / samples;
 }
 
 }; // namespace rk

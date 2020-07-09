@@ -12,7 +12,7 @@ public:
     Motors();
     ~Motors();
 
-    void setup(const rkConfig& cfg);
+    void init(const rkConfig& cfg);
 
     void setPower(int8_t left, int8_t right);
     void setPower(int8_t left, int8_t right, uint8_t pwm_pct_left, uint8_t pwm_pct_right);
