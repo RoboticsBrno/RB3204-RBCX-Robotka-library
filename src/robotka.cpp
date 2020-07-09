@@ -240,11 +240,11 @@ float rkLineGetPosition(bool white_line, uint8_t line_threshold_pct) {
 }
 
 uint16_t rkIrLeft() {
-    return gCtx.readAdc1(gCtx.irChanLeft());
+    return gCtx.irRead(gCtx.irChanLeft());
 }
 
 uint16_t rkIrRight() {
-    return gCtx.readAdc1(gCtx.irChanRight());
+    return gCtx.irRead(gCtx.irChanRight());
 }
 
 uint32_t rkUltraMeasure(uint8_t id) {

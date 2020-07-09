@@ -51,9 +51,11 @@ void Context::setup(const rkConfig& cfg) {
     m_line_cfg.pin_miso = (gpio_num_t)cfg.pins.line_miso;
     m_line_cfg.pin_sck = (gpio_num_t)cfg.pins.line_sck;
 
+    m_ir_left = cfg.pins.ir_adc_chan_left;
+    m_ir_right = cfg.pins.ir_adc_chan_right;
+
     m_motors.init(cfg);
     m_smartLeds.init(cfg);
-    initIrSensors(cfg);
 
     m_wifi.init(cfg);
 
@@ -153,16 +155,18 @@ void Context::saveLineCalibration() {
     }
 }
 
-void Context::initIrSensors(const rkConfig& cfg) {
+void Context::initIrSensors() {
     adc1_config_width(ADC_WIDTH_12Bit);
-    adc1_config_channel_atten(cfg.pins.ir_adc_chan_left, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(cfg.pins.ir_adc_chan_right, ADC_ATTEN_DB_11);
-
-    m_ir_left = cfg.pins.ir_adc_chan_left;
-    m_ir_right = cfg.pins.ir_adc_chan_right;
+    adc1_config_channel_atten(m_ir_left, ADC_ATTEN_DB_11);
+    adc1_config_channel_atten(m_ir_right, ADC_ATTEN_DB_11);
 }
 
-uint16_t Context::readAdc1(adc1_channel_t chan, uint16_t samples) {
+uint16_t Context::irRead(adc1_channel_t chan, uint16_t samples) {
+    bool ex = false;
+    if (m_ir_installed.compare_exchange_strong(ex, true)) {
+        initIrSensors();
+    }
+
     uint32_t reading = 0;
     for (uint16_t i = 0; i < samples; ++i) {
         reading += adc1_get_raw(chan);
