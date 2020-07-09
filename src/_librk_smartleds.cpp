@@ -11,17 +11,22 @@ SmartLeds::~SmartLeds() {
 
 void SmartLeds::init(const rkConfig& cfg) {
     m_count = cfg.smart_leds_count;
-    m_controller.reset(new SmartLed(LED_WS2812B, cfg.smart_leds_count, cfg.pins.smartled_sig));
+    if (m_count != 0)
+        m_controller.reset(new SmartLed(LED_WS2812B, cfg.smart_leds_count, cfg.pins.smartled_sig));
 }
 
 void SmartLeds::setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
     std::lock_guard<std::mutex> l(m_mutex);
+    if (m_count == 0)
+        return;
     (*m_controller)[idx] = Rgb { r, b, g };
     scheduleUpdateLocked();
 }
 
 void SmartLeds::setHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
     std::lock_guard<std::mutex> l(m_mutex);
+    if (m_count == 0)
+        return;
     (*m_controller)[idx] = Hsv { h, s, v };
     scheduleUpdateLocked();
 }
