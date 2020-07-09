@@ -79,7 +79,7 @@ struct rkConfig {
         , wifi_ap_channel(1)
         , motor_id_left(1)
         , motor_id_right(4)
-        , motor_max_power_pct(60)
+        , motor_max_power_pct(80)
         , motor_polarity_switch_left(false)
         , motor_polarity_switch_right(true)
         , motor_enable_failsafe(false)
