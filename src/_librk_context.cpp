@@ -57,9 +57,9 @@ void Context::setup(const rkConfig& cfg) {
     m_motors.init(cfg);
     m_smartLeds.init(cfg);
 
-    m_wifi.init(cfg);
-
     if (cfg.rbcontroller_app_enable) {
+        m_wifi.init(cfg);
+
         // Start web server with control page (see data/index.html)
         rb_web_start(80);
 
