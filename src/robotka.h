@@ -24,9 +24,9 @@
 using namespace gridui;
 
 /**
- * \defgroup general Inicializace
+ * \defgroup general .INICIALIZACE ROBOTA
  *
- * Tato sekce je určená k počátečnímu nastavení knihovny Robotka.
+ * Tato sekce je určená k počátečnímu nastavení knihovny pro Robotku.
  *
  * @{
  */
@@ -410,7 +410,7 @@ void rkButtonWaitForRelease(rkButtonId id);
 
 /**@}*/
 /**
- * \defgroup line Sledování čáry ( !!senzorická lišta !!)
+ * \defgroup line Sledování čáry (!! senzorická lišta !!)
  *
  * Funkce pro komunikaci se senzorickou lištou na čáru. Tyto funkce jsou
  * pro půlměsícovou desku s 8 senzory, ne pro malé, obdélníkové desky s 1 senzorem!
@@ -465,9 +465,9 @@ float rkLineGetPosition(bool white_line = false, uint8_t line_threshold_pct = 25
 
 /**@}*/
 /**
- * \defgroup line Sledování čáry (!! IR moduly !!)
+ * \defgroup irmodules Sledování čáry (!! IR moduly !!)
  *
- * Funkce pro čtení hodnot z obdélíkových IR modulů, které mají každý jeden senzor.
+ * Funkce pro čtení hodnot z obdélníkových IR modulů, které mají každý jeden senzor.
  *
  * @{
  */
