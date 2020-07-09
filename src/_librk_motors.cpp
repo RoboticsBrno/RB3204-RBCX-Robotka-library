@@ -1,7 +1,7 @@
 #include "_librk_motors.h"
 #include "RBCX.h"
 
-static constexpr int32_t MAX_SPEED = 1000;
+static constexpr int32_t MAX_SPEED = 2000;
 
 namespace rk {
 
