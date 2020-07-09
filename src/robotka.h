@@ -569,9 +569,9 @@ void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
  * Hodnoty barev můžete najít pomocí stránky https://alloyui.com/examples/color-picker/hsv.html
  *
  * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
- * \param r hodnota odstínu od 0 do 255
- * \param g hodnota sytosti barvy od 0 do 255
- * \param b hodnota jasu od 0 do 255
+ * \param h hodnota odstínu od 0 do 255
+ * \param s hodnota sytosti barvy od 0 do 255
+ * \param v hodnota jasu od 0 do 255
  */
 void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);
 
