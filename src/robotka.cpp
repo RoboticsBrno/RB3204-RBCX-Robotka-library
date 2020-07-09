@@ -144,7 +144,7 @@ void rkLedById(uint8_t id, bool on) {
     }
 
     auto& l = Manager::get().leds();
-    l.byId(LedId((1 << (id - 1))));
+    l.byId(LedId((1 << (id - 1))), on);
 }
 
 bool rkButtonIsPressed(rkButtonId id, bool waitForRelease) {
