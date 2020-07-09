@@ -77,6 +77,9 @@ Funkce</h2></td></tr>
 <tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (rkButtonId id, bool waitForRelease=false)</td></tr>
 <tr class="memdesc:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto tlačítko?  <a href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">...</a><br /></td></tr>
 <tr class="separator:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a> (std::function&lt; bool(rkButtonId, bool)&gt; callback)</td></tr>
+<tr class="memdesc:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchroní zpracování události o stisku tlačítka.  <a href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">...</a><br /></td></tr>
+<tr class="separator:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3bc0ef766782822a9399654f97fa224c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a> (bool waitForRelease=false)</td></tr>
 <tr class="memdesc:ga3bc0ef766782822a9399654f97fa224c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "dolů"?  <a href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">...</a><br /></td></tr>
 <tr class="separator:ga3bc0ef766782822a9399654f97fa224c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,6 +283,45 @@ Funkce</h2></td></tr>
 
 </div>
 </div>
+<a id="gaf8f5355d2e6405a4c180499ca4f3fa8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8f5355d2e6405a4c180499ca4f3fa8e">&#9670;&nbsp;</a></span>rkButtonOnChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rkButtonOnChange </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(rkButtonId, bool)&gt;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Asynchroní zpracování události o stisku tlačítka. </p>
+<p>Ukázka použití:</p>
+<div class="fragment"><div class="line"><a class="code" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a>([](rkButtonId <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> pressed) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_DOWN) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Dolů: %d\n&quot;</span>, pressed);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_UP) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Nahoru: %d\n&quot;</span>, pressed);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_LEFT) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Doleva: %d\n&quot;</span>, pressed);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_RIGHT) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Doprava: %d\n&quot;</span>, pressed);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">});</div>
+</div><!-- fragment --><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>funkce, která je zavolána pokud se stav kteréhokoliv tlačítka změní. parametry jsou ID tlačítka z rkButtonId a bool isPressed. Funkce musí vrátit true nebo false, podle toho, jestli má čekat na další události (true) nebo se má odstranit a další události už nepřijmat (false). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaefcbc39c395320a29e2898557e4dda5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaefcbc39c395320a29e2898557e4dda5f">&#9670;&nbsp;</a></span>rkButtonRight()</h2>
 
@@ -378,9 +420,10 @@ Funkce</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="agroup__buttons_html_gaf8f5355d2e6405a4c180499ca4f3fa8e"><div class="ttname"><a href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a></div><div class="ttdeci">void rkButtonOnChange(std::function&lt; bool(rkButtonId, bool)&gt; callback)</div><div class="ttdoc">Asynchroní zpracování události o stisku tlačítka.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:165</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 9. čec 2020 08.11:29 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno čt 9. čec 2020 12.15:59 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

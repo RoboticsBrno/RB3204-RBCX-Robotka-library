@@ -22,5 +22,6 @@ var searchData=
   ['buffer_3c_20bigit_20_3e_23',['buffer&lt; bigit &gt;',['../classinternal_1_1buffer.html',1,'internal']]],
   ['buffer_3c_20char_20_3e_24',['buffer&lt; Char &gt;',['../classinternal_1_1buffer.html',1,'internal']]],
   ['buffer_3c_20container_3a_3avalue_5ftype_20_3e_25',['buffer&lt; Container::value_type &gt;',['../classinternal_1_1buffer.html',1,'internal']]],
-  ['buffer_3c_20wchar_5ft_20_3e_26',['buffer&lt; wchar_t &gt;',['../classinternal_1_1buffer.html',1,'internal']]]
+  ['buffer_3c_20wchar_5ft_20_3e_26',['buffer&lt; wchar_t &gt;',['../classinternal_1_1buffer.html',1,'internal']]],
+  ['bzučák_27',['Bzučák',['../group__buzzer.html',1,'']]]
 ];
