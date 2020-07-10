@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "frameworks": [
         "arduino"
     ],
@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "name": "RB3204-RBCX-library",
-            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v0.0.3.zip"
+            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.0.0.zip"
         },
         {
             "name": "RB3201-RBProtocol",
