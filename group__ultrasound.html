@@ -77,9 +77,9 @@ Funkce</h2></td></tr>
 <tr class="memitem:ga5e355a3b39091f576a84132f6426c1d1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ultrasound.html#ga5e355a3b39091f576a84132f6426c1d1">rkUltraMeasure</a> (uint8_t id)</td></tr>
 <tr class="memdesc:ga5e355a3b39091f576a84132f6426c1d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Změřit vzálenost (blokující)  <a href="group__ultrasound.html#ga5e355a3b39091f576a84132f6426c1d1">...</a><br /></td></tr>
 <tr class="separator:ga5e355a3b39091f576a84132f6426c1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf3a47e26b131a0575c867a0902b3500"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ultrasound.html#gaaf3a47e26b131a0575c867a0902b3500">rkUltraMeasureAsync</a> (uint8_t id, std::function&lt; void(uint32_t)&gt; callback)</td></tr>
-<tr class="memdesc:gaaf3a47e26b131a0575c867a0902b3500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Změřit vzálenost (asynchroní)  <a href="group__ultrasound.html#gaaf3a47e26b131a0575c867a0902b3500">...</a><br /></td></tr>
-<tr class="separator:gaaf3a47e26b131a0575c867a0902b3500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98080f65f96c1c3d2efffdaff4f91471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a> (uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</td></tr>
+<tr class="memdesc:ga98080f65f96c1c3d2efffdaff4f91471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Změřit vzálenost (asynchroní)  <a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">...</a><br /></td></tr>
+<tr class="separator:ga98080f65f96c1c3d2efffdaff4f91471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
 <p>Funkce pro meření vzálenosti pomocí ultrazvuků. </p>
@@ -112,8 +112,8 @@ Funkce</h2></td></tr>
 
 </div>
 </div>
-<a id="gaaf3a47e26b131a0575c867a0902b3500"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaf3a47e26b131a0575c867a0902b3500">&#9670;&nbsp;</a></span>rkUltraMeasureAsync()</h2>
+<a id="ga98080f65f96c1c3d2efffdaff4f91471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98080f65f96c1c3d2efffdaff4f91471">&#9670;&nbsp;</a></span>rkUltraMeasureAsync()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Funkce</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; void(uint32_t)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; bool(uint32_t)&gt;&#160;</td>
           <td class="paramname"><em>callback</em>&#160;</td>
         </tr>
         <tr>
@@ -141,7 +141,7 @@ Funkce</h2></td></tr>
 <p>Změřit vzálenost (asynchroní) </p>
 <p>Přidá požadavek na měření vzdálenosti do fronty a okamžitě vrátí. Jakmile je změřeno, je zavolána funkce předaná jako callback, jako parametr bude mít naměřenou vzálenost v mm.</p>
 <p>Příklad použití:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__ultrasound.html#gaaf3a47e26b131a0575c867a0902b3500">rkUltraMeasureAsync</a>(1, [](uint32_t distance_mm) {</div>
+<div class="fragment"><div class="line"><a class="code" href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a>(1, [](uint32_t distance_mm) {</div>
 <div class="line">   printf(<span class="stringliteral">&quot;Namereno: %u mm\n&quot;</span>, distance_mm);</div>
 <div class="line">});</div>
 <div class="line"> </div>
@@ -149,7 +149,7 @@ Funkce</h2></td></tr>
 </div><!-- fragment --><dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce. </td></tr>
-    <tr><td class="paramname">callback</td><td>funkce, která bude zavolána po naměření. Do jejího parametru bude předána naměřená vzdálenost v mm. 0 znamená chybu v měření. </td></tr>
+    <tr><td class="paramname">callback</td><td>funkce, která bude zavolána po naměření. Do jejího parametru bude předána naměřená vzdálenost v mm. 0 znamená chybu v měření. Pokud chcete měřit jen jednou, vraťe z callbacku <code>false</code>, pokud opakovaně, pak vracejte <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -157,11 +157,11 @@ Funkce</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="agroup__ultrasound_html_gaaf3a47e26b131a0575c867a0902b3500"><div class="ttname"><a href="group__ultrasound.html#gaaf3a47e26b131a0575c867a0902b3500">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; void(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:262</div></div>
 <div class="ttc" id="agroup__leds_html_ga5a69bab56ea3d255d42e06fdb1169513"><div class="ttname"><a href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a></div><div class="ttdeci">void rkLedBlue(bool on)</div><div class="ttdoc">Zapnout/vypnout modrou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:125</div></div>
+<div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:262</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 9. čec 2020 21.51:05 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno pá 10. čec 2020 09.02:16 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
