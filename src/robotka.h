@@ -523,8 +523,10 @@ uint32_t rkUltraMeasure(uint8_t id);
  * \param id Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce.
  * \param callback funkce, která bude zavolána po naměření. Do jejího parametru
  *     bude předána naměřená vzdálenost v mm. 0 znamená chybu v měření.
+ *     Pokud chcete měřit jen jednou, vraťe z callbacku `false`, pokud opakovaně,
+ *     pak vracejte `true`.
  */
-void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback);
+void rkUltraMeasureAsync(uint8_t id, std::function<bool(uint32_t)> callback);
 
 /**@}*/
 

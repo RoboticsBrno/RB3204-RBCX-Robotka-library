@@ -259,7 +259,7 @@ uint32_t rkUltraMeasure(uint8_t id) {
     return Manager::get().ultrasound(id - 1).measure();
 }
 
-void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
+void rkUltraMeasureAsync(uint8_t id, std::function<bool(uint32_t)> callback) {
     if (id == 0) {
         ESP_LOGE(TAG, "%s: invalid id %d, Ultrasounds are indexed from 1, just like on the board (U1, U2...)!", __func__, id);
         callback(0);
@@ -270,7 +270,7 @@ void rkUltraMeasureAsync(uint8_t id, std::function<void(uint32_t)> callback) {
         return;
     }
 
-    return Manager::get().ultrasound(id - 1).measureAsync(callback);
+    Manager::get().ultrasound(id - 1).measureAsync(callback);
 }
 
 void rkBuzzerSet(bool on) {
