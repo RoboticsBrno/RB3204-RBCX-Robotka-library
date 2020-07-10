@@ -56,7 +56,7 @@ void WiFi::init(const rkConfig& cfg) {
     const bool enable_ble = false;
 #endif
 
-    bool station_mode = man.buttons().down() != cfg.wifi_default_ap && has_station_name;
+    bool station_mode = man.buttons().up() != cfg.wifi_default_ap && has_station_name;
 
     snprintf(m_ssid, sizeof(m_ssid), "%s-%s", cfg.owner, cfg.name);
 
