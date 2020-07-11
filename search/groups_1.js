@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['baterie_239',['Baterie',['../group__battery.html',1,'']]],
-  ['bzučák_240',['Bzučák',['../group__buzzer.html',1,'']]]
+  ['baterie_241',['Baterie',['../group__battery.html',1,'']]],
+  ['bzučák_242',['Bzučák',['../group__buzzer.html',1,'']]]
 ];

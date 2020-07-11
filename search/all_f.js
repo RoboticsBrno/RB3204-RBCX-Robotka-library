@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tlačítka_114',['Tlačítka',['../group__buttons.html',1,'']]]
+  ['tlačítka_115',['Tlačítka',['../group__buttons.html',1,'']]]
 ];
