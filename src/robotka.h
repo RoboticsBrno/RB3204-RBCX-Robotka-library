@@ -229,6 +229,13 @@ uint32_t rkBatteryPercent();
  */
 uint32_t rkBatteryVoltageMv();
 
+/**
+ * \brief Teplota desky v Robotce
+ *
+ * \return Naměřená teplota v °C
+ */
+int16_t rkTemperature();
+
 /**@}*/
 /**
  * \defgroup rbcontroller Aplikace RBController

@@ -64,6 +64,10 @@ uint32_t rkBatteryVoltageMv() {
     return Manager::get().battery().voltageMv();
 }
 
+int16_t rkTemperature() {
+    return Manager::get().battery().temperatureC();
+}
+
 void rkMotorsSetPower(int8_t left, int8_t right) {
     gCtx.motors().setPower(left, right);
 }
