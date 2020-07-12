@@ -44,7 +44,7 @@ void Context::setup(const rkConfig& cfg) {
         man_flags = ManagerInstallFlags(man_flags | MAN_DISABLE_MOTOR_FAILSAFE);
     }
 
-    man.install(man_flags);
+    man.install(man_flags, 6 * 1024);
 
     m_line_cfg.pin_cs = (gpio_num_t)cfg.pins.line_cs;
     m_line_cfg.pin_mosi = (gpio_num_t)cfg.pins.line_mosi;

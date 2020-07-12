@@ -274,7 +274,7 @@ void rkUltraMeasureAsync(uint8_t id, std::function<bool(uint32_t)> callback) {
         return;
     }
 
-    Manager::get().ultrasound(id - 1).measureAsync(callback);
+    Manager::get().ultrasound(id - 1).measureAsync(std::move(callback));
 }
 
 void rkBuzzerSet(bool on) {

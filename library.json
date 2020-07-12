@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "name": "RB3204-RBCX-library",
-            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.0.0.zip"
+            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.0.1.zip"
         },
         {
             "name": "RB3201-RBProtocol",
