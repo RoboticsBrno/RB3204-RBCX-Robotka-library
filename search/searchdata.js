@@ -6,7 +6,9 @@ var indexSectionsWithContent =
   3: "abcdefgnoprs",
   4: "mnoprsw",
   5: "c",
-  6: "abclmstu"
+  6: "r",
+  7: "b",
+  8: "abclmstu"
 };
 
 var indexSectionNames =
@@ -17,7 +19,9 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "groups"
+  6: "enums",
+  7: "enumvalues",
+  8: "groups"
 };
 
 var indexSectionLabels =
@@ -28,6 +32,8 @@ var indexSectionLabels =
   3: "Funkce",
   4: "Proměnné",
   5: "Definice typů",
-  6: "Skupiny"
+  6: "Výčty",
+  7: "Hodnoty výčtu",
+  8: "Skupiny"
 };
 

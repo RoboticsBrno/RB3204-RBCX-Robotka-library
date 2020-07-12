@@ -64,7 +64,11 @@ var menudata={children:[
 {text:"Seznam souborů",url:"files.html"},
 {text:"Symboly v souborech",url:"globals.html",children:[
 {text:"Vše",url:"globals.html",children:[
+{text:"b",url:"globals.html#index_b"},
+{text:"e",url:"globals.html#index_e"},
 {text:"r",url:"globals.html#index_r"}]},
 {text:"Funkce",url:"globals_func.html",children:[
 {text:"r",url:"globals_func.html#index_r"}]},
+{text:"Výčty",url:"globals_enum.html"},
+{text:"Hodnoty výčtu",url:"globals_eval.html"},
 {text:"Definice maker",url:"globals_defs.html"}]}]}]}

@@ -63,6 +63,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Definice maker</a> &#124;
+<a href="#enum-members">Výčty</a> &#124;
 <a href="#func-members">Funkce</a>  </div>
   <div class="headertitle">
 <div class="title">Tlačítka</div>  </div>
@@ -72,12 +74,38 @@ $(function() {
 <p>Funkce pro vyčítání stavu tlačítek.  
 <a href="#details">...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definice maker</h2></td></tr>
+<tr class="memitem:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="memItemLeft" align="right" valign="top"><a id="ga629d3a5fd4b3fa127d32fbf3b8e5587a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a">EXTRA_BUTTON1</a>&#160;&#160;&#160;27</td></tr>
+<tr class="memdesc:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Číslo pinu pro připojení extra koncového tlačítka, blíže okraji desky. <br /></td></tr>
+<tr class="separator:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="memItemLeft" align="right" valign="top"><a id="ga7dbcb3c4d89eb5b9be87a4d1d208430d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d">EXTRA_BUTTON2</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Číslo pinu pro připojení extra koncového tlačítka, blíže do středu desky. <br /></td></tr>
+<tr class="separator:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Výčty</h2></td></tr>
+<tr class="memitem:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> { <br />
+&#160;&#160;<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77">BTN_DOWN</a> = rb::ButtonId::Down, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f">BTN_UP</a> = rb::ButtonId::Up, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed">BTN_LEFT</a> = rb::ButtonId::Left, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1">BTN_RIGHT</a> = rb::ButtonId::Right, 
+<br />
+&#160;&#160;<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a80246970f32f8ac7a303a68d5a83cea0">BTN_ON</a> = rb::ButtonId::On, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0addb0d42e50c90992aed83401ee92aaf5">BTN_OFF</a> = rb::ButtonId::Off
+<br />
+ }</td></tr>
+<tr class="memdesc:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seznam konstant označujícíh tlačítka, pro použítí v rkButtonIsPressed a dalších.  <a href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">...</a><br /></td></tr>
+<tr class="separator:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkce</h2></td></tr>
-<tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (rkButtonId id, bool waitForRelease=false)</td></tr>
+<tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> id, bool waitForRelease=false)</td></tr>
 <tr class="memdesc:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto tlačítko?  <a href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">...</a><br /></td></tr>
 <tr class="separator:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a> (std::function&lt; bool(rkButtonId, bool)&gt; callback)</td></tr>
+<tr class="memitem:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a> (std::function&lt; bool(<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a>, bool)&gt; callback)</td></tr>
 <tr class="memdesc:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchroní zpracování události o stisku tlačítka.  <a href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">...</a><br /></td></tr>
 <tr class="separator:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3bc0ef766782822a9399654f97fa224c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a> (bool waitForRelease=false)</td></tr>
@@ -98,12 +126,43 @@ Funkce</h2></td></tr>
 <tr class="memitem:gadffbeede1bad4d606b6ba779c0269393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a> (bool waitForRelease=false)</td></tr>
 <tr class="memdesc:gadffbeede1bad4d606b6ba779c0269393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "OFF"?  <a href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">...</a><br /></td></tr>
 <tr class="separator:gadffbeede1bad4d606b6ba779c0269393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a> (rkButtonId id)</td></tr>
+<tr class="memitem:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a> (<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> id)</td></tr>
 <tr class="memdesc:ga32d6fb26301458fe507c9e28e632ac3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Počkat, dokud není tlačítko uvolněno.  <a href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">...</a><br /></td></tr>
 <tr class="separator:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
 <p>Funkce pro vyčítání stavu tlačítek. </p>
+<h2 class="groupheader">Dokumentace výčtových typů</h2>
+<a id="ga73f617d9fa08848ce2f004f09eaad3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73f617d9fa08848ce2f004f09eaad3a0">&#9670;&nbsp;</a></span>rkButtonId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Seznam konstant označujícíh tlačítka, pro použítí v rkButtonIsPressed a dalších. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Hodnoty výčtu</th></tr><tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77"></a>BTN_DOWN&#160;</td><td class="fielddoc"><p>Tlačítko dolů </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f"></a>BTN_UP&#160;</td><td class="fielddoc"><p>Tlačítko nahoru. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed"></a>BTN_LEFT&#160;</td><td class="fielddoc"><p>Tlačítko doleva. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1"></a>BTN_RIGHT&#160;</td><td class="fielddoc"><p>Tlačítko doprava. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0a80246970f32f8ac7a303a68d5a83cea0"></a>BTN_ON&#160;</td><td class="fielddoc"><p>Tlačítko ON/Ok (prostřední) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga73f617d9fa08848ce2f004f09eaad3a0addb0d42e50c90992aed83401ee92aaf5"></a>BTN_OFF&#160;</td><td class="fielddoc"><p>Tlačítko Off/Esc. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Dokumentace funkcí</h2>
 <a id="ga3bc0ef766782822a9399654f97fa224c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3bc0ef766782822a9399654f97fa224c">&#9670;&nbsp;</a></span>rkButtonDown()</h2>
@@ -149,7 +208,7 @@ Funkce</h2></td></tr>
         <tr>
           <td class="memname">bool rkButtonIsPressed </td>
           <td>(</td>
-          <td class="paramtype">rkButtonId&#160;</td>
+          <td class="paramtype"><a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -292,7 +351,7 @@ Funkce</h2></td></tr>
         <tr>
           <td class="memname">void rkButtonOnChange </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; bool(rkButtonId, bool)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a>, bool)&gt;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -301,14 +360,14 @@ Funkce</h2></td></tr>
 
 <p>Asynchroní zpracování události o stisku tlačítka. </p>
 <p>Ukázka použití:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a>([](rkButtonId <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> pressed) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line">    <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_DOWN) {</div>
+<div class="fragment"><div class="line"><a class="code" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a>([](<a class="code" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> pressed) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == <a class="code" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77">BTN_DOWN</a>) {</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Dolů: %d\n&quot;</span>, pressed);</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_UP) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == <a class="code" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f">BTN_UP</a>) {</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Nahoru: %d\n&quot;</span>, pressed);</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_LEFT) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == <a class="code" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed">BTN_LEFT</a>) {</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Doleva: %d\n&quot;</span>, pressed);</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == BTN_RIGHT) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == <a class="code" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1">BTN_RIGHT</a>) {</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Doprava: %d\n&quot;</span>, pressed);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -401,7 +460,7 @@ Funkce</h2></td></tr>
         <tr>
           <td class="memname">void rkButtonWaitForRelease </td>
           <td>(</td>
-          <td class="paramtype">rkButtonId&#160;</td>
+          <td class="paramtype"><a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -421,9 +480,14 @@ Funkce</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="agroup__buttons_html_gaf8f5355d2e6405a4c180499ca4f3fa8e"><div class="ttname"><a href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a></div><div class="ttdeci">void rkButtonOnChange(std::function&lt; bool(rkButtonId, bool)&gt; callback)</div><div class="ttdoc">Asynchroní zpracování události o stisku tlačítka.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:169</div></div>
+<div class="ttc" id="agroup__buttons_html_gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77"><div class="ttname"><a href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77">BTN_DOWN</a></div><div class="ttdeci">@ BTN_DOWN</div><div class="ttdoc">Tlačítko dolů</div><div class="ttdef"><b>Definition:</b> robotka.h:308</div></div>
+<div class="ttc" id="agroup__buttons_html_gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f"><div class="ttname"><a href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f">BTN_UP</a></div><div class="ttdeci">@ BTN_UP</div><div class="ttdoc">Tlačítko nahoru.</div><div class="ttdef"><b>Definition:</b> robotka.h:309</div></div>
+<div class="ttc" id="agroup__buttons_html_ga73f617d9fa08848ce2f004f09eaad3a0"><div class="ttname"><a href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a></div><div class="ttdeci">rkButtonId</div><div class="ttdoc">Seznam konstant označujícíh tlačítka, pro použítí v rkButtonIsPressed a dalších.</div><div class="ttdef"><b>Definition:</b> robotka.h:307</div></div>
+<div class="ttc" id="agroup__buttons_html_gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed"><div class="ttname"><a href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed">BTN_LEFT</a></div><div class="ttdeci">@ BTN_LEFT</div><div class="ttdoc">Tlačítko doleva.</div><div class="ttdef"><b>Definition:</b> robotka.h:310</div></div>
+<div class="ttc" id="agroup__buttons_html_gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1"><div class="ttname"><a href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1">BTN_RIGHT</a></div><div class="ttdeci">@ BTN_RIGHT</div><div class="ttdoc">Tlačítko doprava.</div><div class="ttdef"><b>Definition:</b> robotka.h:311</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno ne 12. čec 2020 08.35:24 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno ne 12. čec 2020 15.43:00 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Třídy</a> &#124;
 <a href="#define-members">Definice maker</a> &#124;
+<a href="#enum-members">Výčty</a> &#124;
 <a href="#func-members">Funkce</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentace souboru robotka.h</div>  </div>
@@ -96,6 +97,29 @@ Definice maker</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">RK_DEFAULT_WIFI_AP_PASSWORD</a>&#160;&#160;&#160;&quot;flusflus&quot;</td></tr>
 <tr class="memdesc:ga774729cebfd08838fd6f5bec88b15b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Výchozí heslo pro WiFi AP. <br /></td></tr>
 <tr class="separator:ga774729cebfd08838fd6f5bec88b15b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a">EXTRA_BUTTON1</a>&#160;&#160;&#160;27</td></tr>
+<tr class="memdesc:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Číslo pinu pro připojení extra koncového tlačítka, blíže okraji desky. <br /></td></tr>
+<tr class="separator:ga629d3a5fd4b3fa127d32fbf3b8e5587a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d">EXTRA_BUTTON2</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Číslo pinu pro připojení extra koncového tlačítka, blíže do středu desky. <br /></td></tr>
+<tr class="separator:ga7dbcb3c4d89eb5b9be87a4d1d208430d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Výčty</h2></td></tr>
+<tr class="memitem:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> { <br />
+&#160;&#160;<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0aef9e53a55cc62d3b526beab4f2d05f77">BTN_DOWN</a> = rb::ButtonId::Down, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0ab60515bd1559ced3c3f5edf9d5729c3f">BTN_UP</a> = rb::ButtonId::Up, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a3ada5858aac1e36d945bc8c630bebeed">BTN_LEFT</a> = rb::ButtonId::Left, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1">BTN_RIGHT</a> = rb::ButtonId::Right, 
+<br />
+&#160;&#160;<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a80246970f32f8ac7a303a68d5a83cea0">BTN_ON</a> = rb::ButtonId::On, 
+<a class="el" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0addb0d42e50c90992aed83401ee92aaf5">BTN_OFF</a> = rb::ButtonId::Off
+<br />
+ }</td></tr>
+<tr class="memdesc:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seznam konstant označujícíh tlačítka, pro použítí v rkButtonIsPressed a dalších.  <a href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">...</a><br /></td></tr>
+<tr class="separator:ga73f617d9fa08848ce2f004f09eaad3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkce</h2></td></tr>
@@ -159,10 +183,10 @@ Funkce</h2></td></tr>
 <tr class="memitem:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">rkLedById</a> (uint8_t id, bool on=true)</td></tr>
 <tr class="memdesc:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapnout/vypnout LED podle jejich čísla na desce, od 1 do 4 včetně.  <a href="group__leds.html#gaeb3b7b86b57f86df7d325ad02bb67d5c">...</a><br /></td></tr>
 <tr class="separator:gaeb3b7b86b57f86df7d325ad02bb67d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (rkButtonId id, bool waitForRelease=false)</td></tr>
+<tr class="memitem:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a> (<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> id, bool waitForRelease=false)</td></tr>
 <tr class="memdesc:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto tlačítko?  <a href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">...</a><br /></td></tr>
 <tr class="separator:ga13a44b9bf33dc9d2fe450c0f6f6fc181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a> (std::function&lt; bool(rkButtonId, bool)&gt; callback)</td></tr>
+<tr class="memitem:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">rkButtonOnChange</a> (std::function&lt; bool(<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a>, bool)&gt; callback)</td></tr>
 <tr class="memdesc:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchroní zpracování události o stisku tlačítka.  <a href="group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e">...</a><br /></td></tr>
 <tr class="separator:gaf8f5355d2e6405a4c180499ca4f3fa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3bc0ef766782822a9399654f97fa224c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga3bc0ef766782822a9399654f97fa224c">rkButtonDown</a> (bool waitForRelease=false)</td></tr>
@@ -183,7 +207,7 @@ Funkce</h2></td></tr>
 <tr class="memitem:gadffbeede1bad4d606b6ba779c0269393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a> (bool waitForRelease=false)</td></tr>
 <tr class="memdesc:gadffbeede1bad4d606b6ba779c0269393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Je teď stisknuto "OFF"?  <a href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">...</a><br /></td></tr>
 <tr class="separator:gadffbeede1bad4d606b6ba779c0269393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a> (rkButtonId id)</td></tr>
+<tr class="memitem:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">rkButtonWaitForRelease</a> (<a class="el" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> id)</td></tr>
 <tr class="memdesc:ga32d6fb26301458fe507c9e28e632ac3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Počkat, dokud není tlačítko uvolněno.  <a href="group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a">...</a><br /></td></tr>
 <tr class="separator:ga32d6fb26301458fe507c9e28e632ac3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga72f95ff9d7ca5b75f1c3560c3c303790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__line.html#ga72f95ff9d7ca5b75f1c3560c3c303790">rkLineCalibrate</a> (float motor_time_coef=1.0)</td></tr>
@@ -225,7 +249,7 @@ Funkce</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno ne 12. čec 2020 08.35:24 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno ne 12. čec 2020 15.43:00 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
