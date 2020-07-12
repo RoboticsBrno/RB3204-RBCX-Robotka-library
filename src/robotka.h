@@ -110,15 +110,6 @@ struct rkConfig {
     rkPinsConfig pins; //!< Konfigurace pinů pro periferie, viz rkPinsConfig
 };
 
-enum rkButtonId {
-    BTN_DOWN = rb::ButtonId::Down,
-    BTN_UP = rb::ButtonId::Up,
-    BTN_LEFT = rb::ButtonId::Left,
-    BTN_RIGHT = rb::ButtonId::Right,
-    BTN_ON = rb::ButtonId::On,
-    BTN_OFF = rb::ButtonId::Off,
-};
-
 /**
  * \brief Inicializační funkce Robotky
  *
@@ -309,6 +300,21 @@ void rkLedById(uint8_t id, bool on = true);
  * Funkce pro vyčítání stavu tlačítek.
  * @{
  */
+
+/**
+ * \brief Seznam konstant označujícíh tlačítka, pro použítí v rkButtonIsPressed a dalších.
+ */
+enum rkButtonId {
+    BTN_DOWN = rb::ButtonId::Down, //!< Tlačítko dolů
+    BTN_UP = rb::ButtonId::Up, //!< Tlačítko nahoru
+    BTN_LEFT = rb::ButtonId::Left, //!< Tlačítko doleva
+    BTN_RIGHT = rb::ButtonId::Right, //!< Tlačítko doprava
+    BTN_ON = rb::ButtonId::On, //!< Tlačítko ON/Ok (prostřední)
+    BTN_OFF = rb::ButtonId::Off, //!< Tlačítko Off/Esc
+};
+
+#define EXTRA_BUTTON1 27 //!< Číslo pinu pro připojení extra koncového tlačítka, blíže okraji desky
+#define EXTRA_BUTTON2 14 //!< Číslo pinu pro připojení extra koncového tlačítka, blíže do středu desky
 
 /**
  * \brief Je teď stisknuto tlačítko?
