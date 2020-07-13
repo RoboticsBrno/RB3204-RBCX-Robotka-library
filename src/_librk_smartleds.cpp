@@ -34,7 +34,7 @@ void SmartLeds::setHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
 void SmartLeds::scheduleUpdateLocked() {
     if (m_timerId != 0)
         return;
-    m_timerId = rb::Timers::get().schedule(std::min(10, (int)m_count), [this]() {
+    m_timerId = rb::Timers::get().schedule(std::max(10, (int)m_count), [this]() {
         return this->update();
     });
 }
