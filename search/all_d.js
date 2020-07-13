@@ -12,7 +12,7 @@ var searchData=
   ['rkbuttonleft_78',['rkButtonLeft',['../group__buttons.html#gab55cc8b2aa05d4f938c6807ce739eebd',1,'robotka.h']]],
   ['rkbuttonoff_79',['rkButtonOff',['../group__buttons.html#gadffbeede1bad4d606b6ba779c0269393',1,'robotka.h']]],
   ['rkbuttonon_80',['rkButtonOn',['../group__buttons.html#ga4eab004dff50030755ab45bd92983e44',1,'robotka.h']]],
-  ['rkbuttononchange_81',['rkButtonOnChange',['../group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e',1,'rkButtonOnChange(std::function&lt; bool(rkButtonId, bool)&gt; callback):&#160;robotka.cpp'],['../group__buttons.html#gaf8f5355d2e6405a4c180499ca4f3fa8e',1,'rkButtonOnChange(std::function&lt; bool(rkButtonId, bool)&gt; callback):&#160;robotka.cpp']]],
+  ['rkbuttononchangeasync_81',['rkButtonOnChangeAsync',['../group__buttons.html#ga0bae7f5cf4c21ae6e67e49e8f0965308',1,'rkButtonOnChangeAsync(std::function&lt; bool(rkButtonId, bool)&gt; callback):&#160;robotka.cpp'],['../group__buttons.html#ga0bae7f5cf4c21ae6e67e49e8f0965308',1,'rkButtonOnChangeAsync(std::function&lt; bool(rkButtonId, bool)&gt; callback=nullptr):&#160;robotka.cpp']]],
   ['rkbuttonright_82',['rkButtonRight',['../group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f',1,'robotka.h']]],
   ['rkbuttonup_83',['rkButtonUp',['../group__buttons.html#ga87d3afcba3fc74d28e731b840adc1ee9',1,'robotka.h']]],
   ['rkbuttonwaitforrelease_84',['rkButtonWaitForRelease',['../group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a',1,'rkButtonWaitForRelease(rkButtonId id):&#160;robotka.cpp'],['../group__buttons.html#ga32d6fb26301458fe507c9e28e632ac3a',1,'rkButtonWaitForRelease(rkButtonId id):&#160;robotka.cpp']]],
