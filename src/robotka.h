@@ -350,7 +350,7 @@ bool rkButtonIsPressed(rkButtonId id, bool waitForRelease = false);
  *    true nebo false, podle toho, jestli má čekat na další události (true) nebo
  *    se má odstranit a další události už nepřijmat (false).
  */
-void rkButtonOnChange(std::function<bool(rkButtonId, bool)> callback);
+void rkButtonOnChangeAsync(std::function<bool(rkButtonId, bool)> callback = nullptr);
 
 /**
  * \brief Je teď stisknuto "dolů"?
