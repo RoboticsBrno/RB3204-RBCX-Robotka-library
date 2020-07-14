@@ -171,7 +171,7 @@ void WiFi::setupBle(const rkConfig& cfg, const Config& wifiCfg) {
 
     m_ble_running = true;
 
-    BLEDevice::init(m_ssid);
+    BLEDevice::init(std::string(m_ssid, std::min(strlen(m_ssid), (size_t)16)));
 
     m_server = BLEDevice::createServer();
 
