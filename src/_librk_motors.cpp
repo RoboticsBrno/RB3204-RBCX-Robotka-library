@@ -1,8 +1,6 @@
 #include "_librk_motors.h"
 #include "RBCX.h"
 
-static constexpr int32_t MAX_SPEED = 2000;
-
 namespace rk {
 
 Motors::Motors()
@@ -20,8 +18,10 @@ void Motors::init(const rkConfig& cfg) {
     m_polarity_switch_right = cfg.motor_polarity_switch_right;
 
     m_wheel_circumference = M_PI * cfg.motor_wheel_diameter;
+    m_max_speed = cfg.motor_max_ticks_per_second;
 
-    auto& man = rb::Manager::get();
+    auto& man
+        = rb::Manager::get();
 
     // Set motor power limits
     man
@@ -30,14 +30,16 @@ void Motors::init(const rkConfig& cfg) {
         .pwmMaxPercent(m_id_right, cfg.motor_max_power_pct)
         .set();
 
-    const MotorConfig motorConf = {
-        .velEpsilon = 3,
-        .posEpsilon = 8,
-        .maxAccel = 4000,
-    };
+    if (rb::Manager::get().coprocFwVersion().number >= 0x010100) {
+        const MotorConfig motorConf = {
+            .velEpsilon = 3,
+            .posEpsilon = 8,
+            .maxAccel = cfg.motor_max_acceleration,
+        };
 
-    man.motor(m_id_left).setConfig(motorConf);
-    man.motor(m_id_right).setConfig(motorConf);
+        man.motor(m_id_left).setConfig(motorConf);
+        man.motor(m_id_right).setConfig(motorConf);
+    }
 }
 
 void Motors::setPower(int8_t left, int8_t right) {
@@ -165,6 +167,13 @@ float Motors::position(rb::MotorId id) {
     return res;
 }
 
+void Motors::setPosition(rb::MotorId id, float positionMm) {
+    auto ticks = mmToTicks(positionMm);
+    if ((m_polarity_switch_left && id == m_id_left) || (m_polarity_switch_right && id == m_id_right))
+        ticks = -ticks;
+    rb::Manager::get().motor(id).setCurrentPosition(ticks);
+}
+
 void Motors::joystick(int32_t x, int32_t y) {
     x = scale(x);
     y = scale(y);
@@ -189,8 +198,8 @@ int16_t Motors::pctToPower(int8_t pct) {
     return rb::clamp(pct * INT16_MAX / 100, -INT16_MAX, INT16_MAX);
 }
 
-int16_t Motors::pctToSpeed(int8_t pct) {
-    return rb::clamp(pct * MAX_SPEED / 100, -INT16_MAX, INT16_MAX);
+int16_t Motors::pctToSpeed(int8_t pct) const {
+    return rb::clamp(pct * m_max_speed / 100, -INT16_MAX, INT16_MAX);
 }
 
 int32_t Motors::mmToTicks(float mm) const {

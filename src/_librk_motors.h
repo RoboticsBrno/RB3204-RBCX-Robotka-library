@@ -31,6 +31,7 @@ public:
     void driveById(rb::MotorId id, float mm, uint8_t speed, std::function<void()> callback = nullptr);
 
     float position(rb::MotorId id);
+    void setPosition(rb::MotorId id, float positionMm);
 
     void joystick(int32_t x, int32_t y);
 
@@ -42,7 +43,7 @@ private:
 
     static int32_t scale(int32_t val);
     static int16_t pctToPower(int8_t pct);
-    static int16_t pctToSpeed(int8_t pct);
+    int16_t pctToSpeed(int8_t pct) const;
     int32_t mmToTicks(float mm) const;
     float ticksToMm(int32_t ticks) const;
 
@@ -60,9 +61,10 @@ private:
 
     rb::MotorId m_id_left;
     rb::MotorId m_id_right;
+    float m_wheel_circumference;
+    int32_t m_max_speed;
     bool m_polarity_switch_left;
     bool m_polarity_switch_right;
-    float m_wheel_circumference;
 };
 
 }; // namespace rk

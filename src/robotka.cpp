@@ -182,6 +182,24 @@ float rkMotorsGetPositionById(uint8_t id) {
     return gCtx.motors().position(rb::MotorId(id));
 }
 
+void rkMotorsSetPositionLeft(float positionMm) {
+    rkMotorsSetPositionById((uint8_t)gCtx.motors().idLeft() + 1, positionMm);
+}
+
+void rkMotorsSetPositionRight(float positionMm) {
+    rkMotorsSetPositionById((uint8_t)gCtx.motors().idRight() + 1, positionMm);
+}
+
+void rkMotorsSetPositionById(uint8_t id, float positionMm) {
+    id -= 1;
+    if (id >= (int)rb::MotorId::MAX) {
+        ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
+        return;
+    }
+
+    gCtx.motors().setPosition(rb::MotorId(id), positionMm);
+}
+
 void rkMotorsJoystick(int32_t x, int32_t y) {
     gCtx.motors().joystick(x, y);
 }

@@ -84,6 +84,8 @@ struct rkConfig {
         , motor_polarity_switch_right(true)
         , motor_enable_failsafe(false)
         , motor_wheel_diameter(67)
+        , motor_max_ticks_per_second(2000)
+        , motor_max_acceleration(6000)
         , smart_leds_count(8) {
     }
 
@@ -106,6 +108,23 @@ struct rkConfig {
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
     uint16_t motor_wheel_diameter; //!< Průměr kol robota v mm, použito na počítání ujeté vzdálenosti. Výchozí: `67` mm.
+
+    /**
+     * \brief Maximální rychlost motorů v ticích enkodéru za vteřinu. Výchozí: `2000`
+     *
+     * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
+     * a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost.
+     */
+    uint32_t motor_max_ticks_per_second;
+
+    /**
+     * \brief Maximální zrychlení motorů v ticích enkodéru za vteřinu.
+     *
+     * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
+     * a rkMotorsDrive. Vyšší číslo znamená, že motory budou mít rychlejší náběh na cílovou rychlost,
+     * ale za to se mohou smýkat po podlaze.
+     */
+    uint32_t motor_max_acceleration;
 
     uint16_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
 
@@ -325,6 +344,28 @@ float rkMotorsGetPositionRight();
  * \return absolutní (celková) najetá vzdálenost na motoru v mm
  */
 float rkMotorsGetPositionById(uint8_t id);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na levém motoru na hodnotu v mm
+ *
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionLeft(float positionMm = 0.f);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na pravém motoru na hodnotu v mm
+ *
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionRight(float positionMm = 0.f);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na motoru podle ID na hodnotu v mm
+ *
+ * \param id číslo motoru od 1 do 4 včetně
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionById(uint8_t id, float positionMm = 0.f);
 
 /**
  * \brief Nastavení rychlosti motorů podle joysticku.
