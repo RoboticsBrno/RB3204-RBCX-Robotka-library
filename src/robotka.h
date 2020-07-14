@@ -526,8 +526,9 @@ uint32_t rkUltraMeasure(uint8_t id);
  * Příklad použití:
  *
  * \code{.cpp}
- * rkUltraMeasureAsync(1, [](uint32_t distance_mm) {
+ * rkUltraMeasureAsync(1, [](uint32_t distance_mm) -> bool {
  *    printf("Namereno: %u mm\n", distance_mm);
+ *    return true;
  * });
  *
  * rkLedBlue(true); // provede se ještě před tím, než se stihne změřit vzdálenost.
