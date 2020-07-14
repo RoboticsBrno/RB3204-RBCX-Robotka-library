@@ -19,7 +19,7 @@ void SmartLeds::setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
     std::lock_guard<std::mutex> l(m_mutex);
     if (m_count == 0)
         return;
-    (*m_controller)[idx] = Rgb { r, b, g };
+    (*m_controller)[idx] = Rgb { r, g, b };
     scheduleUpdateLocked();
 }
 
