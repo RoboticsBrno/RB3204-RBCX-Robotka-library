@@ -251,17 +251,17 @@ $(function() {
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;uint32_t <a class="code" href="group__ultrasound.html#ga5e355a3b39091f576a84132f6426c1d1">rkUltraMeasure</a>(uint8_t <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a>(uint8_t <span class="keywordtype">id</span>, std::function&lt;<span class="keywordtype">bool</span>(uint32_t)&gt; callback);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buzzer.html#gad33f0a30ac090403006b275111850fdb">rkBuzzerSet</a>(<span class="keywordtype">bool</span> on);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__smartleds.html#gafb44ad183f0aeab64b19da2284df74ef">rkSmartLedsRGB</a>(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__smartleds.html#gadbb93f7f7d86cf2a796c43edac403576">rkSmartLedsHSV</a>(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;SmartLed&amp; rkSmartLedsGetController();</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="preprocessor">#endif // LIBRB_H</span></div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a>(uint8_t <span class="keywordtype">id</span>, std::function&lt;<span class="keywordtype">bool</span>(uint32_t)&gt; callback);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buzzer.html#gad33f0a30ac090403006b275111850fdb">rkBuzzerSet</a>(<span class="keywordtype">bool</span> on);</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__smartleds.html#gafb44ad183f0aeab64b19da2284df74ef">rkSmartLedsRGB</a>(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__smartleds.html#gadbb93f7f7d86cf2a796c43edac403576">rkSmartLedsHSV</a>(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;SmartLed&amp; rkSmartLedsGetController();</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="preprocessor">#endif // LIBRB_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agroup__buttons_html_gadffbeede1bad4d606b6ba779c0269393"><div class="ttname"><a href="group__buttons.html#gadffbeede1bad4d606b6ba779c0269393">rkButtonOff</a></div><div class="ttdeci">bool rkButtonOff(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;OFF&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:411</div></div>
 <div class="ttc" id="agroup__buttons_html_gaefcbc39c395320a29e2898557e4dda5f"><div class="ttname"><a href="group__buttons.html#gaefcbc39c395320a29e2898557e4dda5f">rkButtonRight</a></div><div class="ttdeci">bool rkButtonRight(bool waitForRelease=false)</div><div class="ttdoc">Je teď stisknuto &quot;doprava&quot;?</div><div class="ttdef"><b>Definition:</b> robotka.h:391</div></div>
@@ -331,7 +331,7 @@ $(function() {
 <div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:266</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno út 14. čec 2020 08.57:58 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno út 14. čec 2020 13.26:27 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
