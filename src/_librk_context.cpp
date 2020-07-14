@@ -71,6 +71,10 @@ void Context::setup(const rkConfig& cfg) {
 
         UI.begin(m_prot);
     }
+
+    const auto& v = man.coprocFwVersion();
+    printf("STM32 FW version: %06x %.8s%s\n", v.number, v.revision,
+        v.dirty ? "-dirty" : "");
 }
 
 void Context::handleRbcontrollerMessage(const std::string& cmd, rbjson::Object* pkt) {
