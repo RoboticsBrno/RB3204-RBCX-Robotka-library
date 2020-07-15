@@ -14,10 +14,10 @@ public:
 
     void init(const rkConfig& cfg);
 
-    uint8_t count() const { return m_count; }
+    uint16_t count() const { return m_count; }
 
-    void setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
-    void setHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);
+    void setRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
+    void setHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);
 
     SmartLed& controller() { return *m_controller; }
 
@@ -28,6 +28,6 @@ private:
     std::mutex m_mutex;
     std::unique_ptr<SmartLed> m_controller;
     uint16_t m_timerId;
-    uint8_t m_count;
+    uint16_t m_count;
 };
 };

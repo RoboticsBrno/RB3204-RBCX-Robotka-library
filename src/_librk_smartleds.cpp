@@ -15,7 +15,7 @@ void SmartLeds::init(const rkConfig& cfg) {
         m_controller.reset(new SmartLed(LED_WS2812B, cfg.smart_leds_count, cfg.pins.smartled_sig));
 }
 
-void SmartLeds::setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
+void SmartLeds::setRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b) {
     std::lock_guard<std::mutex> l(m_mutex);
     if (m_count == 0)
         return;
@@ -23,7 +23,7 @@ void SmartLeds::setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
     scheduleUpdateLocked();
 }
 
-void SmartLeds::setHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
+void SmartLeds::setHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v) {
     std::lock_guard<std::mutex> l(m_mutex);
     if (m_count == 0)
         return;
@@ -40,6 +40,10 @@ void SmartLeds::scheduleUpdateLocked() {
 }
 
 bool SmartLeds::update() {
+    if(!m_controller->wait(0)) {
+        return true;
+    }
+
     std::lock_guard<std::mutex> l(m_mutex);
     m_controller->show();
     m_timerId = 0;

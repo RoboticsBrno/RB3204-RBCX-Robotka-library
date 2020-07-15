@@ -281,7 +281,7 @@ void rkBuzzerSet(bool on) {
     Manager::get().piezo().setState(on);
 }
 
-void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
+void rkSmartLedsRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b) {
     auto& l = gCtx.smartLed();
     if (idx >= l.count()) {
         ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
@@ -290,7 +290,7 @@ void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b) {
     l.setRGB(idx, r, g, b);
 }
 
-void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v) {
+void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v) {
     auto& l = gCtx.smartLed();
     if (idx >= l.count()) {
         ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());

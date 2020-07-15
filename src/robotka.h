@@ -105,7 +105,7 @@ struct rkConfig {
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
 
-    uint8_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
+    uint16_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
 
     rkPinsConfig pins; //!< Konfigurace pinů pro periferie, viz rkPinsConfig
 };
@@ -577,7 +577,7 @@ void rkBuzzerSet(bool on);
  * \param g hodnota zeleného kanálu od 0 do 255
  * \param b hodnota modrého kanálu od 0 do 255
  */
-void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
+void rkSmartLedsRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
 
 /**
  * \brief Nastavit barvu chytré led ve formátu HSV (Hue, Saturation, Value).
@@ -589,7 +589,7 @@ void rkSmartLedsRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);
  * \param s hodnota sytosti barvy od 0 do 255
  * \param v hodnota jasu od 0 do 255
  */
-void rkSmartLedsHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);
+void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);
 
 SmartLed& rkSmartLedsGetController();
 
