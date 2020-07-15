@@ -82,10 +82,10 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> init(<span class="keyword">const</span> <a class="code" href="structrkConfig.html">rkConfig</a>&amp; cfg);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint8_t count()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_count; }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint16_t count()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_count; }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> setRGB(uint8_t idx, uint8_t r, uint8_t g, uint8_t b);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> setHSV(uint8_t idx, uint8_t h, uint8_t s, uint8_t v);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> setRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> setHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    SmartLed&amp; controller() { <span class="keywordflow">return</span> *m_controller; }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::mutex m_mutex;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::unique_ptr&lt;SmartLed&gt; m_controller;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    uint16_t m_timerId;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    uint8_t m_count;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    uint16_t m_count;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -104,7 +104,7 @@ $(function() {
 <div class="ttc" id="arobotka_8h_html"><div class="ttname"><a href="robotka_8h.html">robotka.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno út 14. čec 2020 15.12:40 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno st 15. čec 2020 16.42:27 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

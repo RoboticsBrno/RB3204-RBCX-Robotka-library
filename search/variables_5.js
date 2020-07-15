@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['smart_5fleds_5fcount_242',['smart_leds_count',['../structrkConfig.html#aaa4ae92551a14db2166b4d2b2042aece',1,'rkConfig']]]
+  ['smart_5fleds_5fcount_242',['smart_leds_count',['../structrkConfig.html#a3090e05f82be0896899460ea37855c43',1,'rkConfig']]]
 ];
