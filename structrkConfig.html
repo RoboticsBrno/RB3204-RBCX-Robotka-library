@@ -133,6 +133,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#ad99c9e33ca54ac2af4746a4f094c9ae5">motor_enable_failsafe</a></td></tr>
 <tr class="memdesc:ad99c9e33ca54ac2af4746a4f094c9ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: <code>false</code> <br /></td></tr>
 <tr class="separator:ad99c9e33ca54ac2af4746a4f094c9ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5020ee971f1207cba7b04a69246014e4"><td class="memItemLeft" align="right" valign="top"><a id="a5020ee971f1207cba7b04a69246014e4"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#a5020ee971f1207cba7b04a69246014e4">motor_wheel_diameter</a></td></tr>
+<tr class="memdesc:a5020ee971f1207cba7b04a69246014e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Průměr kol robota v mm, použito na počítání ujeté vzdálenosti. Výchozí: <code>67</code> mm. <br /></td></tr>
+<tr class="separator:a5020ee971f1207cba7b04a69246014e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fff71d54705a4471e35ffc87c1ae12"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#af7fff71d54705a4471e35ffc87c1ae12">motor_max_ticks_per_second</a></td></tr>
+<tr class="memdesc:af7fff71d54705a4471e35ffc87c1ae12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximální rychlost motorů v ticích enkodéru za vteřinu. Výchozí: <code>2000</code>  <a href="structrkConfig.html#af7fff71d54705a4471e35ffc87c1ae12">...</a><br /></td></tr>
+<tr class="separator:af7fff71d54705a4471e35ffc87c1ae12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82cff9881304aeb6515cb7e3d1bb1cb3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#a82cff9881304aeb6515cb7e3d1bb1cb3">motor_max_acceleration</a></td></tr>
+<tr class="memdesc:a82cff9881304aeb6515cb7e3d1bb1cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximální zrychlení motorů v ticích enkodéru za vteřinu.  <a href="structrkConfig.html#a82cff9881304aeb6515cb7e3d1bb1cb3">...</a><br /></td></tr>
+<tr class="separator:a82cff9881304aeb6515cb7e3d1bb1cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3090e05f82be0896899460ea37855c43"><td class="memItemLeft" align="right" valign="top"><a id="a3090e05f82be0896899460ea37855c43"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#a3090e05f82be0896899460ea37855c43">smart_leds_count</a></td></tr>
 <tr class="memdesc:a3090e05f82be0896899460ea37855c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavení počtu připojených chytrých LED. Výchozí: 8. <br /></td></tr>
@@ -145,13 +155,48 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
 <div class="textblock"><p>Nastavení SW pro Robotky. </p>
 <p>Tato struktura obsahuje konfigurační hodnoty pro software Robotky. Předává se funkci <a class="el" href="group__general.html#ga8ec76111b1acaa90d2a1a3b0947ccb67" title="Inicializační funkce Robotky.">rkSetup()</a>. Ve výchozím stavu má smysluplné hodnoty a není třeba nastavovat všechny, ale jen ty, které chcete změnit. </p>
-</div><hr/>Dokumentace pro tuto strukturu (struct) byla generována z následujícího souboru:<ul>
+</div><h2 class="groupheader">Dokumentace k datovým členům</h2>
+<a id="a82cff9881304aeb6515cb7e3d1bb1cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82cff9881304aeb6515cb7e3d1bb1cb3">&#9670;&nbsp;</a></span>motor_max_acceleration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t rkConfig::motor_max_acceleration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximální zrychlení motorů v ticích enkodéru za vteřinu. </p>
+<p>Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed a rkMotorsDrive. Vyšší číslo znamená, že motory budou mít rychlejší náběh na cílovou rychlost, ale za to se mohou smýkat po podlaze. </p>
+
+</div>
+</div>
+<a id="af7fff71d54705a4471e35ffc87c1ae12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fff71d54705a4471e35ffc87c1ae12">&#9670;&nbsp;</a></span>motor_max_ticks_per_second</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t rkConfig::motor_max_ticks_per_second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximální rychlost motorů v ticích enkodéru za vteřinu. Výchozí: <code>2000</code> </p>
+<p>Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost. </p>
+
+</div>
+</div>
+<hr/>Dokumentace pro tuto strukturu (struct) byla generována z následujícího souboru:<ul>
 <li><a class="el" href="robotka_8h_source.html">robotka.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 16. čec 2020 07.41:21 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno čt 16. čec 2020 07.57:41 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
