@@ -145,7 +145,8 @@ void Motors::drive(float left, float right, uint8_t speed, dual_callback_t callb
     auto& mr = rb::Manager::get().motor(m_id_right);
 
     ml.requestInfo(nullptr);
-    mr.requestInfo([&](rb::Motor&) {
+    mr.requestInfo([this, left, right, speed, cb](rb::Motor& mr) {
+        auto& ml = rb::Manager::get().motor(m_id_left);
         rb::Manager::get()
             .setMotors()
             .driveToValue(m_id_left, ml.position() + mmToTicks(left), pctToSpeed(speed), cb)
@@ -159,7 +160,7 @@ void Motors::driveById(rb::MotorId id, float mm, uint8_t speed, std::function<vo
         mm = -mm;
 
     auto& m = rb::Manager::get().motor(id);
-    m.requestInfo([&](rb::Motor& m) {
+    m.requestInfo([this, mm, speed, id, callback](rb::Motor& m) {
         rb::Manager::get()
             .setMotors()
             .driveToValue(id, m.position() + mmToTicks(mm), pctToSpeed(speed), [this, callback, id](rb::Motor& m) {
