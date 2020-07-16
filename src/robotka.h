@@ -777,6 +777,12 @@ void rkSmartLedsRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
  */
 void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);
 
+/**
+ * \brief Nastavit barvu chytré led podle RGB HEX kódu 
+ * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
+ * \param hexCode barevný hexadecimální RGB kód (0xFF0000)
+ **/
+void rkSmartLedsHEX(uint16_t idx, uint32_t hexCode);
 SmartLed& rkSmartLedsGetController();
 
 /**@}*/
