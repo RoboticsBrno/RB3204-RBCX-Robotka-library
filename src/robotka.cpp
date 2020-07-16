@@ -80,9 +80,9 @@ void rkMotorsSetPowerRight(int8_t power) {
     gCtx.motors().setPowerById(gCtx.motors().idRight(), power);
 }
 
-void rkMotorsSetPowerById(int id, int8_t power) {
+void rkMotorsSetPowerById(uint8_t id, int8_t power) {
     id -= 1;
-    if (id < 0 || id >= (int)rb::MotorId::MAX) {
+    if (id >= (int)rb::MotorId::MAX) {
         ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
         return;
     }
@@ -101,13 +101,103 @@ void rkMotorsSetSpeedRight(int8_t speed) {
     gCtx.motors().setSpeedById(gCtx.motors().idRight(), speed);
 }
 
-void rkMotorsSetSpeedById(int id, int8_t speed) {
+void rkMotorsSetSpeedById(uint8_t id, int8_t speed) {
     id -= 1;
-    if (id < 0 || id >= (int)rb::MotorId::MAX) {
+    if (id >= (int)rb::MotorId::MAX) {
         ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
         return;
     }
     gCtx.motors().setSpeedById(rb::MotorId(id), speed);
+}
+
+void rkMotorsDrive(float mmLeft, float mmRight, uint8_t speed) {
+    SemaphoreHandle_t binary = xSemaphoreCreateBinary();
+    gCtx.motors()
+        .drive(mmLeft, mmRight, speed, [=]() {
+            xSemaphoreGive(binary);
+        });
+    xSemaphoreTake(binary, portMAX_DELAY);
+    vSemaphoreDelete(binary);
+}
+
+void rkMotorsDriveLeft(float mm, uint8_t speed) {
+    rkMotorsDriveById(uint8_t(gCtx.motors().idLeft()) + 1, mm, speed);
+}
+
+void rkMotorsDriveRight(float mm, uint8_t speed) {
+    rkMotorsDriveById(uint8_t(gCtx.motors().idRight()) + 1, mm, speed);
+}
+
+void rkMotorsDriveById(uint8_t id, float mm, uint8_t speed) {
+    id -= 1;
+    if (id >= (int)rb::MotorId::MAX) {
+        ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
+        return;
+    }
+
+    SemaphoreHandle_t binary = xSemaphoreCreateBinary();
+    gCtx.motors()
+        .driveById(rb::MotorId(id), mm, speed, [=]() {
+            xSemaphoreGive(binary);
+        });
+    xSemaphoreTake(binary, portMAX_DELAY);
+    vSemaphoreDelete(binary);
+}
+
+void rkMotorsDriveAsync(float mmLeft, float mmRight, uint8_t speed, std::function<void()> callback) {
+    gCtx.motors().drive(mmLeft, mmRight, speed, std::move(callback));
+}
+
+void rkMotorsDriveLeftAsync(float mm, uint8_t speed, std::function<void()> callback) {
+    gCtx.motors().driveById(gCtx.motors().idLeft(), mm, speed, std::move(callback));
+}
+
+void rkMotorsDriveRightAsync(float mm, uint8_t speed, std::function<void()> callback) {
+    gCtx.motors().driveById(gCtx.motors().idRight(), mm, speed, std::move(callback));
+}
+
+void rkMotorsDriveByIdAsync(uint8_t id, float mm, uint8_t speed, std::function<void()> callback) {
+    id -= 1;
+    if (id >= (int)rb::MotorId::MAX) {
+        ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
+        return;
+    }
+    gCtx.motors().driveById(rb::MotorId(id), mm, speed, std::move(callback));
+}
+
+float rkMotorsGetPositionLeft() {
+    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idLeft() + 1);
+}
+
+float rkMotorsGetPositionRight() {
+    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idRight() + 1);
+}
+
+float rkMotorsGetPositionById(uint8_t id) {
+    id -= 1;
+    if (id >= (int)rb::MotorId::MAX) {
+        ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
+        return 0.f;
+    }
+    return gCtx.motors().position(rb::MotorId(id));
+}
+
+void rkMotorsSetPositionLeft(float positionMm) {
+    rkMotorsSetPositionById((uint8_t)gCtx.motors().idLeft() + 1, positionMm);
+}
+
+void rkMotorsSetPositionRight(float positionMm) {
+    rkMotorsSetPositionById((uint8_t)gCtx.motors().idRight() + 1, positionMm);
+}
+
+void rkMotorsSetPositionById(uint8_t id, float positionMm) {
+    id -= 1;
+    if (id >= (int)rb::MotorId::MAX) {
+        ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
+        return;
+    }
+
+    gCtx.motors().setPosition(rb::MotorId(id), positionMm);
 }
 
 void rkMotorsJoystick(int32_t x, int32_t y) {

@@ -83,6 +83,9 @@ struct rkConfig {
         , motor_polarity_switch_left(false)
         , motor_polarity_switch_right(true)
         , motor_enable_failsafe(false)
+        , motor_wheel_diameter(67)
+        , motor_max_ticks_per_second(2000)
+        , motor_max_acceleration(6000)
         , smart_leds_count(8) {
     }
 
@@ -104,6 +107,24 @@ struct rkConfig {
     bool motor_polarity_switch_left; //!< Prohození polarity levého motoru. Výchozí: `false`
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
+    uint16_t motor_wheel_diameter; //!< Průměr kol robota v mm, použito na počítání ujeté vzdálenosti. Výchozí: `67` mm.
+
+    /**
+     * \brief Maximální rychlost motorů v ticích enkodéru za vteřinu. Výchozí: `2000`
+     *
+     * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
+     * a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost.
+     */
+    uint32_t motor_max_ticks_per_second;
+
+    /**
+     * \brief Maximální zrychlení motorů v ticích enkodéru za vteřinu.
+     *
+     * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
+     * a rkMotorsDrive. Vyšší číslo znamená, že motory budou mít rychlejší náběh na cílovou rychlost,
+     * ale za to se mohou smýkat po podlaze.
+     */
+    uint32_t motor_max_acceleration;
 
     uint16_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
 
@@ -154,7 +175,7 @@ void rkMotorsSetPowerRight(int8_t power);
  * \param id číslo motoru od 1 do 4 včetně
  * \param power výkon motoru od od -100% do 100%
  */
-void rkMotorsSetPowerById(int id, int8_t power);
+void rkMotorsSetPowerById(uint8_t id, int8_t power);
 
 /**
  * \brief Nastavení rychlosti motorů.
@@ -184,7 +205,167 @@ void rkMotorsSetSpeedRight(int8_t speed);
  * \param id číslo motoru od 1 do 4 včetně
  * \param speed rychlost motoru od od -100% do 100%
  */
-void rkMotorsSetSpeedById(int id, int8_t speed);
+void rkMotorsSetSpeedById(uint8_t id, int8_t speed);
+
+/**
+ * \brief Popojetí oběma motory o vzdálenost v mm (blokující).
+ *
+ * Tato funkce zablokuje program, dokud robot danou vzdálenost neujede.
+ *
+ * \param mmLeft kolik milimetrů má ujet levý motor
+ * \param mmRight kolik milimetrů má ujet pravý motor
+ * \param speed rychlost, kterou má robot jet od -100% do 100%
+ */
+void rkMotorsDrive(float mmLeft, float mmRight, uint8_t speed);
+
+/**
+ * \brief Popojetí levým motorem o vzdálenost v mm (blokující).
+ *
+ * Tato funkce zablokuje program, dokud robot danou vzdálenost neujede.
+ *
+ * \param mm kolik milimetrů má ujet levý motor
+ * \param speed rychlost, kterou má motor jet od -100% do 100%
+ */
+void rkMotorsDriveLeft(float mm, uint8_t speed);
+
+/**
+ * \brief Popojetí pravým motorem o vzdálenost v mm (blokující).
+ *
+ * Tato funkce zablokuje program, dokud robot danou vzdálenost neujede.
+ *
+ * \param mm kolik milimetrů má ujet pravý motor
+ * \param speed rychlost, kterou má motor jet od -100% do 100%
+ */
+void rkMotorsDriveRight(float mm, uint8_t speed);
+
+/**
+ * \brief Popojetí motorem podle ID o vzdálenost v mm (blokující).
+ *
+ * Tato funkce zablokuje program, dokud robot danou vzdálenost neujede.
+ *
+ * \param id číslo motoru, který má jet, od 1 do 4 včetně
+ * \param mm kolik milimetrů má motor ujet
+ * \param speed rychlost, kterou má motor jet od -100% do 100%
+ */
+void rkMotorsDriveById(uint8_t id, float mm, uint8_t speed);
+
+/**
+ * \brief Popojetí oběma motory o vzdálenost v mm (asynchroní).
+ *
+ * Tato funkce vrátí okamžítě, a po dojetí zavolá callback.
+ *
+ * Příklad použití:
+ * \code{cpp}
+ * rkMotorsDriveAsync(100, 100, 50, []() {
+ *     printf("Dojel jsem!\n");
+ * });
+ * \endcode
+ *
+ * \param mmLeft kolik milimetrů má ujet levý motor
+ * \param mmRight kolik milimetrů má ujet pravý motor
+ * \param speed rychlost, kterou má robot jet od -100% do 100%
+ * \param callback funkce, která je zavolána jakmile robot dojede o určenou vzdálenost
+ */
+void rkMotorsDriveAsync(float mmLeft, float mmRight, uint8_t speed, std::function<void()> callback = nullptr);
+
+/**
+ * \brief Popojetí levým motorem o vzdálenost v mm (asynchroní).
+ *
+ * Tato funkce vrátí okamžítě, a po dojetí zavolá callback.
+ *
+ * Příklad použití:
+ * \code{cpp}
+ * rkMotorsDriveLeftAsync(100, 50, []() {
+ *     printf("Dojel jsem!\n");
+ * });
+ * \endcode
+ *
+ * \param mm kolik milimetrů má ujet levý motor
+ * \param speed rychlost, kterou má robot jet od -100% do 100%
+ * \param callback funkce, která je zavolána jakmile robot dojede o určenou vzdálenost
+ */
+void rkMotorsDriveLeftAsync(float mm, uint8_t speed, std::function<void()> callback = nullptr);
+
+/**
+ * \brief Popojetí pravým motorem o vzdálenost v mm (asynchroní).
+ *
+ * Tato funkce vrátí okamžítě, a po dojetí zavolá callback.
+ *
+ * Příklad použití:
+ * \code{cpp}
+ * rkMotorsDriveRightAsync(100, 50, []() {
+ *     printf("Dojel jsem!\n");
+ * });
+ * \endcode
+ *
+ * \param mm kolik milimetrů má ujet pravý motor
+ * \param speed rychlost, kterou má robot jet od -100% do 100%
+ * \param callback funkce, která je zavolána jakmile robot dojede o určenou vzdálenost
+ */
+void rkMotorsDriveRightAsync(float mm, uint8_t speed, std::function<void()> callback = nullptr);
+
+/**
+ * \brief Popojetí motorem podle ID o vzdálenost v mm (asynchroní).
+ *
+ * Tato funkce vrátí okamžítě, a po dojetí zavolá callback.
+ *
+ * Příklad použití:
+ * \code{cpp}
+ * rkMotorsDriveByIdAsync(2, 100, 50, []() {
+ *     printf("Dojel jsem!\n");
+ * });
+ * \endcode
+ *
+ * \param id číslo motoru, který má jet, od 1 do 4 včetně
+ * \param mm kolik milimetrů má ujet pravý motor
+ * \param speed rychlost, kterou má robot jet od -100% do 100%
+ * \param callback funkce, která je zavolána jakmile robot dojede o určenou vzdálenost
+ */
+void rkMotorsDriveByIdAsync(uint8_t id, float mm, uint8_t speed, std::function<void()> callback = nullptr);
+
+/**
+ * \brief Vrátí absolutní najetou vzálenost na levém motoru v mm
+ *
+ * \return absolutní (celková) najetá vzdálenost na levém motoru v mm
+ */
+float rkMotorsGetPositionLeft();
+
+/**
+ * \brief Vrátí absolutní najetou vzálenost na pravém motoru v mm
+ *
+ * \return absolutní (celková) najetá vzdálenost na pravém motoru v mm
+ */
+float rkMotorsGetPositionRight();
+
+/**
+ * \brief Vrátí absolutní najetou vzálenost na motoru podle ID
+ *
+ * \param id číslo motoru od 1 do 4 včetně
+ * \return absolutní (celková) najetá vzdálenost na motoru v mm
+ */
+float rkMotorsGetPositionById(uint8_t id);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na levém motoru na hodnotu v mm
+ *
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionLeft(float positionMm = 0.f);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na pravém motoru na hodnotu v mm
+ *
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionRight(float positionMm = 0.f);
+
+/**
+ * \brief Nastaví absolutní počítadlo vzdálenosti na motoru podle ID na hodnotu v mm
+ *
+ * \param id číslo motoru od 1 do 4 včetně
+ * \param positionMm absolutní pozice, na kterou nastavit čítač
+ */
+void rkMotorsSetPositionById(uint8_t id, float positionMm = 0.f);
 
 /**
  * \brief Nastavení rychlosti motorů podle joysticku.
