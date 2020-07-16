@@ -85,7 +85,7 @@ struct rkConfig {
         , motor_enable_failsafe(false)
         , motor_wheel_diameter(67)
         , motor_max_ticks_per_second(2000)
-        , motor_max_acceleration(50000)
+        , motor_max_acceleration(10000)
         , smart_leds_count(8) {
     }
 
