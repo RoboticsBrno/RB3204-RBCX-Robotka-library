@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rkconfig_183',['rkConfig',['../structrkConfig.html',1,'']]],
-  ['rkpinsconfig_184',['rkPinsConfig',['../structrkPinsConfig.html',1,'']]]
+  ['rkconfig_184',['rkConfig',['../structrkConfig.html',1,'']]],
+  ['rkpinsconfig_185',['rkPinsConfig',['../structrkPinsConfig.html',1,'']]]
 ];

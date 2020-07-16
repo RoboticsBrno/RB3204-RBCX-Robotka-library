@@ -80,10 +80,50 @@ Funkce</h2></td></tr>
 <tr class="memitem:ga4513e6c94dd7d09b7f0cbf640c534408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__smartleds.html#ga4513e6c94dd7d09b7f0cbf640c534408">rkSmartLedsHSV</a> (uint16_t idx, uint8_t h, uint8_t s, uint8_t v)</td></tr>
 <tr class="memdesc:ga4513e6c94dd7d09b7f0cbf640c534408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavit barvu chytré led ve formátu HSV (Hue, Saturation, Value).  <a href="group__smartleds.html#ga4513e6c94dd7d09b7f0cbf640c534408">...</a><br /></td></tr>
 <tr class="separator:ga4513e6c94dd7d09b7f0cbf640c534408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc3bc369bb034acdda2e9b12ae7da645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__smartleds.html#gacc3bc369bb034acdda2e9b12ae7da645">rkSmartLedsHEX</a> (uint16_t idx, uint32_t hexCode)</td></tr>
+<tr class="memdesc:gacc3bc369bb034acdda2e9b12ae7da645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastavit barvu chytré led podle RGB HEX kódu.  <a href="group__smartleds.html#gacc3bc369bb034acdda2e9b12ae7da645">...</a><br /></td></tr>
+<tr class="separator:gacc3bc369bb034acdda2e9b12ae7da645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
 <p>Ovládání pásku chytrých LED. </p>
 <h2 class="groupheader">Dokumentace funkcí</h2>
+<a id="gacc3bc369bb034acdda2e9b12ae7da645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc3bc369bb034acdda2e9b12ae7da645">&#9670;&nbsp;</a></span>rkSmartLedsHEX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rkSmartLedsHEX </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>hexCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nastavit barvu chytré led podle RGB HEX kódu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně) </td></tr>
+    <tr><td class="paramname">hexCode</td><td>barevný hexadecimální RGB kód (0xFF0000) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga4513e6c94dd7d09b7f0cbf640c534408"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4513e6c94dd7d09b7f0cbf640c534408">&#9670;&nbsp;</a></span>rkSmartLedsHSV()</h2>
 
@@ -191,7 +231,7 @@ Funkce</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 16. čec 2020 11.31:35 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno čt 16. čec 2020 11.37:16 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
