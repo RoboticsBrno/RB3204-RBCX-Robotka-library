@@ -97,37 +97,43 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    uint16_t irRead(adc1_channel_t chan, uint16_t samples = 32);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> handleRbcontrollerMessage(<span class="keyword">const</span> std::string&amp; cmd, rbjson::Object* pkt);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> loadLineCalibration(mcp3008::LineSensor::CalibrationData&amp; data);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> initIrSensors();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Motors m_motors;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    WiFi m_wifi;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    rb::Protocol* m_prot;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::atomic&lt;bool&gt; m_initialized;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::atomic&lt;bool&gt; m_line_installed;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::atomic&lt;bool&gt; m_ir_installed;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> stupidServoSet(uint8_t <span class="keywordtype">id</span>, <span class="keywordtype">float</span> positionDegrees);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> stupidServoGet(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> handleRbcontrollerMessage(<span class="keyword">const</span> std::string&amp; cmd, rbjson::Object* pkt);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> loadLineCalibration(mcp3008::LineSensor::CalibrationData&amp; data);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> initIrSensors();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    Motors m_motors;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    WiFi m_wifi;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    rb::Protocol* m_prot;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::atomic&lt;bool&gt; m_initialized;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mcp3008::Driver::Config m_line_cfg;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mcp3008::LineSensor m_line;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    SmartLeds m_smartLeds;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    adc1_channel_t m_ir_left;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    adc1_channel_t m_ir_right;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> Context gCtx;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::atomic&lt;bool&gt; m_line_installed;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::atomic&lt;bool&gt; m_ir_installed;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mcp3008::Driver::Config m_line_cfg;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mcp3008::LineSensor m_line;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    SmartLeds m_smartLeds;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    adc1_channel_t m_ir_left;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    adc1_channel_t m_ir_right;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> m_stupid_servo_min;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> m_stupid_servo_max;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> Context gCtx;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructrkConfig_html"><div class="ttname"><a href="structrkConfig.html">rkConfig</a></div><div class="ttdoc">Nastavení SW pro Robotky.</div><div class="ttdef"><b>Definition:</b> robotka.h:70</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 16. čec 2020 10.05:46 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno čt 16. čec 2020 10.09:15 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
