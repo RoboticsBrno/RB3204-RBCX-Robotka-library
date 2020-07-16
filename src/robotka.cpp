@@ -299,6 +299,15 @@ void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v) {
     l.setHSV(idx, h, s, v);
 }
 
+void rkSmartLEdsHEX(uint16_t idx, uint32_t hexCode){
+    auto& l = gCtx.smartLed();
+    if (idx >= l.count()) {
+        ESP_LOGE(TAG, "%s: invalid LED idx %d, must be <= %d!", __func__, idx, l.count());
+        return;
+    }
+    l.setRGB(idx,hexCode >> 16,(hexCode & 0x00ff00) >> 8,(hexCode & 0x0000ff));
+}
+
 SmartLed& rkSmartLedsGetController() {
     return gCtx.smartLed().controller();
 }
