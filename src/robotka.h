@@ -85,7 +85,7 @@ struct rkConfig {
         , motor_enable_failsafe(false)
         , motor_wheel_diameter(67)
         , motor_max_ticks_per_second(2000)
-        , motor_max_acceleration(6000)
+        , motor_max_acceleration(50000)
         , smart_leds_count(8) {
     }
 
@@ -118,7 +118,7 @@ struct rkConfig {
     uint32_t motor_max_ticks_per_second;
 
     /**
-     * \brief Maximální zrychlení motorů v ticích enkodéru za vteřinu.
+     * \brief Maximální zrychlení motorů v ticích enkodéru za vteřinu. Výchozí: `50000`
      *
      * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
      * a rkMotorsDrive. Vyšší číslo znamená, že motory budou mít rychlejší náběh na cílovou rychlost,
