@@ -141,10 +141,13 @@ void Motors::drive(float left, float right, uint8_t speed, dual_callback_t callb
         };
     }
 
+    auto& ml = rb::Manager::get().motor(m_id_left);
+    auto& mr = rb::Manager::get().motor(m_id_right);
+
     rb::Manager::get()
         .setMotors()
-        .drive(m_id_left, mmToTicks(left), pctToSpeed(speed), cb)
-        .drive(m_id_right, mmToTicks(right), pctToSpeed(speed), cb)
+        .driveToValue(m_id_left, ml.position() + mmToTicks(left), pctToSpeed(speed), cb)
+        .driveToValue(m_id_right, mr.position() + mmToTicks(right), pctToSpeed(speed), cb)
         .set();
 }
 
@@ -152,9 +155,11 @@ void Motors::driveById(rb::MotorId id, float mm, uint8_t speed, std::function<vo
     if ((m_polarity_switch_left && id == m_id_left) || (m_polarity_switch_right && id == m_id_right))
         mm = -mm;
 
+    auto& m = rb::Manager::get().motor(id);
+
     rb::Manager::get()
         .setMotors()
-        .drive(id, mmToTicks(mm), pctToSpeed(speed), [this, callback, id](rb::Motor& m) {
+        .driveToValue(id, m.position() + mmToTicks(mm), pctToSpeed(speed), [this, callback, id](rb::Motor& m) {
             callback();
         })
         .set();
