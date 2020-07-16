@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        , motor_enable_failsafe(<span class="keyword">false</span>)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        , motor_wheel_diameter(67)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        , motor_max_ticks_per_second(2000)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        , motor_max_acceleration(6000)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        , motor_max_acceleration(50000)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        , smart_leds_count(8) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
@@ -354,7 +354,7 @@ $(function() {
 <div class="ttc" id="astructrkConfig_html_a9aa5f8cefd3ac6e9b5bf77c240eaa48f"><div class="ttname"><a href="structrkConfig.html#a9aa5f8cefd3ac6e9b5bf77c240eaa48f">rkConfig::pins</a></div><div class="ttdeci">rkPinsConfig pins</div><div class="ttdoc">Konfigurace pinů pro periferie, viz rkPinsConfig.</div><div class="ttdef"><b>Definition:</b> robotka.h:131</div></div>
 <div class="ttc" id="agroup__motors_html_ga2ab76ce8144d24d80af28deed2352cac"><div class="ttname"><a href="group__motors.html#ga2ab76ce8144d24d80af28deed2352cac">rkMotorsSetPowerRight</a></div><div class="ttdeci">void rkMotorsSetPowerRight(int8_t power)</div><div class="ttdoc">Nastavení výkonu pravého motoru.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:79</div></div>
 <div class="ttc" id="agroup__motors_html_ga6df3da4a2d4496506490c19c2e1e9c49"><div class="ttname"><a href="group__motors.html#ga6df3da4a2d4496506490c19c2e1e9c49">rkMotorsSetSpeedById</a></div><div class="ttdeci">void rkMotorsSetSpeedById(uint8_t id, int8_t speed)</div><div class="ttdoc">Nastavení rychlosti motoru podle jeho čísla (M1...M4) na desce.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:104</div></div>
-<div class="ttc" id="astructrkConfig_html_a82cff9881304aeb6515cb7e3d1bb1cb3"><div class="ttname"><a href="structrkConfig.html#a82cff9881304aeb6515cb7e3d1bb1cb3">rkConfig::motor_max_acceleration</a></div><div class="ttdeci">uint32_t motor_max_acceleration</div><div class="ttdoc">Maximální zrychlení motorů v ticích enkodéru za vteřinu.</div><div class="ttdef"><b>Definition:</b> robotka.h:127</div></div>
+<div class="ttc" id="astructrkConfig_html_a82cff9881304aeb6515cb7e3d1bb1cb3"><div class="ttname"><a href="structrkConfig.html#a82cff9881304aeb6515cb7e3d1bb1cb3">rkConfig::motor_max_acceleration</a></div><div class="ttdeci">uint32_t motor_max_acceleration</div><div class="ttdoc">Maximální zrychlení motorů v ticích enkodéru za vteřinu. Výchozí: 50000</div><div class="ttdef"><b>Definition:</b> robotka.h:127</div></div>
 <div class="ttc" id="agroup__line_html_ga431763d1456764ea6789809a6819be03"><div class="ttname"><a href="group__line.html#ga431763d1456764ea6789809a6819be03">rkLineClearCalibration</a></div><div class="ttdeci">void rkLineClearCalibration()</div><div class="ttdoc">Vymazat kalibraci.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:318</div></div>
 <div class="ttc" id="agroup__motors_html_ga825106e225179decd0f5c60585428bd2"><div class="ttname"><a href="group__motors.html#ga825106e225179decd0f5c60585428bd2">rkMotorsDriveByIdAsync</a></div><div class="ttdeci">void rkMotorsDriveByIdAsync(uint8_t id, float mm, uint8_t speed, std::function&lt; void()&gt; callback=nullptr)</div><div class="ttdoc">Popojetí motorem podle ID o vzdálenost v mm (asynchroní).</div><div class="ttdef"><b>Definition:</b> robotka.cpp:159</div></div>
 <div class="ttc" id="agroup__buttons_html_gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1"><div class="ttname"><a href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0a2611033a9ee862508cc4cff33b2d01b1">BTN_RIGHT</a></div><div class="ttdeci">@ BTN_RIGHT</div><div class="ttdoc">Tlačítko doprava.</div><div class="ttdef"><b>Definition:</b> robotka.h:492</div></div>
@@ -384,7 +384,7 @@ $(function() {
 <div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:356</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 16. čec 2020 08.00:08 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
+Generováno čt 16. čec 2020 09.17:12 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
