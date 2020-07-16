@@ -86,6 +86,8 @@ struct rkConfig {
         , motor_wheel_diameter(67)
         , motor_max_ticks_per_second(2000)
         , motor_max_acceleration(10000)
+        , stupid_servo_min(-1.65f)
+        , stupid_servo_max(1.65f)
         , smart_leds_count(8) {
     }
 
@@ -125,6 +127,9 @@ struct rkConfig {
      * ale za to se mohou smýkat po podlaze.
      */
     uint32_t motor_max_acceleration;
+
+    float stupid_servo_min; //!< Spodní hranice signálu pro hloupá serva, která se robvná -90 stupňům. Výchozí: `-1.65`
+    float stupid_servo_max; //!< Horní hranice signálu pro hloupá serva, která se rovná 90 stupňům. Výchozí: `1.65`
 
     uint16_t smart_leds_count; //!< Nastavení počtu připojených chytrých LED. Výchozí: 8
 
@@ -773,6 +778,39 @@ void rkSmartLedsRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
 void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);
 
 SmartLed& rkSmartLedsGetController();
+
+/**@}*/
+/**
+ * \defgroup stupidservos Serva (hloupá)
+ *
+ * Metody pro ovládání hloupých servo.
+ * @{
+ */
+
+/**
+ * \brief Nastaví pozici hloupého serva na zadaný úhel
+ *
+ * \param id číslo serva od 1 do 4 včetně, podle popisku na desce (SERVO1...SERVO4)
+ * \param angleDegrees úhel natočení serva od -90 do 90 stupňů.
+ */
+void rkServosSetPosition(uint8_t id, float angleDegrees);
+
+/**
+ * \brief Vrátí naposledy nastavenou pozici hloupého serva.
+ *
+ * \param id číslo serva od 1 do 4 včetně, podle popisku na desce (SERVO1...SERVO4)
+ * \return nastavený úhel serva ve stupňích, nebo NaN (viz std::isnan()) pokud je servo vypnuté.
+ */
+float rkServosGetPosition(uint8_t id);
+
+/**
+ * \brief Vypne hloupé servo
+ *
+ * Přestane se do serva posílát signál, ono tedy přestane držet svoji pozici.
+ *
+ * \param id číslo serva od 1 do 4 včetně, podle popisku na desce (SERVO1...SERVO4)
+ */
+void rkServosDisable(uint8_t id);
 
 /**@}*/
 

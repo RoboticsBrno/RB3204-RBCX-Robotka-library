@@ -392,3 +392,30 @@ void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v) {
 SmartLed& rkSmartLedsGetController() {
     return gCtx.smartLed().controller();
 }
+
+void rkServosSetPosition(uint8_t id, float angleDegrees) {
+    id -= 1;
+    if (id >= rb::StupidServosCount) {
+        ESP_LOGE(TAG, "%s: invalid id %d, must be <= %d!", __func__, id, rb::StupidServosCount);
+        return;
+    }
+    gCtx.stupidServoSet(id, angleDegrees);
+}
+
+float rkServosGetPosition(uint8_t id) {
+    id -= 1;
+    if (id >= rb::StupidServosCount) {
+        ESP_LOGE(TAG, "%s: invalid id %d, must be <= %d!", __func__, id, rb::StupidServosCount);
+        return NAN;
+    }
+    return gCtx.stupidServoGet(id);
+}
+
+void rkServosDisable(uint8_t id) {
+    id -= 1;
+    if (id >= rb::StupidServosCount) {
+        ESP_LOGE(TAG, "%s: invalid id %d, must be <= %d!", __func__, id, rb::StupidServosCount);
+        return;
+    }
+    rb::Manager::get().stupidServo(id).disable();
+}

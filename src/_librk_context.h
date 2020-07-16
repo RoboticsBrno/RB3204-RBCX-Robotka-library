@@ -29,6 +29,9 @@ public:
 
     uint16_t irRead(adc1_channel_t chan, uint16_t samples = 32);
 
+    void stupidServoSet(uint8_t id, float positionDegrees);
+    float stupidServoGet(uint8_t id);
+
 private:
     void handleRbcontrollerMessage(const std::string& cmd, rbjson::Object* pkt);
     bool loadLineCalibration(mcp3008::LineSensor::CalibrationData& data);
@@ -50,6 +53,9 @@ private:
 
     adc1_channel_t m_ir_left;
     adc1_channel_t m_ir_right;
+
+    float m_stupid_servo_min;
+    float m_stupid_servo_max;
 };
 
 extern Context gCtx;

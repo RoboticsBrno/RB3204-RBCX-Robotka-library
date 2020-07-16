@@ -54,6 +54,9 @@ void Context::setup(const rkConfig& cfg) {
     m_ir_left = cfg.pins.ir_adc_chan_left;
     m_ir_right = cfg.pins.ir_adc_chan_right;
 
+    m_stupid_servo_min = cfg.stupid_servo_min;
+    m_stupid_servo_max = cfg.stupid_servo_max;
+
     m_motors.init(cfg);
     m_smartLeds.init(cfg);
 
@@ -176,6 +179,24 @@ uint16_t Context::irRead(adc1_channel_t chan, uint16_t samples) {
         reading += adc1_get_raw(chan);
     }
     return reading / samples;
+}
+
+void Context::stupidServoSet(uint8_t id, float positionDegrees) {
+    const auto coef = rb::clamp(positionDegrees, -90.f, 90.f) / 90.f;
+    const auto val = coef >= 0.f ? coef * m_stupid_servo_max : coef * m_stupid_servo_min * -1;
+    Manager::get().stupidServo(id).setPosition(val);
+}
+
+float Context::stupidServoGet(uint8_t id) {
+    const auto val = Manager::get().stupidServo(id).position();
+    if (std::isnan(val))
+        return val;
+
+    if (val >= 0.f) {
+        return val / m_stupid_servo_max * 90.f;
+    } else {
+        return val / m_stupid_servo_min * -90.f;
+    }
 }
 
 }; // namespace rk
