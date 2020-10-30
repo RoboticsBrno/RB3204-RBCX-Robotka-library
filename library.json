@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "frameworks": [
         "arduino"
     ],
@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "name": "RB3204-RBCX-library",
-            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.2.0.zip"
+            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.2.1.zip"
         },
         {
             "name": "RB3201-RBProtocol",
@@ -35,7 +35,7 @@
         },
         {
             "name": "Esp32-RBGridUI",
-            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.2.3.zip"
+            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.2.4.zip"
         },
         {
             "name": "SmartLeds",
