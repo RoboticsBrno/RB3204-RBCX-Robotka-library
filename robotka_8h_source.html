@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Zdrojový soubor robotka.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generováno programem Doxygen 1.8.18 -->
+<!-- Generováno programem Doxygen 1.8.20 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
@@ -107,8 +107,8 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    adc1_channel_t ir_adc_chan_right;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define RK_DEFAULT_WIFI_AP_PASSWORD &quot;flusflus&quot; </span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">   62</a></span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group__general.html#ga774729cebfd08838fd6f5bec88b15b11">   61</a></span>&#160;<span class="preprocessor">#define RK_DEFAULT_WIFI_AP_PASSWORD &quot;flusflus&quot; </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span> </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structrkConfig.html">   70</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structrkConfig.html">rkConfig</a> {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="structrkConfig.html">rkConfig</a>()</div>
@@ -244,9 +244,9 @@ $(function() {
 <div class="line"><a name="l00499"></a><span class="lineno"><a class="line" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0addb0d42e50c90992aed83401ee92aaf5">  499</a></span>&#160;    <a class="code" href="group__buttons.html#gga73f617d9fa08848ce2f004f09eaad3a0addb0d42e50c90992aed83401ee92aaf5">BTN_OFF</a> = rb::ButtonId::Off, </div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;};</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="preprocessor">#define EXTRA_BUTTON1 27 </span></div>
-<div class="line"><a name="l00503"></a><span class="lineno"><a class="line" href="group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a">  503</a></span>&#160;<span class="preprocessor">#define EXTRA_BUTTON2 14 </span></div>
-<div class="line"><a name="l00504"></a><span class="lineno"><a class="line" href="group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d">  504</a></span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a">  502</a></span>&#160;<span class="preprocessor">#define EXTRA_BUTTON1 27 </span></div>
+<div class="line"><a name="l00503"></a><span class="lineno"><a class="line" href="group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d">  503</a></span>&#160;<span class="preprocessor">#define EXTRA_BUTTON2 14 </span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="preprocessor"></span> </div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__buttons.html#ga13a44b9bf33dc9d2fe450c0f6f6fc181">rkButtonIsPressed</a>(<a class="code" href="group__buttons.html#ga73f617d9fa08848ce2f004f09eaad3a0">rkButtonId</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> waitForRelease = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
@@ -402,9 +402,7 @@ $(function() {
 <div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:356</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno čt 16. čec 2020 11.39:00 pro projekt Robotka programem &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
+Generováno pá 30. říj 2020 09.23:38 pro projekt Robotka programem&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
 </small></address>
 </body>
 </html>
