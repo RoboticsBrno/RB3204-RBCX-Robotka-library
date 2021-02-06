@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['format_45',['format',['../classbasic__printf__context.html#a931a0b93e495c59094d6d401d40b2921',1,'basic_printf_context']]],
-  ['format_5farg_5fstore_46',['format_arg_store',['../classformat__arg__store.html',1,'']]],
-  ['format_5fargs_47',['format_args',['../structformat__args.html',1,'']]],
-  ['format_5ferror_48',['format_error',['../classformat__error.html',1,'']]],
-  ['format_5fint_49',['format_int',['../classformat__int.html',1,'']]]
+  ['end_40',['end',['../classbasic__format__parse__context.html#a02391d628854caf8c3416f21dec43b46',1,'basic_format_parse_context']]],
+  ['extra_5fbutton1_41',['EXTRA_BUTTON1',['../group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a',1,'robotka.h']]],
+  ['extra_5fbutton2_42',['EXTRA_BUTTON2',['../group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d',1,'robotka.h']]]
 ];

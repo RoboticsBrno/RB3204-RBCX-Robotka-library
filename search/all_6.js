@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['get_50',['get',['../classbasic__format__args.html#aeddde6f5786c567b2054a6cf7f6c1876',1,'basic_format_args']]],
-  ['grow_51',['grow',['../classinternal_1_1buffer.html#a38f53be20945474be4f60b58b9b4cc54',1,'internal::buffer::grow()'],['../classbasic__memory__buffer.html#a2f01489b9805a99cdc93ab0aee6730eb',1,'basic_memory_buffer::grow()']]]
+  ['format_43',['format',['../classbasic__printf__context.html#a931a0b93e495c59094d6d401d40b2921',1,'basic_printf_context']]],
+  ['format_5farg_5fstore_44',['format_arg_store',['../classformat__arg__store.html',1,'']]],
+  ['format_5fargs_45',['format_args',['../structformat__args.html',1,'']]],
+  ['format_5ferror_46',['format_error',['../classformat__error.html',1,'']]],
+  ['format_5fint_47',['format_int',['../classformat__int.html',1,'']]]
 ];

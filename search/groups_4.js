@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motory_308',['Motory',['../group__motors.html',1,'']]]
+  ['ledky_303',['LEDky',['../group__leds.html',1,'']]]
 ];

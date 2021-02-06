@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['data_40',['data',['../classbasic__string__view.html#a48c221f626c53e68f6d63105329f6b08',1,'basic_string_view::data()'],['../classinternal_1_1buffer.html#aaaa371bd0a7aaad4af49363cb85fefb3',1,'internal::buffer::data() FMT_NOEXCEPT'],['../classinternal_1_1buffer.html#a7ad3b2ff77f2b5ca94c45b9c17901212',1,'internal::buffer::data() const FMT_NOEXCEPT'],['../classformat__int.html#a4ecc95eeed01911d1e2dcc4fabc5df5a',1,'format_int::data()']]],
-  ['dynamic_5fformat_5farg_5fstore_41',['dynamic_format_arg_store',['../classdynamic__format__arg__store.html',1,'']]]
+  ['c_5fstr_32',['c_str',['../classformat__int.html#a0ae1671f3ddacb00738133f29549b724',1,'format_int']]],
+  ['capacity_33',['capacity',['../classinternal_1_1buffer.html#ab71f52fc20af6ed2a15f75143c89e2a4',1,'internal::buffer']]],
+  ['char_5ftype_34',['char_type',['../classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e',1,'basic_printf_context']]],
+  ['check_5farg_5fid_35',['check_arg_id',['../classbasic__format__parse__context.html#a7a548535000cbd315a9ac35996950eec',1,'basic_format_parse_context']]],
+  ['chytré_20led_36',['Chytré LED',['../group__smartleds.html',1,'']]],
+  ['clear_37',['clear',['../classinternal_1_1buffer.html#a0837aac78fc5bc2ef51ea232b8e1df51',1,'internal::buffer']]]
 ];

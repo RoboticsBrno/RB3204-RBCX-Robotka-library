@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Zdrojový soubor fmt/format.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generováno programem Doxygen 1.8.20 -->
+<!-- Generováno programem Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -181,8 +181,8 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#    define FMT_THROW(x)              \</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">      do {                            \</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">        static_cast&lt;void&gt;(sizeof(x)); \</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">        FMT_ASSERT(false, &quot;&quot;);        \</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">      } while (false)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">        FMT_ASSERT(false, &quot;&quot;</span>);        \</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      } while (false)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#  endif</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
@@ -2294,7 +2294,7 @@ $(function() {
 <div class="line"><a name="l02263"></a><span class="lineno"> 2263</span>&#160; </div>
 <div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;  arg_id_kind kind;</div>
 <div class="line"><a name="l02265"></a><span class="lineno"> 2265</span>&#160;  <span class="keyword">union </span>value {</div>
-<div class="line"><a name="l02266"></a><span class="lineno"> 2266</span>&#160;    FMT_CONSTEXPR value(<span class="keywordtype">int</span> <span class="keywordtype">id</span> = 0) : index{<span class="keywordtype">id</span>} {}</div>
+<div class="line"><a name="l02266"></a><span class="lineno"> 2266</span>&#160;    FMT_CONSTEXPR value(<span class="keywordtype">int</span> <span class="keywordtype">id</span> = 0) : index{id} {}</div>
 <div class="line"><a name="l02267"></a><span class="lineno"> 2267</span>&#160;    FMT_CONSTEXPR value(<a class="code" href="classbasic__string__view.html">basic_string_view&lt;Char&gt;</a> n) : name(n) {}</div>
 <div class="line"><a name="l02268"></a><span class="lineno"> 2268</span>&#160; </div>
 <div class="line"><a name="l02269"></a><span class="lineno"> 2269</span>&#160;    <span class="keywordtype">int</span> index;</div>
@@ -3437,7 +3437,7 @@ $(function() {
 <div class="line"><a name="l03527"></a><span class="lineno"> 3527</span>&#160;    <span class="keywordflow">return</span> format(str, std::forward&lt;Args&gt;(args)...);</div>
 <div class="line"><a name="l03528"></a><span class="lineno"> 3528</span>&#160;  }</div>
 <div class="line"><a name="l03529"></a><span class="lineno"> 3529</span>&#160;};</div>
-<div class="line"><a name="l03530"></a><span class="lineno"> 3530</span>&#160;<span class="preprocessor">#  endif  // FMT_USE_UDL_TEMPLATE</span></div>
+<div class="line"><a name="l03530"></a><span class="lineno"> 3530</span>&#160;<span class="preprocessor">#  endif  </span><span class="comment">// FMT_USE_UDL_TEMPLATE</span></div>
 <div class="line"><a name="l03531"></a><span class="lineno"> 3531</span>&#160; </div>
 <div class="line"><a name="l03532"></a><span class="lineno"> 3532</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char&gt; <span class="keyword">struct </span>udl_arg {</div>
 <div class="line"><a name="l03533"></a><span class="lineno"> 3533</span>&#160;  <a class="code" href="classbasic__string__view.html">basic_string_view&lt;Char&gt;</a> str;</div>
@@ -3477,7 +3477,6 @@ $(function() {
 <div class="line"><a name="l03567"></a><span class="lineno"> 3567</span>&#160;}</div>
 <div class="line"><a name="l03568"></a><span class="lineno"> 3568</span>&#160;<span class="preprocessor">#    pragma GCC diagnostic pop</span></div>
 <div class="line"><a name="l03569"></a><span class="lineno"> 3569</span>&#160;<span class="preprocessor">#  else</span></div>
-<div class="line"><a name="l03570"></a><span class="lineno"> 3570</span>&#160; </div>
 <div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160;FMT_CONSTEXPR internal::udl_formatter&lt;char&gt; <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span> _format(<span class="keyword">const</span> <span class="keywordtype">char</span>* s,</div>
 <div class="line"><a name="l03581"></a><span class="lineno"> 3581</span>&#160;                                                               std::size_t n) {</div>
 <div class="line"><a name="l03582"></a><span class="lineno"> 3582</span>&#160;  <span class="keywordflow">return</span> {{s, n}};</div>
@@ -3486,7 +3485,7 @@ $(function() {
 <div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* s, std::size_t n) {</div>
 <div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;  <span class="keywordflow">return</span> {{s, n}};</div>
 <div class="line"><a name="l03587"></a><span class="lineno"> 3587</span>&#160;}</div>
-<div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;<span class="preprocessor">#  endif  // FMT_USE_UDL_TEMPLATE</span></div>
+<div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;<span class="preprocessor">#  endif  </span><span class="comment">// FMT_USE_UDL_TEMPLATE</span></div>
 <div class="line"><a name="l03589"></a><span class="lineno"> 3589</span>&#160; </div>
 <div class="line"><a name="l03600"></a><span class="lineno"> 3600</span>&#160;FMT_CONSTEXPR internal::udl_arg&lt;char&gt; <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span> _a(<span class="keyword">const</span> <span class="keywordtype">char</span>* s,</div>
 <div class="line"><a name="l03601"></a><span class="lineno"> 3601</span>&#160;                                                    std::size_t n) {</div>
@@ -3497,7 +3496,7 @@ $(function() {
 <div class="line"><a name="l03606"></a><span class="lineno"> 3606</span>&#160;  <span class="keywordflow">return</span> {{s, n}};</div>
 <div class="line"><a name="l03607"></a><span class="lineno"> 3607</span>&#160;}</div>
 <div class="line"><a name="l03608"></a><span class="lineno"> 3608</span>&#160;}  <span class="comment">// namespace literals</span></div>
-<div class="line"><a name="l03609"></a><span class="lineno"> 3609</span>&#160;<span class="preprocessor">#endif  // FMT_USE_USER_DEFINED_LITERALS</span></div>
+<div class="line"><a name="l03609"></a><span class="lineno"> 3609</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// FMT_USE_USER_DEFINED_LITERALS</span></div>
 <div class="line"><a name="l03610"></a><span class="lineno"> 3610</span>&#160;FMT_END_NAMESPACE</div>
 <div class="line"><a name="l03611"></a><span class="lineno"> 3611</span>&#160; </div>
 <div class="line"><a name="l03612"></a><span class="lineno"> 3612</span>&#160;<span class="preprocessor">#define FMT_STRING_IMPL(s, ...)                                     \</span></div>
@@ -3526,43 +3525,43 @@ $(function() {
 <div class="line"><a name="l03645"></a><span class="lineno"> 3645</span>&#160;<span class="preprocessor">#  define FMT_FUNC</span></div>
 <div class="line"><a name="l03646"></a><span class="lineno"> 3646</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l03647"></a><span class="lineno"> 3647</span>&#160; </div>
-<div class="line"><a name="l03648"></a><span class="lineno"> 3648</span>&#160;<span class="preprocessor">#endif  // FMT_FORMAT_H_</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassinternal_1_1buffer_html_abac844b364cd93450a9c311807d15f80"><div class="ttname"><a href="classinternal_1_1buffer.html#abac844b364cd93450a9c311807d15f80">internal::buffer::size</a></div><div class="ttdeci">std::size_t size() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:684</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_ab71f52fc20af6ed2a15f75143c89e2a4"><div class="ttname"><a href="classinternal_1_1buffer.html#ab71f52fc20af6ed2a15f75143c89e2a4">internal::buffer::capacity</a></div><div class="ttdeci">std::size_t capacity() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:687</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html"><div class="ttname"><a href="classinternal_1_1buffer.html">internal::buffer</a></div><div class="ttdef"><b>Definition:</b> core.h:645</div></div>
-<div class="ttc" id="aclassformat__arg__store_html"><div class="ttname"><a href="classformat__arg__store.html">format_arg_store</a></div><div class="ttdef"><b>Definition:</b> core.h:1331</div></div>
-<div class="ttc" id="aclassbasic__memory__buffer_html_a2f01489b9805a99cdc93ab0aee6730eb"><div class="ttname"><a href="classbasic__memory__buffer.html#a2f01489b9805a99cdc93ab0aee6730eb">basic_memory_buffer::grow</a></div><div class="ttdeci">void grow(std::size_t size) FMT_OVERRIDE</div><div class="ttdef"><b>Definition:</b> format.h:700</div></div>
-<div class="ttc" id="aclassbasic__memory__buffer_html"><div class="ttname"><a href="classbasic__memory__buffer.html">basic_memory_buffer</a></div><div class="ttdef"><b>Definition:</b> format.h:631</div></div>
-<div class="ttc" id="aclassbasic__format__parse__context_html_a02391d628854caf8c3416f21dec43b46"><div class="ttname"><a href="classbasic__format__parse__context.html#a02391d628854caf8c3416f21dec43b46">basic_format_parse_context::end</a></div><div class="ttdeci">FMT_CONSTEXPR iterator end() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:575</div></div>
-<div class="ttc" id="aclassbasic__memory__buffer_html_a89e2e5da9bee8af9c487b4493c4d6327"><div class="ttname"><a href="classbasic__memory__buffer.html#a89e2e5da9bee8af9c487b4493c4d6327">basic_memory_buffer::operator=</a></div><div class="ttdeci">basic_memory_buffer &amp; operator=(basic_memory_buffer &amp;&amp;other) FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> format.h:688</div></div>
-<div class="ttc" id="aclassbasic__string__view_html"><div class="ttname"><a href="classbasic__string__view.html">basic_string_view</a></div><div class="ttdef"><b>Definition:</b> core.h:351</div></div>
-<div class="ttc" id="aclassbasic__string__view_html_a7fd9f4dcac1782259b0cd217af69d737"><div class="ttname"><a href="classbasic__string__view.html#a7fd9f4dcac1782259b0cd217af69d737">basic_string_view::size</a></div><div class="ttdeci">FMT_CONSTEXPR size_t size() const</div><div class="ttdef"><b>Definition:</b> core.h:397</div></div>
-<div class="ttc" id="aclasssystem__error_html"><div class="ttname"><a href="classsystem__error.html">system_error</a></div><div class="ttdef"><b>Definition:</b> format.h:2786</div></div>
-<div class="ttc" id="aclassbasic__format__parse__context_html_ac123ab6c1c6e58db3ab0a917def4add8"><div class="ttname"><a href="classbasic__format__parse__context.html#ac123ab6c1c6e58db3ab0a917def4add8">basic_format_parse_context::advance_to</a></div><div class="ttdeci">FMT_CONSTEXPR void advance_to(iterator it)</div><div class="ttdef"><b>Definition:</b> core.h:578</div></div>
-<div class="ttc" id="aclassformat__int_html_a4ecc95eeed01911d1e2dcc4fabc5df5a"><div class="ttname"><a href="classformat__int.html#a4ecc95eeed01911d1e2dcc4fabc5df5a">format_int::data</a></div><div class="ttdeci">const char * data() const</div><div class="ttdef"><b>Definition:</b> format.h:2908</div></div>
-<div class="ttc" id="aclassarg__formatter_html_ac8ddd9b78934fc951916a30d46114ab1"><div class="ttname"><a href="classarg__formatter.html#ac8ddd9b78934fc951916a30d46114ab1">arg_formatter::operator()</a></div><div class="ttdeci">iterator operator()(typename basic_format_arg&lt; context_type &gt;::handle handle)</div><div class="ttdef"><b>Definition:</b> format.h:2775</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_a4d38f4fdc2d4ca913a5a13523b690893"><div class="ttname"><a href="classinternal_1_1buffer.html#a4d38f4fdc2d4ca913a5a13523b690893">internal::buffer::resize</a></div><div class="ttdeci">void resize(std::size_t new_size)</div><div class="ttdef"><b>Definition:</b> core.h:698</div></div>
-<div class="ttc" id="aclassformat__int_html_a0ae1671f3ddacb00738133f29549b724"><div class="ttname"><a href="classformat__int.html#a0ae1671f3ddacb00738133f29549b724">format_int::c_str</a></div><div class="ttdeci">const char * c_str() const</div><div class="ttdef"><b>Definition:</b> format.h:2914</div></div>
-<div class="ttc" id="aclassformat__int_html_a644fe6f2d0505d48ff08ab22448b5069"><div class="ttname"><a href="classformat__int.html#a644fe6f2d0505d48ff08ab22448b5069">format_int::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdef"><b>Definition:</b> format.h:2900</div></div>
-<div class="ttc" id="aclassbasic__format__args_html"><div class="ttname"><a href="classbasic__format__args.html">basic_format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1480</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_a0493c6d5ceedf88219624f59ea2fbf4c"><div class="ttname"><a href="classinternal_1_1buffer.html#a0493c6d5ceedf88219624f59ea2fbf4c">internal::buffer::append</a></div><div class="ttdeci">void append(const U *begin, const U *end)</div><div class="ttdef"><b>Definition:</b> format.h:557</div></div>
+<div class="line"><a name="l03648"></a><span class="lineno"> 3648</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// FMT_FORMAT_H_</span></div>
 <div class="ttc" id="aclassarg__formatter_html"><div class="ttname"><a href="classarg__formatter.html">arg_formatter</a></div><div class="ttdef"><b>Definition:</b> format.h:2743</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_a0c5d6939cc27e8be6ae5e7bede1e3ae8"><div class="ttname"><a href="classinternal_1_1buffer.html#a0c5d6939cc27e8be6ae5e7bede1e3ae8">internal::buffer::set</a></div><div class="ttdeci">void set(T *buf_data, std::size_t buf_capacity) FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:661</div></div>
-<div class="ttc" id="aclassformat__error_html"><div class="ttname"><a href="classformat__error.html">format_error</a></div><div class="ttdef"><b>Definition:</b> format.h:724</div></div>
-<div class="ttc" id="aclassformat__int_html_ab14204962423d35a320f15e673b08e06"><div class="ttname"><a href="classformat__int.html#ab14204962423d35a320f15e673b08e06">format_int::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> format.h:2924</div></div>
+<div class="ttc" id="aclassarg__formatter_html_ac8ddd9b78934fc951916a30d46114ab1"><div class="ttname"><a href="classarg__formatter.html#ac8ddd9b78934fc951916a30d46114ab1">arg_formatter::operator()</a></div><div class="ttdeci">iterator operator()(typename basic_format_arg&lt; context_type &gt;::handle handle)</div><div class="ttdef"><b>Definition:</b> format.h:2775</div></div>
 <div class="ttc" id="aclassarg__formatter_html_ad30be490bff49291d06048448b004331"><div class="ttname"><a href="classarg__formatter.html#ad30be490bff49291d06048448b004331">arg_formatter::arg_formatter</a></div><div class="ttdeci">arg_formatter(context_type &amp;ctx, basic_format_parse_context&lt; char_type &gt; *parse_ctx=nullptr, format_specs *specs=nullptr)</div><div class="ttdef"><b>Definition:</b> format.h:2764</div></div>
-<div class="ttc" id="aclassbasic__format__parse__context_html_a5c45c2385a7aa2a1da7a335f9ac42d9a"><div class="ttname"><a href="classbasic__format__parse__context.html#a5c45c2385a7aa2a1da7a335f9ac42d9a">basic_format_parse_context::begin</a></div><div class="ttdeci">FMT_CONSTEXPR iterator begin() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:568</div></div>
+<div class="ttc" id="aclassbasic__format__args_html"><div class="ttname"><a href="classbasic__format__args.html">basic_format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1480</div></div>
 <div class="ttc" id="aclassbasic__format__parse__context_html"><div class="ttname"><a href="classbasic__format__parse__context.html">basic_format_parse_context&lt; char_type &gt;</a></div></div>
+<div class="ttc" id="aclassbasic__format__parse__context_html_a02391d628854caf8c3416f21dec43b46"><div class="ttname"><a href="classbasic__format__parse__context.html#a02391d628854caf8c3416f21dec43b46">basic_format_parse_context::end</a></div><div class="ttdeci">FMT_CONSTEXPR iterator end() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:575</div></div>
+<div class="ttc" id="aclassbasic__format__parse__context_html_a5c45c2385a7aa2a1da7a335f9ac42d9a"><div class="ttname"><a href="classbasic__format__parse__context.html#a5c45c2385a7aa2a1da7a335f9ac42d9a">basic_format_parse_context::begin</a></div><div class="ttdeci">FMT_CONSTEXPR iterator begin() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:568</div></div>
+<div class="ttc" id="aclassbasic__format__parse__context_html_ac123ab6c1c6e58db3ab0a917def4add8"><div class="ttname"><a href="classbasic__format__parse__context.html#ac123ab6c1c6e58db3ab0a917def4add8">basic_format_parse_context::advance_to</a></div><div class="ttdeci">FMT_CONSTEXPR void advance_to(iterator it)</div><div class="ttdef"><b>Definition:</b> core.h:578</div></div>
+<div class="ttc" id="aclassbasic__memory__buffer_html"><div class="ttname"><a href="classbasic__memory__buffer.html">basic_memory_buffer</a></div><div class="ttdef"><b>Definition:</b> format.h:631</div></div>
+<div class="ttc" id="aclassbasic__memory__buffer_html_a2f01489b9805a99cdc93ab0aee6730eb"><div class="ttname"><a href="classbasic__memory__buffer.html#a2f01489b9805a99cdc93ab0aee6730eb">basic_memory_buffer::grow</a></div><div class="ttdeci">void grow(std::size_t size) FMT_OVERRIDE</div><div class="ttdef"><b>Definition:</b> format.h:700</div></div>
+<div class="ttc" id="aclassbasic__memory__buffer_html_a89e2e5da9bee8af9c487b4493c4d6327"><div class="ttname"><a href="classbasic__memory__buffer.html#a89e2e5da9bee8af9c487b4493c4d6327">basic_memory_buffer::operator=</a></div><div class="ttdeci">basic_memory_buffer &amp; operator=(basic_memory_buffer &amp;&amp;other) FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> format.h:688</div></div>
 <div class="ttc" id="aclassbasic__memory__buffer_html_ae3e8292ba2764ec68bb113cdc6c45b63"><div class="ttname"><a href="classbasic__memory__buffer.html#ae3e8292ba2764ec68bb113cdc6c45b63">basic_memory_buffer::basic_memory_buffer</a></div><div class="ttdeci">basic_memory_buffer(basic_memory_buffer &amp;&amp;other) FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> format.h:681</div></div>
+<div class="ttc" id="aclassbasic__string__view_html"><div class="ttname"><a href="classbasic__string__view.html">basic_string_view</a></div><div class="ttdef"><b>Definition:</b> core.h:351</div></div>
+<div class="ttc" id="aclassbasic__string__view_html_a48c221f626c53e68f6d63105329f6b08"><div class="ttname"><a href="classbasic__string__view.html#a48c221f626c53e68f6d63105329f6b08">basic_string_view::data</a></div><div class="ttdeci">FMT_CONSTEXPR const Char * data() const</div><div class="ttdef"><b>Definition:</b> core.h:394</div></div>
+<div class="ttc" id="aclassbasic__string__view_html_a7fd9f4dcac1782259b0cd217af69d737"><div class="ttname"><a href="classbasic__string__view.html#a7fd9f4dcac1782259b0cd217af69d737">basic_string_view::size</a></div><div class="ttdeci">FMT_CONSTEXPR size_t size() const</div><div class="ttdef"><b>Definition:</b> core.h:397</div></div>
+<div class="ttc" id="aclassformat__arg__store_html"><div class="ttname"><a href="classformat__arg__store.html">format_arg_store</a></div><div class="ttdef"><b>Definition:</b> core.h:1331</div></div>
+<div class="ttc" id="aclassformat__error_html"><div class="ttname"><a href="classformat__error.html">format_error</a></div><div class="ttdef"><b>Definition:</b> format.h:724</div></div>
 <div class="ttc" id="aclassformat__int_html"><div class="ttname"><a href="classformat__int.html">format_int</a></div><div class="ttdef"><b>Definition:</b> format.h:2853</div></div>
+<div class="ttc" id="aclassformat__int_html_a0ae1671f3ddacb00738133f29549b724"><div class="ttname"><a href="classformat__int.html#a0ae1671f3ddacb00738133f29549b724">format_int::c_str</a></div><div class="ttdeci">const char * c_str() const</div><div class="ttdef"><b>Definition:</b> format.h:2914</div></div>
+<div class="ttc" id="aclassformat__int_html_a4ecc95eeed01911d1e2dcc4fabc5df5a"><div class="ttname"><a href="classformat__int.html#a4ecc95eeed01911d1e2dcc4fabc5df5a">format_int::data</a></div><div class="ttdeci">const char * data() const</div><div class="ttdef"><b>Definition:</b> format.h:2908</div></div>
+<div class="ttc" id="aclassformat__int_html_a644fe6f2d0505d48ff08ab22448b5069"><div class="ttname"><a href="classformat__int.html#a644fe6f2d0505d48ff08ab22448b5069">format_int::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdef"><b>Definition:</b> format.h:2900</div></div>
+<div class="ttc" id="aclassformat__int_html_ab14204962423d35a320f15e673b08e06"><div class="ttname"><a href="classformat__int.html#ab14204962423d35a320f15e673b08e06">format_int::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> format.h:2924</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html"><div class="ttname"><a href="classinternal_1_1buffer.html">internal::buffer</a></div><div class="ttdef"><b>Definition:</b> core.h:645</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_a0493c6d5ceedf88219624f59ea2fbf4c"><div class="ttname"><a href="classinternal_1_1buffer.html#a0493c6d5ceedf88219624f59ea2fbf4c">internal::buffer::append</a></div><div class="ttdeci">void append(const U *begin, const U *end)</div><div class="ttdef"><b>Definition:</b> format.h:557</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_a0c5d6939cc27e8be6ae5e7bede1e3ae8"><div class="ttname"><a href="classinternal_1_1buffer.html#a0c5d6939cc27e8be6ae5e7bede1e3ae8">internal::buffer::set</a></div><div class="ttdeci">void set(T *buf_data, std::size_t buf_capacity) FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:661</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_a4d38f4fdc2d4ca913a5a13523b690893"><div class="ttname"><a href="classinternal_1_1buffer.html#a4d38f4fdc2d4ca913a5a13523b690893">internal::buffer::resize</a></div><div class="ttdeci">void resize(std::size_t new_size)</div><div class="ttdef"><b>Definition:</b> core.h:698</div></div>
 <div class="ttc" id="aclassinternal_1_1buffer_html_aaaa371bd0a7aaad4af49363cb85fefb3"><div class="ttname"><a href="classinternal_1_1buffer.html#aaaa371bd0a7aaad4af49363cb85fefb3">internal::buffer::data</a></div><div class="ttdeci">T * data() FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:690</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_ab71f52fc20af6ed2a15f75143c89e2a4"><div class="ttname"><a href="classinternal_1_1buffer.html#ab71f52fc20af6ed2a15f75143c89e2a4">internal::buffer::capacity</a></div><div class="ttdeci">std::size_t capacity() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:687</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_abac844b364cd93450a9c311807d15f80"><div class="ttname"><a href="classinternal_1_1buffer.html#abac844b364cd93450a9c311807d15f80">internal::buffer::size</a></div><div class="ttdeci">std::size_t size() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:684</div></div>
+<div class="ttc" id="aclasssystem__error_html"><div class="ttname"><a href="classsystem__error.html">system_error</a></div><div class="ttdef"><b>Definition:</b> format.h:2786</div></div>
 <div class="ttc" id="aclasssystem__error_html_a6761fd4c8604a59a7c79f6bfdfaf25cb"><div class="ttname"><a href="classsystem__error.html#a6761fd4c8604a59a7c79f6bfdfaf25cb">system_error::system_error</a></div><div class="ttdeci">system_error(int error_code, string_view message, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> format.h:2815</div></div>
 <div class="ttc" id="astructformat__args_html"><div class="ttname"><a href="structformat__args.html">format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1579</div></div>
-<div class="ttc" id="aclassbasic__string__view_html_a48c221f626c53e68f6d63105329f6b08"><div class="ttname"><a href="classbasic__string__view.html#a48c221f626c53e68f6d63105329f6b08">basic_string_view::data</a></div><div class="ttdeci">FMT_CONSTEXPR const Char * data() const</div><div class="ttdef"><b>Definition:</b> core.h:394</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno ne 22. lis 2020 10.50:22 pro projekt Robotka programem&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+Generováno so 6. úno 2021 14.56:57 pro projekt Robotka programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

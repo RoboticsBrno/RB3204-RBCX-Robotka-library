@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ultrazvuky_149',['Ultrazvuky',['../group__ultrasound.html',1,'']]]
+  ['tlačítka_146',['Tlačítka',['../group__buttons.html',1,'']]]
 ];

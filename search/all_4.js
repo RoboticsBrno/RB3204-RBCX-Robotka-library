@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['end_42',['end',['../classbasic__format__parse__context.html#a02391d628854caf8c3416f21dec43b46',1,'basic_format_parse_context']]],
-  ['extra_5fbutton1_43',['EXTRA_BUTTON1',['../group__buttons.html#ga629d3a5fd4b3fa127d32fbf3b8e5587a',1,'robotka.h']]],
-  ['extra_5fbutton2_44',['EXTRA_BUTTON2',['../group__buttons.html#ga7dbcb3c4d89eb5b9be87a4d1d208430d',1,'robotka.h']]]
+  ['data_38',['data',['../classbasic__string__view.html#a48c221f626c53e68f6d63105329f6b08',1,'basic_string_view::data()'],['../classinternal_1_1buffer.html#aaaa371bd0a7aaad4af49363cb85fefb3',1,'internal::buffer::data() FMT_NOEXCEPT'],['../classinternal_1_1buffer.html#a7ad3b2ff77f2b5ca94c45b9c17901212',1,'internal::buffer::data() const FMT_NOEXCEPT'],['../classformat__int.html#a4ecc95eeed01911d1e2dcc4fabc5df5a',1,'format_int::data()']]],
+  ['dynamic_5fformat_5farg_5fstore_39',['dynamic_format_arg_store',['../classdynamic__format__arg__store.html',1,'']]]
 ];

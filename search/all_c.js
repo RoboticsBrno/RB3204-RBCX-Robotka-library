@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pins_69',['pins',['../structrkConfig.html#a9aa5f8cefd3ac6e9b5bf77c240eaa48f',1,'rkConfig']]],
-  ['printf_5farg_5fformatter_70',['printf_arg_formatter',['../classprintf__arg__formatter.html',1,'printf_arg_formatter&lt; Range &gt;'],['../classprintf__arg__formatter.html#affaad59bc384a1d5c22aa5a80d3804ee',1,'printf_arg_formatter::printf_arg_formatter()']]],
-  ['push_5fback_71',['push_back',['../classdynamic__format__arg__store.html#a710e994685e69fd1cd4f56d29efc0d95',1,'dynamic_format_arg_store::push_back(const T &amp;arg)'],['../classdynamic__format__arg__store.html#ac58637a7965cbfeab47c2f50e923dc07',1,'dynamic_format_arg_store::push_back(std::reference_wrapper&lt; T &gt; arg)']]]
+  ['operator_28_29_64',['operator()',['../classarg__formatter.html#ac8ddd9b78934fc951916a30d46114ab1',1,'arg_formatter::operator()()'],['../classprintf__arg__formatter.html#a4e462c5b70ceef75a41261472aa56313',1,'printf_arg_formatter::operator()(const char *value)'],['../classprintf__arg__formatter.html#a880170cd3e3ace7546cb01268586ac77',1,'printf_arg_formatter::operator()(const wchar_t *value)'],['../classprintf__arg__formatter.html#a22c7d349112400ecf9a66005b1a0229e',1,'printf_arg_formatter::operator()(const void *value)'],['../classprintf__arg__formatter.html#a57ded50a248eab9775966e05330dfcb5',1,'printf_arg_formatter::operator()(typename basic_format_arg&lt; context_type &gt;::handle handle)']]],
+  ['operator_3d_65',['operator=',['../classbasic__memory__buffer.html#a89e2e5da9bee8af9c487b4493c4d6327',1,'basic_memory_buffer']]],
+  ['owner_66',['owner',['../structrkConfig.html#af5cd8612bda3218aca9bb0fc5ca38d92',1,'rkConfig']]]
 ];

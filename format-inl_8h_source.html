@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Zdrojový soubor fmt/format-inl.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generováno programem Doxygen 1.8.20 -->
+<!-- Generováno programem Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef _MSC_VER</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#  pragma warning(push)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#  pragma warning(disable : 4702)  // unreachable code</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#  pragma warning(disable : 4702)  </span><span class="comment">// unreachable code</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// Dummy implementations of strerror_r and strerror_s called if corresponding</span></div>
@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifndef _MSC_VER</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#  define FMT_SNPRINTF snprintf</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#else  // _MSC_VER</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#else  </span><span class="comment">// _MSC_VER</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> fmt_snprintf(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> size, <span class="keyword">const</span> <span class="keywordtype">char</span>* format, ...) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  va_list args;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  va_start(args, format);</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#  define FMT_SNPRINTF fmt_snprintf</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif  // _MSC_VER</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// _MSC_VER</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// A portable thread-safe version of strerror.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Sets buffer to point to a string describing the error code.</span></div>
@@ -1472,26 +1472,26 @@ $(function() {
 <div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;<span class="preprocessor">#  pragma warning(pop)</span></div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160; </div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;<span class="preprocessor">#endif  // FMT_FORMAT_INL_H_</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassinternal_1_1buffer_html_abac844b364cd93450a9c311807d15f80"><div class="ttname"><a href="classinternal_1_1buffer.html#abac844b364cd93450a9c311807d15f80">internal::buffer::size</a></div><div class="ttdeci">std::size_t size() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:684</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_ab71f52fc20af6ed2a15f75143c89e2a4"><div class="ttname"><a href="classinternal_1_1buffer.html#ab71f52fc20af6ed2a15f75143c89e2a4">internal::buffer::capacity</a></div><div class="ttdeci">std::size_t capacity() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:687</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html"><div class="ttname"><a href="classinternal_1_1buffer.html">internal::buffer</a></div><div class="ttdef"><b>Definition:</b> core.h:645</div></div>
-<div class="ttc" id="aclassbasic__memory__buffer_html"><div class="ttname"><a href="classbasic__memory__buffer.html">basic_memory_buffer</a></div><div class="ttdef"><b>Definition:</b> format.h:631</div></div>
-<div class="ttc" id="aclassbasic__string__view_html"><div class="ttname"><a href="classbasic__string__view.html">basic_string_view&lt; char &gt;</a></div></div>
-<div class="ttc" id="aclassbasic__string__view_html_a7fd9f4dcac1782259b0cd217af69d737"><div class="ttname"><a href="classbasic__string__view.html#a7fd9f4dcac1782259b0cd217af69d737">basic_string_view::size</a></div><div class="ttdeci">FMT_CONSTEXPR size_t size() const</div><div class="ttdef"><b>Definition:</b> core.h:397</div></div>
-<div class="ttc" id="aclasssystem__error_html"><div class="ttname"><a href="classsystem__error.html">system_error</a></div><div class="ttdef"><b>Definition:</b> format.h:2786</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_a4d38f4fdc2d4ca913a5a13523b690893"><div class="ttname"><a href="classinternal_1_1buffer.html#a4d38f4fdc2d4ca913a5a13523b690893">internal::buffer::resize</a></div><div class="ttdeci">void resize(std::size_t new_size)</div><div class="ttdef"><b>Definition:</b> core.h:698</div></div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// FMT_FORMAT_INL_H_</span></div>
 <div class="ttc" id="aclassbasic__format__args_html"><div class="ttname"><a href="classbasic__format__args.html">basic_format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1480</div></div>
-<div class="ttc" id="aclassformat__error_html"><div class="ttname"><a href="classformat__error.html">format_error</a></div><div class="ttdef"><b>Definition:</b> format.h:724</div></div>
-<div class="ttc" id="aclassbasic__format__parse__context_html_a5c45c2385a7aa2a1da7a335f9ac42d9a"><div class="ttname"><a href="classbasic__format__parse__context.html#a5c45c2385a7aa2a1da7a335f9ac42d9a">basic_format_parse_context::begin</a></div><div class="ttdeci">FMT_CONSTEXPR iterator begin() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:568</div></div>
 <div class="ttc" id="aclassbasic__format__parse__context_html"><div class="ttname"><a href="classbasic__format__parse__context.html">basic_format_parse_context</a></div><div class="ttdef"><b>Definition:</b> core.h:551</div></div>
-<div class="ttc" id="aclassinternal_1_1buffer_html_aaaa371bd0a7aaad4af49363cb85fefb3"><div class="ttname"><a href="classinternal_1_1buffer.html#aaaa371bd0a7aaad4af49363cb85fefb3">internal::buffer::data</a></div><div class="ttdeci">T * data() FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:690</div></div>
-<div class="ttc" id="astructformat__args_html"><div class="ttname"><a href="structformat__args.html">format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1579</div></div>
+<div class="ttc" id="aclassbasic__format__parse__context_html_a5c45c2385a7aa2a1da7a335f9ac42d9a"><div class="ttname"><a href="classbasic__format__parse__context.html#a5c45c2385a7aa2a1da7a335f9ac42d9a">basic_format_parse_context::begin</a></div><div class="ttdeci">FMT_CONSTEXPR iterator begin() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:568</div></div>
+<div class="ttc" id="aclassbasic__memory__buffer_html"><div class="ttname"><a href="classbasic__memory__buffer.html">basic_memory_buffer</a></div><div class="ttdef"><b>Definition:</b> format.h:631</div></div>
+<div class="ttc" id="aclassbasic__string__view_html"><div class="ttname"><a href="classbasic__string__view.html">basic_string_view</a></div><div class="ttdef"><b>Definition:</b> core.h:351</div></div>
 <div class="ttc" id="aclassbasic__string__view_html_a48c221f626c53e68f6d63105329f6b08"><div class="ttname"><a href="classbasic__string__view.html#a48c221f626c53e68f6d63105329f6b08">basic_string_view::data</a></div><div class="ttdeci">FMT_CONSTEXPR const Char * data() const</div><div class="ttdef"><b>Definition:</b> core.h:394</div></div>
+<div class="ttc" id="aclassbasic__string__view_html_a7fd9f4dcac1782259b0cd217af69d737"><div class="ttname"><a href="classbasic__string__view.html#a7fd9f4dcac1782259b0cd217af69d737">basic_string_view::size</a></div><div class="ttdeci">FMT_CONSTEXPR size_t size() const</div><div class="ttdef"><b>Definition:</b> core.h:397</div></div>
+<div class="ttc" id="aclassformat__error_html"><div class="ttname"><a href="classformat__error.html">format_error</a></div><div class="ttdef"><b>Definition:</b> format.h:724</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html"><div class="ttname"><a href="classinternal_1_1buffer.html">internal::buffer</a></div><div class="ttdef"><b>Definition:</b> core.h:645</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_a4d38f4fdc2d4ca913a5a13523b690893"><div class="ttname"><a href="classinternal_1_1buffer.html#a4d38f4fdc2d4ca913a5a13523b690893">internal::buffer::resize</a></div><div class="ttdeci">void resize(std::size_t new_size)</div><div class="ttdef"><b>Definition:</b> core.h:698</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_aaaa371bd0a7aaad4af49363cb85fefb3"><div class="ttname"><a href="classinternal_1_1buffer.html#aaaa371bd0a7aaad4af49363cb85fefb3">internal::buffer::data</a></div><div class="ttdeci">T * data() FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:690</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_ab71f52fc20af6ed2a15f75143c89e2a4"><div class="ttname"><a href="classinternal_1_1buffer.html#ab71f52fc20af6ed2a15f75143c89e2a4">internal::buffer::capacity</a></div><div class="ttdeci">std::size_t capacity() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:687</div></div>
+<div class="ttc" id="aclassinternal_1_1buffer_html_abac844b364cd93450a9c311807d15f80"><div class="ttname"><a href="classinternal_1_1buffer.html#abac844b364cd93450a9c311807d15f80">internal::buffer::size</a></div><div class="ttdeci">std::size_t size() const FMT_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> core.h:684</div></div>
+<div class="ttc" id="aclasssystem__error_html"><div class="ttname"><a href="classsystem__error.html">system_error</a></div><div class="ttdef"><b>Definition:</b> format.h:2786</div></div>
+<div class="ttc" id="astructformat__args_html"><div class="ttname"><a href="structformat__args.html">format_args</a></div><div class="ttdef"><b>Definition:</b> core.h:1579</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generováno ne 22. lis 2020 10.50:22 pro projekt Robotka programem&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+Generováno so 6. úno 2021 14.56:57 pro projekt Robotka programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
