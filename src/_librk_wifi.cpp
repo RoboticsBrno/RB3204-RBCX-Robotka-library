@@ -186,7 +186,7 @@ void WiFi::setupBle(const rkConfig& cfg, const Config& wifiCfg) {
         name->setValue(cfg.name);
         m_chars.push_back(name);
 
-        auto ip = rb::WiFi::getIp().addr;
+        auto ip = rb::WiFi::getIp();
         m_ip_char = service->createCharacteristic(WIFI_IP_UUID,
             BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY);
         m_ip_char->setValue(ip);
@@ -251,7 +251,7 @@ void WiFi::scheduleIpUpdateLocked() {
 
 bool WiFi::updateIpChar() {
     auto ip = rb::WiFi::getIp();
-    if (ip.addr == 0) {
+    if (ip == 0) {
         return true;
     }
 
@@ -259,7 +259,7 @@ bool WiFi::updateIpChar() {
     if (m_ip_char == nullptr)
         return false;
 
-    m_ip_char->setValue(ip.addr);
+    m_ip_char->setValue(ip);
     m_ip_char->notify();
     m_ip_update_running = false;
     return false;
