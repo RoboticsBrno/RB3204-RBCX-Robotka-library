@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "version": "1.3.11",
+    "version": "1.3.12",
     "frameworks": [
         "arduino"
     ],
@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "name": "RB3204-RBCX-library",
-            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.2.2.zip"
+            "version": "https://github.com/RoboticsBrno/RB3204-RBCX-library/archive/v1.2.3.zip"
         },
         {
             "name": "RB3201-RBProtocol",
@@ -31,11 +31,11 @@
         },
         {
             "name": "Esp32-Mcp3008-LineSensor",
-            "version": "https://github.com/RoboticsBrno/Esp32-Mcp3008-LineSensor/archive/v2.0.2.zip"
+            "version": "https://github.com/RoboticsBrno/Esp32-Mcp3008-LineSensor/archive/v2.0.3.zip"
         },
         {
             "name": "Esp32-RBGridUI",
-            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.6.0.zip"
+            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.6.3.zip"
         },
         {
             "name": "SmartLeds",
