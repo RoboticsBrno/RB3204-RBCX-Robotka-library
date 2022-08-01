@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Zdrojový soubor fmt/format-inl.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Vygenerováno programem Doxygen 1.9.3 -->
+<!-- Vygenerováno programem Doxygen 1.9.4 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search",'Hledat','.html');
@@ -409,7 +409,7 @@ $(function() {
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment">// A handmade floating-point number f * pow(2, e).</span></div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keyword">class </span>fp {</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="keyword">using</span> significand_type = uint64_t;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="keyword">using </span>significand_type = uint64_t;</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  significand_type f;</div>
@@ -436,7 +436,7 @@ $(function() {
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Double, FMT_ENABLE_IF(sizeof(Double) == sizeof(u<span class="keywordtype">int</span>64_t))&gt;</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  <span class="keywordtype">bool</span> assign(Double d) {</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="comment">// Assume double is in the format [sign][exponent][significand].</span></div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="keyword">using</span> limits = std::numeric_limits&lt;Double&gt;;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="keyword">using </span>limits = std::numeric_limits&lt;Double&gt;;</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> exponent_size =</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        bits&lt;Double&gt;::value - double_significand_size - 1;  <span class="comment">// -1 for sign</span></div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    <span class="keyword">const</span> uint64_t significand_mask = implicit_bit - 1;</div>
@@ -573,8 +573,8 @@ $(function() {
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>  <span class="comment">// A bigint is stored as an array of bigits (big digits), with bigit at index</span></div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>  <span class="comment">// 0 being the least significant one.</span></div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>  <span class="keyword">using</span> bigit = uint32_t;</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>  <span class="keyword">using</span> double_bigit = uint64_t;</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>  <span class="keyword">using </span>bigit = uint32_t;</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>  <span class="keyword">using </span>double_bigit = uint64_t;</div>
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  <span class="keyword">enum</span> { bigits_capacity = 32 };</div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>  <a class="code hl_class" href="classbasic__memory__buffer.html">basic_memory_buffer&lt;bigit, bigits_capacity&gt;</a> bigits_;</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>  <span class="keywordtype">int</span> exp_;</div>
@@ -752,7 +752,7 @@ $(function() {
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    <span class="keywordtype">int</span> num_bigits = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(bigits_.<a class="code hl_function" href="classinternal_1_1buffer.html#abac844b364cd93450a9c311807d15f80">size</a>());</div>
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    <span class="keywordtype">int</span> num_result_bigits = 2 * num_bigits;</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    bigits_.<a class="code hl_function" href="classinternal_1_1buffer.html#a4d38f4fdc2d4ca913a5a13523b690893">resize</a>(to_unsigned(num_result_bigits));</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    <span class="keyword">using</span> accumulator_t = conditional_t&lt;FMT_USE_INT128, uint128_t, accumulator&gt;;</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    <span class="keyword">using </span>accumulator_t = conditional_t&lt;FMT_USE_INT128, uint128_t, accumulator&gt;;</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    <span class="keyword">auto</span> sum = accumulator_t();</div>
 <div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> bigit_index = 0; bigit_index &lt; num_bigits; ++bigit_index) {</div>
 <div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>      <span class="comment">// Compute bigit at position bigit_index of the result by adding</span></div>
@@ -1491,7 +1491,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: ne 27. bře 2022 17.10:56, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Vygenerováno dne: po 1. srp 2022 19.09:10, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
 </small></address>
 </body>
 </html>

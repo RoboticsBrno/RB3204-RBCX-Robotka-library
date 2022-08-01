@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Zdrojový soubor fmt/printf.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Vygenerováno programem Doxygen 1.9.3 -->
+<!-- Vygenerováno programem Doxygen 1.9.4 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search",'Hledat','.html');
@@ -138,11 +138,11 @@ $(function() {
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">struct </span>make_unsigned_or_bool : std::make_unsigned&lt;T&gt; {};</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>make_unsigned_or_bool&lt;bool&gt; { <span class="keyword">using</span> type = bool; };</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>make_unsigned_or_bool&lt;bool&gt; { <span class="keyword">using </span>type = bool; };</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Context&gt; <span class="keyword">class </span>arg_converter {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">using</span> char_type = <span class="keyword">typename</span> Context::char_type;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">using </span>char_type = <span class="keyword">typename</span> Context::char_type;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  basic_format_arg&lt;Context&gt;&amp; arg_;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  char_type type_;</div>
@@ -158,14 +158,14 @@ $(function() {
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U, FMT_ENABLE_IF(std::is_<span class="keywordtype">int</span>egral&lt;U&gt;::value)&gt;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> operator()(U value) {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> is_signed = type_ == <span class="charliteral">&#39;d&#39;</span> || type_ == <span class="charliteral">&#39;i&#39;</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">using</span> target_type = conditional_t&lt;std::is_same&lt;T, void&gt;::value, U, T&gt;;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">using </span>target_type = conditional_t&lt;std::is_same&lt;T, void&gt;::value, U, T&gt;;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (const_check(<span class="keyword">sizeof</span>(target_type) &lt;= <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>))) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="comment">// Extra casts are used to silence warnings.</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="keywordflow">if</span> (is_signed) {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        arg_ = internal::make_arg&lt;Context&gt;(</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>target_type<span class="keyword">&gt;</span>(value)));</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keyword">using</span> unsigned_type = <span class="keyword">typename</span> make_unsigned_or_bool&lt;target_type&gt;::type;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keyword">using </span>unsigned_type = <span class="keyword">typename</span> make_unsigned_or_bool&lt;target_type&gt;::type;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        arg_ = internal::make_arg&lt;Context&gt;(</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>unsigned_type<span class="keyword">&gt;</span>(value)));</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      }</div>
@@ -217,7 +217,7 @@ $(function() {
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">// left alignment if it is negative.</span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char&gt; <span class="keyword">class </span>printf_width_handler {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keyword">using</span> format_specs = basic_format_specs&lt;Char&gt;;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keyword">using </span>format_specs = basic_format_specs&lt;Char&gt;;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  format_specs&amp; specs_;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
@@ -257,25 +257,25 @@ $(function() {
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>}  <span class="comment">// namespace internal</span></div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword">using</span> internal::printf;  <span class="comment">// For printing into memory_buffer.</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword">using </span>internal::printf;  <span class="comment">// For printing into memory_buffer.</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Range&gt; <span class="keyword">class </span><a class="code hl_class" href="classprintf__arg__formatter.html">printf_arg_formatter</a>;</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char&gt;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">class </span>basic_printf_parse_context : <span class="keyword">public</span> <a class="code hl_class" href="classbasic__format__parse__context.html">basic_format_parse_context</a>&lt;Char&gt; {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keyword">using</span> <a class="code hl_class" href="classbasic__format__parse__context.html">basic_format_parse_context&lt;Char&gt;::basic_format_parse_context</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keyword">using </span><a class="code hl_class" href="classbasic__format__parse__context.html">basic_format_parse_context</a>&lt;Char&gt;<a class="code hl_class" href="classbasic__format__parse__context.html">::basic_format_parse_context</a>;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>};</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> OutputIt, <span class="keyword">typename</span> Char&gt; <span class="keyword">class </span><a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context</a>;</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Range&gt;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classprintf__arg__formatter.html">  204</a></span><span class="keyword">class </span><a class="code hl_class" href="classprintf__arg__formatter.html">printf_arg_formatter</a> : <span class="keyword">public</span> internal::arg_formatter_base&lt;Range&gt; {</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">using</span> iterator = <span class="keyword">typename</span> Range::iterator;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">using </span>iterator = <span class="keyword">typename</span> Range::iterator;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keyword">using</span> char_type = <span class="keyword">typename</span> Range::value_type;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keyword">using</span> base = internal::arg_formatter_base&lt;Range&gt;;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">using</span> <a class="code hl_class" href="classbasic__printf__context.html">context_type</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context&lt;iterator, char_type&gt;</a>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keyword">using </span>char_type = <span class="keyword">typename</span> Range::value_type;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keyword">using </span>base = internal::arg_formatter_base&lt;Range&gt;;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">using </span><a class="code hl_class" href="classbasic__printf__context.html">context_type</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context&lt;iterator, char_type&gt;</a>;</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <a class="code hl_class" href="classbasic__printf__context.html">context_type</a>&amp; context_;</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
@@ -290,7 +290,7 @@ $(function() {
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  }</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keyword">using</span> format_specs = <span class="keyword">typename</span> base::format_specs;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keyword">using </span>format_specs = <span class="keyword">typename</span> base::format_specs;</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classprintf__arg__formatter.html#affaad59bc384a1d5c22aa5a80d3804ee">  235</a></span>  <a class="code hl_function" href="classprintf__arg__formatter.html#affaad59bc384a1d5c22aa5a80d3804ee">printf_arg_formatter</a>(iterator iter, format_specs&amp; specs, <a class="code hl_class" href="classbasic__printf__context.html">context_type</a>&amp; ctx)</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      : base(Range(iter), &amp;specs, internal::locale_ref()), context_(ctx) {}</div>
@@ -379,14 +379,14 @@ $(function() {
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classbasic__printf__context.html">  325</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> OutputIt, <span class="keyword">typename</span> Char&gt; <span class="keyword">class </span><a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context</a> {</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e">  328</a></span>  <span class="keyword">using</span> <a class="code hl_typedef" href="classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e">char_type</a> = Char;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keyword">using</span> iterator = OutputIt;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  <span class="keyword">using</span> format_arg = basic_format_arg&lt;basic_printf_context&gt;;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keyword">using</span> parse_context_type = basic_printf_parse_context&lt;Char&gt;;</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using</span> formatter_type = printf_formatter&lt;T&gt;;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e">  328</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e">char_type</a> = Char;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keyword">using </span>iterator = OutputIt;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  <span class="keyword">using </span>format_arg = basic_format_arg&lt;basic_printf_context&gt;;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keyword">using </span>parse_context_type = basic_printf_parse_context&lt;Char&gt;;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using </span>formatter_type = printf_formatter&lt;T&gt;;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keyword">using</span> format_specs = basic_format_specs&lt;char_type&gt;;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keyword">using </span>format_specs = basic_format_specs&lt;char_type&gt;;</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  OutputIt out_;</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <a class="code hl_class" href="classbasic__format__args.html">basic_format_args&lt;basic_printf_context&gt;</a> args_;</div>
@@ -553,7 +553,7 @@ $(function() {
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>    <span class="comment">// Parse length and convert the argument to the required type.</span></div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    c = it != end ? *it++ : 0;</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    <a class="code hl_typedef" href="classbasic__printf__context.html#a5ceea5767a393451e5a82b2b75a6f63e">char_type</a> t = it != end ? *it : 0;</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    <span class="keyword">using</span> internal::convert_arg;</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    <span class="keyword">using </span>internal::convert_arg;</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keywordflow">switch</span> (c) {</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>      <span class="keywordflow">if</span> (t == <span class="charliteral">&#39;h&#39;</span>) {</div>
@@ -617,15 +617,15 @@ $(function() {
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>}</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char&gt;</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keyword">using</span> <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t</a> =</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keyword">using </span><a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t</a> =</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context&lt;std::back_insert_iterator&lt;internal::buffer&lt;Char&gt;</a>&gt;,</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                         Char&gt;;</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keyword">using</span> <a class="code hl_class" href="classbasic__printf__context.html">printf_context</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;char&gt;</a>;</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keyword">using</span> <a class="code hl_class" href="classbasic__printf__context.html">wprintf_context</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;wchar_t&gt;</a>;</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keyword">using </span><a class="code hl_class" href="classbasic__printf__context.html">printf_context</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;char&gt;</a>;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keyword">using </span><a class="code hl_class" href="classbasic__printf__context.html">wprintf_context</a> = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;wchar_t&gt;</a>;</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span> </div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="keyword">using</span> <a class="code hl_class" href="classbasic__format__args.html">printf_args</a> = <a class="code hl_class" href="classbasic__format__args.html">basic_format_args&lt;printf_context&gt;</a>;</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="keyword">using</span> <a class="code hl_class" href="classbasic__format__args.html">wprintf_args</a> = <a class="code hl_class" href="classbasic__format__args.html">basic_format_args&lt;wprintf_context&gt;</a>;</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="keyword">using </span><a class="code hl_class" href="classbasic__format__args.html">printf_args</a> = <a class="code hl_class" href="classbasic__format__args.html">basic_format_args&lt;printf_context&gt;</a>;</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="keyword">using </span><a class="code hl_class" href="classbasic__format__args.html">wprintf_args</a> = <a class="code hl_class" href="classbasic__format__args.html">basic_format_args&lt;wprintf_context&gt;</a>;</div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="keyword">inline</span> <a class="code hl_class" href="classformat__arg__store.html">format_arg_store</a>&lt;<a class="code hl_class" href="classbasic__printf__context.html">printf_context</a>, Args...&gt; make_printf_args(</div>
@@ -651,7 +651,7 @@ $(function() {
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span>... Args,</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>          <span class="keyword">typename</span> Char = enable_if_t&lt;internal::is_string&lt;S&gt;::value, char_t&lt;S&gt;&gt;&gt;</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="keyword">inline</span> std::basic_string&lt;Char&gt; sprintf(<span class="keyword">const</span> S&amp; format, <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>  <span class="keyword">using</span> context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>  <span class="keyword">using </span>context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>  <span class="keywordflow">return</span> vsprintf(to_string_view(format), make_format_args&lt;context&gt;(args...));</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>}</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
@@ -670,7 +670,7 @@ $(function() {
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span>... Args,</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>          <span class="keyword">typename</span> Char = enable_if_t&lt;internal::is_string&lt;S&gt;::value, char_t&lt;S&gt;&gt;&gt;</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="keyword">inline</span> <span class="keywordtype">int</span> fprintf(std::FILE* f, <span class="keyword">const</span> S&amp; format, <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  <span class="keyword">using</span> context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  <span class="keyword">using </span>context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>  <span class="keywordflow">return</span> vfprintf(f, to_string_view(format),</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>                  make_format_args&lt;context&gt;(args...));</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>}</div>
@@ -685,7 +685,7 @@ $(function() {
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span>... Args,</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>          FMT_ENABLE_IF(internal::is_string&lt;S&gt;::value)&gt;</div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="keyword">inline</span> <span class="keywordtype">int</span> printf(<span class="keyword">const</span> S&amp; format_str, <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  <span class="keyword">using</span> context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;char_t&lt;S&gt;</a>&gt;;</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  <span class="keyword">using </span>context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;char_t&lt;S&gt;</a>&gt;;</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>  <span class="keywordflow">return</span> vprintf(to_string_view(format_str),</div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>                 make_format_args&lt;context&gt;(args...));</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>}</div>
@@ -714,7 +714,7 @@ $(function() {
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span>... Args, <span class="keyword">typename</span> Char = char_t&lt;S&gt;&gt;</div>
 <div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="keyword">inline</span> <span class="keywordtype">int</span> fprintf(std::basic_ostream&lt;Char&gt;&amp; os, <span class="keyword">const</span> S&amp; format_str,</div>
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>                   <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  <span class="keyword">using</span> context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  <span class="keyword">using </span>context = <a class="code hl_class" href="classbasic__printf__context.html">basic_printf_context_t&lt;Char&gt;</a>;</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>  <span class="keywordflow">return</span> vfprintf(os, to_string_view(format_str),</div>
 <div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>                  make_format_args&lt;context&gt;(args...));</div>
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>}</div>
@@ -744,7 +744,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: ne 27. bře 2022 17.10:56, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Vygenerováno dne: po 1. srp 2022 19.09:10, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
 </small></address>
 </body>
 </html>
