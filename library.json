@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "version": "1.3.13",
+    "version": "1.3.14",
     "frameworks": [
         "arduino"
     ],
@@ -35,7 +35,7 @@
         },
         {
             "name": "Esp32-RBGridUI",
-            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.9.1.zip"
+            "version": "https://github.com/RoboticsBrno/Esp32-RBGridUI/archive/v4.9.2.zip"
         },
         {
             "name": "SmartLeds",
