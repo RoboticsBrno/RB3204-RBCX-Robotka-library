@@ -165,20 +165,31 @@ void rkMotorsDriveByIdAsync(uint8_t id, float mm, uint8_t speed, std::function<v
     gCtx.motors().driveById(rb::MotorId(id), mm, speed, std::move(callback));
 }
 
-float rkMotorsGetPositionLeft() {
-    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idLeft() + 1);
+float rkMotorsGetPositionLeft(bool fetch) {
+    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idLeft() + 1, fetch);
 }
 
-float rkMotorsGetPositionRight() {
-    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idRight() + 1);
+float rkMotorsGetPositionRight(bool fetch) {
+    return rkMotorsGetPositionById((uint8_t)gCtx.motors().idRight() + 1, fetch);
 }
 
-float rkMotorsGetPositionById(uint8_t id) {
+float rkMotorsGetPositionById(uint8_t id, bool fetch) {
     id -= 1;
     if (id >= (int)rb::MotorId::MAX) {
         ESP_LOGE(TAG, "%s: invalid motor id, %d is out of range <1;4>.", __func__, id + 1);
         return 0.f;
     }
+
+    if(fetch) {
+        SemaphoreHandle_t binary = xSemaphoreCreateBinary();
+        auto& m = rb::Manager::get().motor(rb::MotorId(id));
+        m.requestInfo([=](rb::Motor& m) {
+            xSemaphoreGive(binary);
+        });
+        xSemaphoreTake(binary, portMAX_DELAY);
+        vSemaphoreDelete(binary);
+    }
+
     return gCtx.motors().position(rb::MotorId(id));
 }
 

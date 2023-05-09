@@ -331,24 +331,27 @@ void rkMotorsDriveByIdAsync(uint8_t id, float mm, uint8_t speed, std::function<v
 /**
  * \brief Vrátí absolutní najetou vzálenost na levém motoru v mm
  *
+ * \param fetch zeptá se koprocesoru na opravdovou pozici, místo toho, aby vrátil "cachovanou" hodnotu, ale volání trvá déle
  * \return absolutní (celková) najetá vzdálenost na levém motoru v mm
  */
-float rkMotorsGetPositionLeft();
+float rkMotorsGetPositionLeft(bool fetch = false);
 
 /**
  * \brief Vrátí absolutní najetou vzálenost na pravém motoru v mm
  *
+ * \param fetch zeptá se koprocesoru na opravdovou pozici, místo toho, aby vrátil "cachovanou" hodnotu, ale volání trvá déle
  * \return absolutní (celková) najetá vzdálenost na pravém motoru v mm
  */
-float rkMotorsGetPositionRight();
+float rkMotorsGetPositionRight(bool fetch = false);
 
 /**
  * \brief Vrátí absolutní najetou vzálenost na motoru podle ID
  *
  * \param id číslo motoru od 1 do 4 včetně
+ * \param fetch zeptá se koprocesoru na opravdovou pozici, místo toho, aby vrátil "cachovanou" hodnotu, ale volání trvá déle
  * \return absolutní (celková) najetá vzdálenost na motoru v mm
  */
-float rkMotorsGetPositionById(uint8_t id);
+float rkMotorsGetPositionById(uint8_t id, bool fetch = false);
 
 /**
  * \brief Nastaví absolutní počítadlo vzdálenosti na levém motoru na hodnotu v mm
