@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Ultrazvuky</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Vygenerováno programem Doxygen 1.9.4 -->
+<!-- Vygenerováno programem Doxygen 1.9.5 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Hledat','.html');
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -57,9 +57,16 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Načítám...</div>
+<div class="SRStatus" id="Searching">Vyhledávám...</div>
+<div class="SRStatus" id="NoMatches">Nebylo nic nalezeno</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -82,7 +89,7 @@ Funkce</h2></td></tr>
 <p >Funkce pro meření vzálenosti pomocí ultrazvuků. </p>
 <h2 class="groupheader">Dokumentace funkcí</h2>
 <a id="ga5e355a3b39091f576a84132f6426c1d1" name="ga5e355a3b39091f576a84132f6426c1d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e355a3b39091f576a84132f6426c1d1">&#9670;&nbsp;</a></span>rkUltraMeasure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e355a3b39091f576a84132f6426c1d1">&#9670;&#160;</a></span>rkUltraMeasure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -110,7 +117,7 @@ Funkce</h2></td></tr>
 </div>
 </div>
 <a id="ga98080f65f96c1c3d2efffdaff4f91471" name="ga98080f65f96c1c3d2efffdaff4f91471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga98080f65f96c1c3d2efffdaff4f91471">&#9670;&nbsp;</a></span>rkUltraMeasureAsync()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98080f65f96c1c3d2efffdaff4f91471">&#9670;&#160;</a></span>rkUltraMeasureAsync()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,8 +151,8 @@ Funkce</h2></td></tr>
 <div class="line">});</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a>(<span class="keyword">true</span>); <span class="comment">// provede se ještě před tím, než se stihne změřit vzdálenost.</span></div>
-<div class="ttc" id="agroup__leds_html_ga5a69bab56ea3d255d42e06fdb1169513"><div class="ttname"><a href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a></div><div class="ttdeci">void rkLedBlue(bool on)</div><div class="ttdoc">Zapnout/vypnout modrou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:219</div></div>
-<div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:356</div></div>
+<div class="ttc" id="agroup__leds_html_ga5a69bab56ea3d255d42e06fdb1169513"><div class="ttname"><a href="group__leds.html#ga5a69bab56ea3d255d42e06fdb1169513">rkLedBlue</a></div><div class="ttdeci">void rkLedBlue(bool on)</div><div class="ttdoc">Zapnout/vypnout modrou LED.</div><div class="ttdef"><b>Definition:</b> robotka.cpp:230</div></div>
+<div class="ttc" id="agroup__ultrasound_html_ga98080f65f96c1c3d2efffdaff4f91471"><div class="ttname"><a href="group__ultrasound.html#ga98080f65f96c1c3d2efffdaff4f91471">rkUltraMeasureAsync</a></div><div class="ttdeci">void rkUltraMeasureAsync(uint8_t id, std::function&lt; bool(uint32_t)&gt; callback)</div><div class="ttdoc">Změřit vzálenost (asynchroní)</div><div class="ttdef"><b>Definition:</b> robotka.cpp:367</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Id ultrazvuku, od 1 do 4 včetně, podle popisků na desce. </td></tr>
@@ -159,7 +166,7 @@ Funkce</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: pá 5. srp 2022 19.33:33, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+Vygenerováno dne: út 9. kvě 2023 18.42:23, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

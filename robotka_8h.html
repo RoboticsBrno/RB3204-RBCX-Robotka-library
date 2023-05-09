@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Robotka: Dokumentace souboru robotka.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Vygenerováno programem Doxygen 1.9.4 -->
+<!-- Vygenerováno programem Doxygen 1.9.5 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Hledat','.html');
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -56,9 +56,16 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Načítám...</div>
+<div class="SRStatus" id="Searching">Vyhledávám...</div>
+<div class="SRStatus" id="NoMatches">Nebylo nic nalezeno</div>
+</div>
+</div>
+</div>
 </div>
 
 </div><!-- top -->
@@ -174,15 +181,15 @@ Funkce</h2></td></tr>
 <tr class="memitem:ga825106e225179decd0f5c60585428bd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga825106e225179decd0f5c60585428bd2">rkMotorsDriveByIdAsync</a> (uint8_t id, float mm, uint8_t speed, std::function&lt; void()&gt; callback=nullptr)</td></tr>
 <tr class="memdesc:ga825106e225179decd0f5c60585428bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popojetí motorem podle ID o vzdálenost v mm (asynchroní).  <a href="group__motors.html#ga825106e225179decd0f5c60585428bd2">...</a><br /></td></tr>
 <tr class="separator:ga825106e225179decd0f5c60585428bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ce85a46bc1ecf7e01a3d809bd7e34ba"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga0ce85a46bc1ecf7e01a3d809bd7e34ba">rkMotorsGetPositionLeft</a> ()</td></tr>
-<tr class="memdesc:ga0ce85a46bc1ecf7e01a3d809bd7e34ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na levém motoru v mm.  <a href="group__motors.html#ga0ce85a46bc1ecf7e01a3d809bd7e34ba">...</a><br /></td></tr>
-<tr class="separator:ga0ce85a46bc1ecf7e01a3d809bd7e34ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga87766ea8ba917a5937506dd95641f4e1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga87766ea8ba917a5937506dd95641f4e1">rkMotorsGetPositionRight</a> ()</td></tr>
-<tr class="memdesc:ga87766ea8ba917a5937506dd95641f4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na pravém motoru v mm.  <a href="group__motors.html#ga87766ea8ba917a5937506dd95641f4e1">...</a><br /></td></tr>
-<tr class="separator:ga87766ea8ba917a5937506dd95641f4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5f8865fd4c5304432dacf6be5da7933"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#gaf5f8865fd4c5304432dacf6be5da7933">rkMotorsGetPositionById</a> (uint8_t id)</td></tr>
-<tr class="memdesc:gaf5f8865fd4c5304432dacf6be5da7933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na motoru podle ID.  <a href="group__motors.html#gaf5f8865fd4c5304432dacf6be5da7933">...</a><br /></td></tr>
-<tr class="separator:gaf5f8865fd4c5304432dacf6be5da7933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2489f8850e910891fc11e11cb8e94b3a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga2489f8850e910891fc11e11cb8e94b3a">rkMotorsGetPositionLeft</a> (bool fetch=false)</td></tr>
+<tr class="memdesc:ga2489f8850e910891fc11e11cb8e94b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na levém motoru v mm.  <a href="group__motors.html#ga2489f8850e910891fc11e11cb8e94b3a">...</a><br /></td></tr>
+<tr class="separator:ga2489f8850e910891fc11e11cb8e94b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17a8c9941c3b6ff37dad01cc112c4fb7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga17a8c9941c3b6ff37dad01cc112c4fb7">rkMotorsGetPositionRight</a> (bool fetch=false)</td></tr>
+<tr class="memdesc:ga17a8c9941c3b6ff37dad01cc112c4fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na pravém motoru v mm.  <a href="group__motors.html#ga17a8c9941c3b6ff37dad01cc112c4fb7">...</a><br /></td></tr>
+<tr class="separator:ga17a8c9941c3b6ff37dad01cc112c4fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c26ca09dc163bbcaac8f04cddcb0716"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga0c26ca09dc163bbcaac8f04cddcb0716">rkMotorsGetPositionById</a> (uint8_t id, bool fetch=false)</td></tr>
+<tr class="memdesc:ga0c26ca09dc163bbcaac8f04cddcb0716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí absolutní najetou vzálenost na motoru podle ID.  <a href="group__motors.html#ga0c26ca09dc163bbcaac8f04cddcb0716">...</a><br /></td></tr>
+<tr class="separator:ga0c26ca09dc163bbcaac8f04cddcb0716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga626267bd2080553940602221432053b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__motors.html#ga626267bd2080553940602221432053b5">rkMotorsSetPositionLeft</a> (float positionMm=0.f)</td></tr>
 <tr class="memdesc:ga626267bd2080553940602221432053b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nastaví absolutní počítadlo vzdálenosti na levém motoru na hodnotu v mm.  <a href="group__motors.html#ga626267bd2080553940602221432053b5">...</a><br /></td></tr>
 <tr class="separator:ga626267bd2080553940602221432053b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,7 +310,7 @@ Funkce</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: pá 5. srp 2022 19.33:33, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+Vygenerováno dne: út 9. kvě 2023 18.42:23, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
