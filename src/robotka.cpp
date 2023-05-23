@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "_librk_context.h"
+#include "_librk_smart_servo.h"
 #include "robotka.h"
 
 #include "RBCX.h"
@@ -438,4 +439,9 @@ void rkServosDisable(uint8_t id) {
         return;
     }
     rb::Manager::get().stupidServo(id).disable();
+}
+
+lx16a::SmartServoBus& rkSmartServoBus(uint8_t servo_count) {
+    static rk::SmartServoBusInitializer init(servo_count);
+    return init.bus();
 }

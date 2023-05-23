@@ -17,6 +17,8 @@
 
 #include "SmartLeds.h"
 
+#include "SmartServoBus.hpp"
+
 #include "RBCX.h"
 #include "gridui.h"
 #include "rbprotocol.h"
@@ -820,6 +822,29 @@ float rkServosGetPosition(uint8_t id);
  * \param id číslo serva od 1 do 4 včetně, podle popisku na desce (SERVO1...SERVO4)
  */
 void rkServosDisable(uint8_t id);
+
+/**@}*/
+
+/**
+ * \defgroup smartservos Serva (chytrá)
+ *
+ * Metody pro ovládání chytrých serv. Chytrá serva se ovládájí přes knihovnu Esp32-lx16a,
+ * knihovna robotky má pouze pár pomocných metod pro získání správně nastavené instance.
+ * @{
+ */
+
+/**
+ * \brief Vrátí instanci SmartServoBus pro ovládání chytrých serv.
+ *
+ * 
+ *
+ * \param servo_count počet serv napojených na sběrnici. Serva musí mít ID nastavená
+ *     v rozmezí <0;servo_count). servo_count je použito pouze při prvním volání
+ *     rkSmartServoBus fce, v dalších můžete prostě použít 0.
+ *                    
+ * \return reference na SmartServoBus objekt, vrací pokaždé tu stejnou referenci.
+ */
+lx16a::SmartServoBus& rkSmartServoBus(uint8_t servo_count);
 
 /**@}*/
 
