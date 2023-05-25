@@ -107,7 +107,7 @@ struct rkConfig {
 
     uint8_t motor_id_left; //!< Které M číslo motoru patří levému, podle čísla na desce. Výchozí: `2`
     uint8_t motor_id_right; //!< Které M číslo motoru patří pravému, podle čísla na desce. Výchozí: `1`
-    uint8_t motor_max_power_pct; //!< Limit výkonu motoru v procentech od 0 do 100. Výchozí: `60`
+    uint8_t motor_max_power_pct; //!< Limit výkonu motoru v procentech od 0 do 100. Ovlivňuje všechny režimy motorů. Výchozí: `60`
     bool motor_polarity_switch_left; //!< Prohození polarity levého motoru. Výchozí: `false`
     bool motor_polarity_switch_right; //!< Prohození polarity pravého motoru. Výchozí: `true`
     bool motor_enable_failsafe; //!< Zastaví motory po 500ms, pokud není zavoláno rkSetMotorPower nebo rkSetMotorSpeed. Výchozí: `false`
@@ -118,6 +118,8 @@ struct rkConfig {
      *
      * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
      * a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost.
+     * 
+     * Rychlostní regulátor je ovlivněn i `motor_max_power_pct` hodnotou.
      */
     uint32_t motor_max_ticks_per_second;
 
