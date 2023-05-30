@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Robotka: Rejstřík tříd</title>
+<title>Robotka: Zdrojový soubor _librk_smart_servo.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,37 +70,31 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Rejstřík tříd</div></div>
+  <div class="headertitle"><div class="title">_librk_smart_servo.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_F">F</a>&#160;|&#160;<a class="qindex" href="#letter_I">I</a>&#160;|&#160;<a class="qindex" href="#letter_P">P</a>&#160;|&#160;<a class="qindex" href="#letter_R">R</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a></div>
-<div class="classindex">
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_A" name="letter_A">A</a></dt>
-<dd><a class="el" href="classarg__formatter.html">arg_formatter</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_B" name="letter_B">B</a></dt>
-<dd><a class="el" href="classbasic__format__args.html">basic_format_args</a></dd><dd><a class="el" href="classbasic__format__parse__context.html">basic_format_parse_context</a></dd><dd><a class="el" href="classbasic__memory__buffer.html">basic_memory_buffer</a></dd><dd><a class="el" href="classbasic__printf__context.html">basic_printf_context</a></dd><dd><a class="el" href="classbasic__string__view.html">basic_string_view</a></dd><dd><a class="el" href="classinternal_1_1buffer.html">buffer</a> (internal)</dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_D" name="letter_D">D</a></dt>
-<dd><a class="el" href="classdynamic__format__arg__store.html">dynamic_format_arg_store</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_F" name="letter_F">F</a></dt>
-<dd><a class="el" href="classformat__arg__store.html">format_arg_store</a></dd><dd><a class="el" href="structformat__args.html">format_args</a></dd><dd><a class="el" href="classformat__error.html">format_error</a></dd><dd><a class="el" href="classformat__int.html">format_int</a></dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_I" name="letter_I">I</a></dt>
-<dd><a class="el" href="structis__char.html">is_char</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_P" name="letter_P">P</a></dt>
-<dd><a class="el" href="classprintf__arg__formatter.html">printf_arg_formatter</a></dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_R" name="letter_R">R</a></dt>
-<dd><a class="el" href="structrkConfig.html">rkConfig</a></dd><dd><a class="el" href="structrkPinsConfig.html">rkPinsConfig</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_S" name="letter_S">S</a></dt>
-<dd><a class="el" href="classsystem__error.html">system_error</a></dd></dl>
-</div>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;SmartServoBus.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;RBCXManager.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>rk {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>SmartServoBusInitializer {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    SmartServoBusInitializer(uint8_t servo_count) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">auto</span>&amp; man = rb::Manager::get();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        m_bus.begin(servo_count, &amp;man.smartServoBusBackend());</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    lx16a::SmartServoBus&amp; bus() { <span class="keywordflow">return</span> m_bus; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    lx16a::SmartServoBus m_bus;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Vygenerováno dne: út 30. kvě 2023 18.30:51, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

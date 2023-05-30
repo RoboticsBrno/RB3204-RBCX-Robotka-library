@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Robotka: Rejstřík tříd</title>
+<title>Robotka: Serva (chytrá)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,35 +70,47 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Rejstřík tříd</div></div>
+  <div class="summary">
+<a href="#func-members">Funkce</a>  </div>
+  <div class="headertitle"><div class="title">Serva (chytrá)</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_F">F</a>&#160;|&#160;<a class="qindex" href="#letter_I">I</a>&#160;|&#160;<a class="qindex" href="#letter_P">P</a>&#160;|&#160;<a class="qindex" href="#letter_R">R</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a></div>
-<div class="classindex">
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_A" name="letter_A">A</a></dt>
-<dd><a class="el" href="classarg__formatter.html">arg_formatter</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_B" name="letter_B">B</a></dt>
-<dd><a class="el" href="classbasic__format__args.html">basic_format_args</a></dd><dd><a class="el" href="classbasic__format__parse__context.html">basic_format_parse_context</a></dd><dd><a class="el" href="classbasic__memory__buffer.html">basic_memory_buffer</a></dd><dd><a class="el" href="classbasic__printf__context.html">basic_printf_context</a></dd><dd><a class="el" href="classbasic__string__view.html">basic_string_view</a></dd><dd><a class="el" href="classinternal_1_1buffer.html">buffer</a> (internal)</dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_D" name="letter_D">D</a></dt>
-<dd><a class="el" href="classdynamic__format__arg__store.html">dynamic_format_arg_store</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_F" name="letter_F">F</a></dt>
-<dd><a class="el" href="classformat__arg__store.html">format_arg_store</a></dd><dd><a class="el" href="structformat__args.html">format_args</a></dd><dd><a class="el" href="classformat__error.html">format_error</a></dd><dd><a class="el" href="classformat__int.html">format_int</a></dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_I" name="letter_I">I</a></dt>
-<dd><a class="el" href="structis__char.html">is_char</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_P" name="letter_P">P</a></dt>
-<dd><a class="el" href="classprintf__arg__formatter.html">printf_arg_formatter</a></dd></dl>
-<dl class="classindex even">
-<dt class="alphachar"><a id="letter_R" name="letter_R">R</a></dt>
-<dd><a class="el" href="structrkConfig.html">rkConfig</a></dd><dd><a class="el" href="structrkPinsConfig.html">rkPinsConfig</a></dd></dl>
-<dl class="classindex odd">
-<dt class="alphachar"><a id="letter_S" name="letter_S">S</a></dt>
-<dd><a class="el" href="classsystem__error.html">system_error</a></dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkce</h2></td></tr>
+<tr class="memitem:ga05cb64135939cd7cd7f7874fd6a256f1"><td class="memItemLeft" align="right" valign="top">lx16a::SmartServoBus &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__smartservos.html#ga05cb64135939cd7cd7f7874fd6a256f1">rkSmartServoBus</a> (uint8_t servo_count)</td></tr>
+<tr class="memdesc:ga05cb64135939cd7cd7f7874fd6a256f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrátí instanci SmartServoBus pro ovládání chytrých serv.  <a href="group__smartservos.html#ga05cb64135939cd7cd7f7874fd6a256f1">...</a><br /></td></tr>
+<tr class="separator:ga05cb64135939cd7cd7f7874fd6a256f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
+<p >Metody pro ovládání chytrých serv. Chytrá serva se ovládájí přes knihovnu Esp32-lx16a, knihovna robotky má pouze pár pomocných metod pro získání správně nastavené instance. </p>
+<h2 class="groupheader">Dokumentace funkcí</h2>
+<a id="ga05cb64135939cd7cd7f7874fd6a256f1" name="ga05cb64135939cd7cd7f7874fd6a256f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05cb64135939cd7cd7f7874fd6a256f1">&#9670;&#160;</a></span>rkSmartServoBus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lx16a::SmartServoBus &amp; rkSmartServoBus </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>servo_count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vrátí instanci SmartServoBus pro ovládání chytrých serv. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servo_count</td><td>počet serv napojených na sběrnici. Serva musí mít ID nastavená v rozmezí &lt;0;servo_count). servo_count je použito pouze při prvním volání rkSmartServoBus fce, v dalších můžete prostě použít 0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>reference na SmartServoBus objekt, vrací pokaždé tu stejnou referenci. </dd></dl>
+
+</div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->

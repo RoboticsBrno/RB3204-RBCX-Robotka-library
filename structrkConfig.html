@@ -126,7 +126,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>motor_id_right</b>
 <tr class="separator:ac7c0397b741aa8bd9ab5db6fddfb424d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217f36a4ec2030e2614c3bf2e9c6db0b"><td class="memItemLeft" align="right" valign="top"><a id="a217f36a4ec2030e2614c3bf2e9c6db0b" name="a217f36a4ec2030e2614c3bf2e9c6db0b"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>motor_max_power_pct</b></td></tr>
-<tr class="memdesc:a217f36a4ec2030e2614c3bf2e9c6db0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit výkonu motoru v procentech od 0 do 100. Výchozí: <code>60</code> <br /></td></tr>
+<tr class="memdesc:a217f36a4ec2030e2614c3bf2e9c6db0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit výkonu motoru v procentech od 0 do 100. Ovlivňuje všechny režimy motorů. Výchozí: <code>60</code> <br /></td></tr>
 <tr class="separator:a217f36a4ec2030e2614c3bf2e9c6db0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98b16d3afdb82c807c2095ac507c9dab"><td class="memItemLeft" align="right" valign="top"><a id="a98b16d3afdb82c807c2095ac507c9dab" name="a98b16d3afdb82c807c2095ac507c9dab"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>motor_polarity_switch_left</b></td></tr>
@@ -201,7 +201,8 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>smart_leds_count<
 </div><div class="memdoc">
 
 <p>Maximální rychlost motorů v ticích enkodéru za vteřinu. Výchozí: <code>2000</code> </p>
-<p >Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost. </p>
+<p >Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost.</p>
+<p >Rychlostní regulátor je ovlivněn i <code>motor_max_power_pct</code> hodnotou. </p>
 
 </div>
 </div>
@@ -211,7 +212,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>smart_leds_count<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: út 9. kvě 2023 18.42:23, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Vygenerováno dne: út 30. kvě 2023 18.30:51, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
