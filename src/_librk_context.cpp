@@ -6,6 +6,7 @@
 
 #include "rbprotocol.h"
 #include "rbwebserver.h"
+#include "rbdns.h"
 #include "rbwifi.h"
 #include <stdio.h>
 
@@ -70,7 +71,11 @@ void Context::setup(const rkConfig& cfg) {
         using namespace std::placeholders;
         m_prot = new Protocol(cfg.owner, cfg.name, "Compiled at " __DATE__ " " __TIME__,
             std::bind(&Context::handleRbcontrollerMessage, this, _1, _2));
-        m_prot->start();
+
+        auto protCfg = Protocol::DEFAULT_CONFIG;
+        protCfg.enable_ws = cfg.rbcontroller_enable_webocket;
+        protCfg.enable_udp = cfg.rbcontroller_enable_udp;
+        m_prot->start(protCfg);
 
         UI.begin(m_prot);
     }

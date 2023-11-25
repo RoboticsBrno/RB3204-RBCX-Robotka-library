@@ -5,6 +5,7 @@
 
 #include <RBCX.h>
 #include <RBCXNvs.h>
+#include <rbdns.h>
 #include <rbwifi.h>
 
 #include "_librk_wifi.h"
@@ -66,6 +67,10 @@ void WiFi::init(const rkConfig& cfg) {
     }
 
     setupWifi(wifiCfg);
+
+    if (cfg.rbcontroller_app_enable && cfg.rbcontroller_enable_webocket && !station_mode) {
+        rb::DnsServer::get().start();
+    }
 
 #ifndef RK_DISABLE_BLE
     if (enable_ble) {

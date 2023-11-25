@@ -72,6 +72,8 @@ struct rkPinsConfig {
 struct rkConfig {
     rkConfig()
         : rbcontroller_app_enable(false)
+        , rbcontroller_enable_webocket(true)
+        , rbcontroller_enable_udp(true)
         , owner("Nenastaven")
         , name("Nenastaveno")
         , wifi_name("")
@@ -94,6 +96,18 @@ struct rkConfig {
     }
 
     bool rbcontroller_app_enable; //!< povolit komunikaci s aplikací RBController. Výchozí: `false`
+    /**
+     * Povolit komunikaci s GridUI přes běžný prohlížeč. Pokud vytvoříte také WiFi síť, stačí se na ní připojit,
+     * a na telefonu se automaticky otevře ovládání bez nutnosti instalace RBController aplikace.
+     * Výchozí: `true`, pokud je `rbcontroller_app_enable` `true`
+     */
+    bool rbcontroller_enable_webocket;
+    /**
+     * Povolit komunikaci s GridUI přes UDP, tedy přes Android aplikaci RBController. Vypnutí ušetří
+     * výkon a paměť v případě, že se chcete připojit pouze přes prohlížeč pomocí WebSocketů.
+     * Výchozí: `true`, pokud je `rbcontroller_app_enable` `true`
+     */
+    bool rbcontroller_enable_udp;
 
     const char* owner; //!< Jméno vlastníka robota. Podle tohoto jména filtruje RBController roboty. Výchozí: `""`
     const char* name; //!< Jméno robota. Výchozí: ""
