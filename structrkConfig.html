@@ -88,6 +88,10 @@ Veřejné atributy</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>rbcontroller_app_enable</b></td></tr>
 <tr class="memdesc:a18347342033debb9e6b6a0d2323ed96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">povolit komunikaci s aplikací RBController. Výchozí: <code>false</code> <br /></td></tr>
 <tr class="separator:a18347342033debb9e6b6a0d2323ed96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae9a4cea97ad0709da187de48208a19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#a7ae9a4cea97ad0709da187de48208a19">rbcontroller_enable_webocket</a></td></tr>
+<tr class="separator:a7ae9a4cea97ad0709da187de48208a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87b5e23cb356c8e3c9080d4de976038"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrkConfig.html#aa87b5e23cb356c8e3c9080d4de976038">rbcontroller_enable_udp</a></td></tr>
+<tr class="separator:aa87b5e23cb356c8e3c9080d4de976038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5cd8612bda3218aca9bb0fc5ca38d92"><td class="memItemLeft" align="right" valign="top"><a id="af5cd8612bda3218aca9bb0fc5ca38d92" name="af5cd8612bda3218aca9bb0fc5ca38d92"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>owner</b></td></tr>
 <tr class="memdesc:af5cd8612bda3218aca9bb0fc5ca38d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jméno vlastníka robota. Podle tohoto jména filtruje RBController roboty. Výchozí: <code>""</code> <br /></td></tr>
@@ -206,13 +210,43 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>smart_leds_count<
 
 </div>
 </div>
+<a id="aa87b5e23cb356c8e3c9080d4de976038" name="aa87b5e23cb356c8e3c9080d4de976038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87b5e23cb356c8e3c9080d4de976038">&#9670;&#160;</a></span>rbcontroller_enable_udp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rkConfig::rbcontroller_enable_udp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Povolit komunikaci s GridUI přes UDP, tedy přes Android aplikaci RBController. Vypnutí ušetří výkon a paměť v případě, že se chcete připojit pouze přes prohlížeč pomocí WebSocketů. Výchozí: <code>true</code>, pokud je <code>rbcontroller_app_enable</code> <code>true</code> </p>
+
+</div>
+</div>
+<a id="a7ae9a4cea97ad0709da187de48208a19" name="a7ae9a4cea97ad0709da187de48208a19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ae9a4cea97ad0709da187de48208a19">&#9670;&#160;</a></span>rbcontroller_enable_webocket</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rkConfig::rbcontroller_enable_webocket</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Povolit komunikaci s GridUI přes běžný prohlížeč. Pokud vytvoříte také WiFi síť, stačí se na ní připojit, a na telefonu se automaticky otevře ovládání bez nutnosti instalace RBController aplikace. Výchozí: <code>true</code>, pokud je <code>rbcontroller_app_enable</code> <code>true</code> </p>
+
+</div>
+</div>
 <hr/>Dokumentace pro tuto strukturu byla vygenerována z následujícího souboru:<ul>
 <li><a class="el" href="robotka_8h_source.html">robotka.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Vygenerováno dne: út 30. kvě 2023 18.30:51, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Vygenerováno dne: so 25. lis 2023 20.55:08, pro projekt: Robotka, programem&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
