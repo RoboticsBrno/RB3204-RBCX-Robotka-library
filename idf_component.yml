@@ -4,21 +4,15 @@ dependencies:
   roboticsbrno/rb3204-rbcx-library:
     git: https://github.com/RoboticsBrno/RB3204-RBCX-library.git
     version: 5476369d761ff9e160552e40680ff272e04ade51
-  roboticsbrno/smartleds:
-    git: https://github.com/RoboticsBrno/SmartLeds.git
-    version: cee7537b918b575e8045a5e21b527fc09fb35c35
   roboticsbrno/rb3204-rbcx-coproc-comm:
     git: https://github.com/RoboticsBrno/RB3204-RBCX-coproc-comm.git
     version: 88260585f73a93af7f7f8717af64ebad5acaa474
-  roboticsbrno/esp32-lx16a:
-    git: https://github.com/RoboticsBrno/Esp32-lx16a.git
-    version: 94b1e5d2f2511df96aa67ca52037b444cda7ecc9
   roboticsbrno/esp32-mcp3008-linesensor:
     git: https://github.com/RoboticsBrno/Esp32-Mcp3008-LineSensor.git
     version: bfa8eece3b468d9f2ce2fd030fd52c3d7b425476
-  roboticsbrno/rb3201-rbprotocol-library:
-    git: https://github.com/RoboticsBrno/RB3201-RBProtocol-library.git
-    version: 5e4dcdad56c34ee00fddc779380886e4bd3079b7
   roboticsbrno/esp32-rbgridui:
     git: https://github.com/RoboticsBrno/Esp32-RBGridUI.git
     version: v5.4.1
+  roboticsbrno/smartleds:
+    git: https://github.com/RoboticsBrno/SmartLeds.git
+    version: cee7537b918b575e8045a5e21b527fc09fb35c35
