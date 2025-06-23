@@ -132,7 +132,7 @@ struct rkConfig {
      *
      * Ovlivňuje regulátor rychlosti motorů, který se používá u funkcí rkMotorsSetSpeed
      * a rkMotorsDrive. Oba dva motory by měli být schopny dosáhnout tuto rychlost.
-     * 
+     *
      * Rychlostní regulátor je ovlivněn i `motor_max_power_pct` hodnotou.
      */
     uint32_t motor_max_ticks_per_second;
@@ -799,7 +799,7 @@ void rkSmartLedsRGB(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
 void rkSmartLedsHSV(uint16_t idx, uint8_t h, uint8_t s, uint8_t v);
 
 /**
- * \brief Nastavit barvu chytré led podle RGB HEX kódu 
+ * \brief Nastavit barvu chytré led podle RGB HEX kódu
  * \param idx Číslo LED, kterou chcete nastavit, od 0 do počtu led - 1 (tedy s jedním páskem od 0 do 7 včetně)
  * \param hexCode barevný hexadecimální RGB kód (0xFF0000)
  **/
@@ -852,12 +852,12 @@ void rkServosDisable(uint8_t id);
 /**
  * \brief Vrátí instanci SmartServoBus pro ovládání chytrých serv.
  *
- * 
+ *
  *
  * \param servo_count počet serv napojených na sběrnici. Serva musí mít ID nastavená
  *     v rozmezí <0;servo_count). servo_count je použito pouze při prvním volání
  *     rkSmartServoBus fce, v dalších můžete prostě použít 0.
- *                    
+ *
  * \return reference na SmartServoBus objekt, vrací pokaždé tu stejnou referenci.
  */
 lx16a::SmartServoBus& rkSmartServoBus(uint8_t servo_count);

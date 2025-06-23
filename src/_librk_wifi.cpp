@@ -3,6 +3,11 @@
 #include <esp_log.h>
 #include <esp_wifi.h>
 
+#ifndef RK_DISABLE_BLE
+#include <esp_bt.h>
+#include <esp_bt_main.h>
+#endif
+
 #include <RBCX.h>
 #include <RBCXNvs.h>
 #include <rbdns.h>
@@ -74,10 +79,14 @@ void WiFi::init(const rkConfig& cfg) {
 
 #ifndef RK_DISABLE_BLE
     if (enable_ble) {
+#ifdef ESP_BT_MODE_CLASSIC_BT
         esp_bt_mem_release(ESP_BT_MODE_CLASSIC_BT);
+#endif
         setupBle(cfg, wifiCfg);
     } else {
+#ifdef ESP_BT_MODE_BTDM
         esp_bt_mem_release(ESP_BT_MODE_BTDM);
+#endif
     }
 #endif
 }
@@ -134,7 +143,9 @@ void WiFi::disableBle() {
     BLEDevice::getAdvertising()->stop();
 
     BLEDevice::deinit(false);
+#ifdef ESP_BT_MODE_BTDM
     esp_bt_mem_release(ESP_BT_MODE_BTDM);
+#endif
 
     delete BLEDevice::getAdvertising();
     //delete m_server;
@@ -161,18 +172,24 @@ void WiFi::setupBle(const rkConfig& cfg, const Config& wifiCfg) {
     auto& man = rb::Manager::get();
 
     // Preinit in BLE-only mode, saves few KB of RAM
+#ifdef ESP_BT_CONTROLLER_STATUS_ENABLED
     if (esp_bt_controller_get_status() != ESP_BT_CONTROLLER_STATUS_ENABLED) {
         if (esp_bt_controller_get_status() == ESP_BT_CONTROLLER_STATUS_IDLE) {
             esp_bt_controller_config_t cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
+#ifdef ESP_BT_MODE_BLE
             cfg.mode = ESP_BT_MODE_BLE;
+#endif
             esp_bt_controller_init(&cfg);
             while (esp_bt_controller_get_status() == ESP_BT_CONTROLLER_STATUS_IDLE) {
             }
         }
         if (esp_bt_controller_get_status() == ESP_BT_CONTROLLER_STATUS_INITED) {
+#ifdef ESP_BT_MODE_BLE
             esp_bt_controller_enable(ESP_BT_MODE_BLE);
+#endif
         }
     }
+#endif
 
     m_ble_running = true;
 
@@ -218,7 +235,7 @@ void WiFi::setupBle(const rkConfig& cfg, const Config& wifiCfg) {
         service->start();
         m_services.push_back(service);
 
-        man.schedule(5000, [=]() -> bool {
+        man.schedule(5000, [this, batt_chr]() -> bool {
             const std::lock_guard<std::mutex> lock(m_mutex);
             if (!m_ble_running)
                 return false;
@@ -249,7 +266,7 @@ void WiFi::scheduleIpUpdateLocked() {
     }
 
     m_ip_update_running = true;
-    rb::Manager::get().schedule(300, [=]() -> bool {
+    rb::Manager::get().schedule(300, [this]() -> bool {
         return updateIpChar();
     });
 }

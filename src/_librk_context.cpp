@@ -9,6 +9,7 @@
 #include "rbdns.h"
 #include "rbwifi.h"
 #include <stdio.h>
+#include <inttypes.h>
 
 #include "_librk_context.h"
 
@@ -81,7 +82,7 @@ void Context::setup(const rkConfig& cfg) {
     }
 
     const auto& v = man.coprocFwVersion();
-    printf("STM32 FW version: %06x %.8s%s\n", v.number, v.revision,
+    printf("STM32 FW version: %06" PRIx32 " %.8s%s\n", v.number, v.revision,
         v.dirty ? "-dirty" : "");
 }
 
@@ -168,9 +169,9 @@ void Context::saveLineCalibration() {
 }
 
 void Context::initIrSensors() {
-    adc1_config_width(ADC_WIDTH_12Bit);
-    adc1_config_channel_atten(m_ir_left, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(m_ir_right, ADC_ATTEN_DB_11);
+    adc1_config_width(ADC_WIDTH_BIT_12);
+    adc1_config_channel_atten(m_ir_left, ADC_ATTEN_DB_12);
+    adc1_config_channel_atten(m_ir_right, ADC_ATTEN_DB_12);
 }
 
 uint16_t Context::irRead(adc1_channel_t chan, uint16_t samples) {

@@ -4,11 +4,23 @@
 #include <string.h>
 
 #ifndef RK_DISABLE_BLE
+#include <BLEDevice.h>
 #include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
 #else
 class BLECharacteristicCallbacks {
+public:
+    enum Status { SUCCESS = 0 };
+    virtual ~BLECharacteristicCallbacks() {}
+    virtual void onRead(void*) {}
+    virtual void onNotify(void*) {}
+    virtual void onStatus(void*, Status, uint32_t) {}
+    virtual void onWrite(void*) {}
 };
 typedef void BLECharacteristic;
+typedef void BLEServer;
+typedef void BLEService;
 typedef int Status;
 #endif
 

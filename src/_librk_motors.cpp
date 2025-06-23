@@ -205,11 +205,11 @@ int32_t Motors::scale(int32_t val) {
 }
 
 int16_t Motors::pctToPower(int8_t pct) {
-    return rb::clamp(pct * INT16_MAX / 100, -INT16_MAX, INT16_MAX);
+    return rb::clamp(static_cast<int16_t>(pct * INT16_MAX / 100), static_cast<int16_t>(-INT16_MAX), static_cast<int16_t>(INT16_MAX));
 }
 
 int16_t Motors::pctToSpeed(int8_t pct) const {
-    return rb::clamp(pct * m_max_speed / 100, -INT16_MAX, INT16_MAX);
+    return rb::clamp(static_cast<int16_t>(pct * m_max_speed / 100), static_cast<int16_t>(-INT16_MAX), static_cast<int16_t>(INT16_MAX));
 }
 
 int32_t Motors::mmToTicks(float mm) const {
